@@ -12,5 +12,9 @@
   background: linear-gradient(to right, #f07f1d 50%, #1b1b1b 50%);
 }
 
+.App.active {
+  overflow: hidden;
+}
+
 @media screen {
 }

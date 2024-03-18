@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./MainPage.css";
 
-function MainPage(props) {
+function MainPage({ selectCategory }) {
+  const mainRef = useRef(null);
+
+  useEffect(() => {
+    if (selectCategory == "main") {
+      mainRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [selectCategory]);
   return (
-    <div className="mainpage-container">
+    <div className="mainpage-container" ref={mainRef}>
       <div className="mainpage-titleBox">
         <div>KIMYOUNGIL</div>
         <div>Frontend Developer</div>
