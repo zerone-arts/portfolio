@@ -82,5 +82,5 @@
 .menu-container ul li button:hover {
   color: #ce701e;
   transition: 0.2s;
-  cursor: pointer;
+  cursor: none;
 }

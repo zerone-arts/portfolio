@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Header.css";
-function Header({ toggle, setToggle, setSelectCategory }) {
-  useEffect(() => {
-    console.log(toggle);
-  }, [toggle]);
-
+function Header({ toggle, setToggle, setSelectCategory, setHover }) {
   const menuSelectHandle = (item) => {
     setSelectCategory(item);
     setTimeout(() => {
@@ -14,11 +10,16 @@ function Header({ toggle, setToggle, setSelectCategory }) {
 
   return (
     <div className="header-container">
-      <div className={`header-logo`}>
+      <div className={`header-logo ${toggle}`}>
         <button
-          style={toggle ? { color: `rgb(195, 195, 195)` } : {}}
           onClick={() => {
             menuSelectHandle("main");
+          }}
+          onMouseOver={() => {
+            setHover("main");
+          }}
+          onMouseLeave={() => {
+            setHover("");
           }}
         >
           zerone .
@@ -30,6 +31,12 @@ function Header({ toggle, setToggle, setSelectCategory }) {
           onClick={() => {
             menuSelectHandle("main");
           }}
+          onMouseOver={() => {
+            setHover("main");
+          }}
+          onMouseLeave={() => {
+            setHover("");
+          }}
         >
           <div className="header-line-object"></div>
         </li>
@@ -37,6 +44,12 @@ function Header({ toggle, setToggle, setSelectCategory }) {
           <button
             onClick={() => {
               menuSelectHandle("about");
+            }}
+            onMouseOver={() => {
+              setHover("about");
+            }}
+            onMouseLeave={() => {
+              setHover("");
             }}
           >
             about me
@@ -47,6 +60,12 @@ function Header({ toggle, setToggle, setSelectCategory }) {
             onClick={() => {
               menuSelectHandle("project");
             }}
+            onMouseOver={() => {
+              setHover("project");
+            }}
+            onMouseLeave={() => {
+              setHover("");
+            }}
           >
             project
           </button>
@@ -56,6 +75,12 @@ function Header({ toggle, setToggle, setSelectCategory }) {
             onClick={() => {
               menuSelectHandle("contact");
             }}
+            onMouseOver={() => {
+              setHover("contact");
+            }}
+            onMouseLeave={() => {
+              setHover("");
+            }}
           >
             contact
           </button>
@@ -64,13 +89,17 @@ function Header({ toggle, setToggle, setSelectCategory }) {
       <button
         className="header-menu-bar"
         onClick={() => (toggle === "" ? setToggle("active") : setToggle(""))}
+        onMouseOver={() => {
+          setHover("menu");
+        }}
+        onMouseLeave={() => {
+          setHover("");
+        }}
       >
-        {/* <ion-icon name="menu-outline"></ion-icon> */}
         <div className={`header-menu-bar-top ${toggle}`}></div>
         <div className={`header-menu-bar-center ${toggle}`}></div>
         <div className={`header-menu-bar-bottom ${toggle}`}></div>
       </button>
-      <div className="header-menu"></div>
     </div>
   );
 }
