@@ -1,6 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Header.css";
-function Header({ toggle, setToggle, setSelectCategory, setHover }) {
+function Header({
+  toggle,
+  setToggle,
+  setSelectCategory,
+  setHover,
+  bgBlackPercent,
+}) {
+  const [logoColor, setLogoColor] = useState("");
+  const mouseOverHandle = () => {
+    setHover("main");
+  };
+
+  const mouseOutHandle = () => {
+    setHover("");
+  };
+
   const menuSelectHandle = (item) => {
     setSelectCategory(item);
     setTimeout(() => {
@@ -8,19 +23,23 @@ function Header({ toggle, setToggle, setSelectCategory, setHover }) {
     }, 1000);
   };
 
+  useEffect(() => {
+    if (bgBlackPercent <= 40 && bgBlackPercent >= 0) {
+      setLogoColor("");
+    } else {
+      setLogoColor("active");
+    }
+  }, [bgBlackPercent]);
+
   return (
     <div className="header-container">
-      <div className={`header-logo ${toggle}`}>
+      <div className={`header-logo ${toggle} ${logoColor}`}>
         <button
           onClick={() => {
             menuSelectHandle("main");
           }}
-          onMouseOver={() => {
-            setHover("main");
-          }}
-          onMouseLeave={() => {
-            setHover("");
-          }}
+          onMouseOver={mouseOverHandle}
+          onMouseLeave={mouseOutHandle}
         >
           zerone .
         </button>

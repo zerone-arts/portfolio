@@ -1,5 +1,5 @@
 .mouse-container {
-  position: absolute;
+  position: fixed;
   width: 18px;
   height: 18px;
   border: 1px solid white;
@@ -9,15 +9,4 @@
   z-index: 999;
   pointer-events: none;
   transition: 0.5s transform;
-}
-
-.mouse-background {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  transition: 0.3s;
 }

@@ -4,7 +4,7 @@ import MainPage from "./pages/MainPage/MainPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import ProjectPage from "./pages/ProjectPage/ProjectPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MenuPage from "./pages/MenuPage/MenuPage";
 import Mouse from "./components/Mouse/Mouse";
 
@@ -15,6 +15,7 @@ function App() {
   const [hover, setHover] = useState("");
   const [screenWidth, setScreenWdith] = useState(null);
   const [click, setClick] = useState(false);
+  const [bgBlackPercent, setBlackPercent] = useState(null);
 
   const mouseMoveHandle = (e) => {
     setXY({ x: e.clientX, y: e.clientY });
@@ -49,13 +50,21 @@ function App() {
         setClick(false);
       }}
     >
+      <div
+        className="app-blackBg"
+        style={{ width: `${50 + bgBlackPercent}%` }}
+      ></div>
       <Header
         toggle={toggle}
         setToggle={setToggle}
         setSelectCategory={setSelectCategory}
         setHover={setHover}
+        bgBlackPercent={bgBlackPercent}
       />
-      <MainPage selectCategory={selectCategory} />
+      <MainPage
+        selectCategory={selectCategory}
+        setBlackPercent={setBlackPercent}
+      />
       <AboutPage selectCategory={selectCategory} />
       <ProjectPage selectCategory={selectCategory} />
       <ContactPage selectCategory={selectCategory} />
@@ -64,7 +73,7 @@ function App() {
         setSelectCategory={setSelectCategory}
         setHover={setHover}
       />
-      <Mouse xy={xy} hover={hover} click={click} setClick={setClick} />
+      <Mouse xy={xy} hover={hover} click={click} />
     </div>
   );
 }

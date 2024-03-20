@@ -19,23 +19,19 @@
   left: 0;
   width: 50%;
   height: 100%;
-  color: rgb(24, 24, 24);
+
   position: relative;
   display: flex;
   align-items: center;
   padding: 50px;
 }
 .header-logo.active button {
-  color: rgb(195, 195, 195);
+  color: #af7340;
 }
 
 .header-logo button:hover {
   transition: 0.3s;
   color: rgb(195, 195, 195);
-}
-.header-logo.active button:hover {
-  transition: 0.3s;
-  color: #af7340;
 }
 
 .header-container .header-list {
