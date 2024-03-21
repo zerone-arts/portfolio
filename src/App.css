@@ -9,7 +9,7 @@
 }
 .App {
   width: 100%;
-  background: #f07f1d;
+  background-color: #1b1b1b;
   overflow: hidden;
 }
 
@@ -19,7 +19,9 @@
 
 .app-blackBg {
   position: absolute;
-  right: 0;
-  height: 400vh;
-  background-color: #1b1b1b;
+  right: left;
+  width: 50%;
+  height: 100vh;
+
+  background: #f07f1d;
 }

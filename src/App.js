@@ -15,7 +15,6 @@ function App() {
   const [hover, setHover] = useState("");
   const [screenWidth, setScreenWdith] = useState(null);
   const [click, setClick] = useState(false);
-  const [bgBlackPercent, setBlackPercent] = useState(null);
 
   const mouseMoveHandle = (e) => {
     setXY({ x: e.clientX, y: e.clientY });
@@ -50,21 +49,14 @@ function App() {
         setClick(false);
       }}
     >
-      <div
-        className="app-blackBg"
-        style={{ width: `${50 + bgBlackPercent}%` }}
-      ></div>
+      <div className="app-blackBg"></div>
       <Header
         toggle={toggle}
         setToggle={setToggle}
         setSelectCategory={setSelectCategory}
         setHover={setHover}
-        bgBlackPercent={bgBlackPercent}
       />
-      <MainPage
-        selectCategory={selectCategory}
-        setBlackPercent={setBlackPercent}
-      />
+      <MainPage selectCategory={selectCategory} />
       <AboutPage selectCategory={selectCategory} />
       <ProjectPage selectCategory={selectCategory} />
       <ContactPage selectCategory={selectCategory} />

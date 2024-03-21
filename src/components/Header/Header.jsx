@@ -1,12 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Header.css";
-function Header({
-  toggle,
-  setToggle,
-  setSelectCategory,
-  setHover,
-  bgBlackPercent,
-}) {
+function Header({ toggle, setToggle, setSelectCategory, setHover }) {
   const [logoColor, setLogoColor] = useState("");
   const mouseOverHandle = () => {
     setHover("main");
@@ -22,14 +16,6 @@ function Header({
       setSelectCategory("");
     }, 1000);
   };
-
-  useEffect(() => {
-    if (bgBlackPercent <= 40 && bgBlackPercent >= 0) {
-      setLogoColor("");
-    } else {
-      setLogoColor("active");
-    }
-  }, [bgBlackPercent]);
 
   return (
     <div className="header-container">
