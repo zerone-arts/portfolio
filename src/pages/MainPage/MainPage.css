@@ -52,7 +52,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   display: flex;
 }
 .mainpage-titleBox ul li {
@@ -93,6 +92,7 @@
 }
 
 .mainpage-zeroone-box div:nth-child(1) {
+  position: relative;
   color: #363636;
 }
 

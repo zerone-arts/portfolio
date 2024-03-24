@@ -15,6 +15,7 @@ function App() {
   const [hover, setHover] = useState("");
   const [screenWidth, setScreenWdith] = useState(null);
   const [click, setClick] = useState(false);
+  const [bgWidth, setBgWidth] = useState(50);
 
   const mouseMoveHandle = (e) => {
     setXY({ x: e.clientX, y: e.clientY });
@@ -38,6 +39,20 @@ function App() {
     };
   }, []);
 
+  function onScroll() {
+    if (window.scrollY <= 300) {
+      setBgWidth(50);
+    } else {
+      setBgWidth(0);
+    }
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
   return (
     <div
       className={`App ${toggle}`}
@@ -49,12 +64,13 @@ function App() {
         setClick(false);
       }}
     >
-      <div className="app-blackBg"></div>
+      <div className="app-blackBg" style={{ width: `${bgWidth}%` }}></div>
       <Header
         toggle={toggle}
         setToggle={setToggle}
         setSelectCategory={setSelectCategory}
         setHover={setHover}
+        bgWidth={bgWidth}
       />
       <MainPage selectCategory={selectCategory} />
       <AboutPage selectCategory={selectCategory} />

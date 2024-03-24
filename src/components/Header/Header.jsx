@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Header.css";
-function Header({ toggle, setToggle, setSelectCategory, setHover }) {
-  const [logoColor, setLogoColor] = useState("");
+function Header({ toggle, setToggle, setSelectCategory, setHover, bgWidth }) {
   const mouseOverHandle = () => {
     setHover("main");
   };
@@ -19,7 +18,9 @@ function Header({ toggle, setToggle, setSelectCategory, setHover }) {
 
   return (
     <div className="header-container">
-      <div className={`header-logo ${toggle} ${logoColor}`}>
+      <div
+        className={`header-logo ${toggle} ${bgWidth == "0" ? "active" : ""}`}
+      >
         <button
           onClick={() => {
             menuSelectHandle("main");

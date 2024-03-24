@@ -20,8 +20,7 @@
 .app-blackBg {
   position: absolute;
   right: left;
-  width: 50%;
-  height: 100vh;
-
-  background: #f07f1d;
+  height: 400vh;
+  transition: 1s;
+  background: #a65d1e;
 }

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./AboutPage.css";
-import ProfileComponet from "./ProfileComponet";
-import SkillComponent from "./SkillComponent";
-import Personality from "./Personality";
+import ProfileComponet from "./ProfileComponet/ProfileComponet";
+import SkillComponent from "./SkillComponent/SkillComponent";
+import Personality from "./Personality/Personality";
 
 function AboutPage({ selectCategory }) {
   const [select, setSelect] = useState("i am");
@@ -44,7 +44,7 @@ function AboutPage({ selectCategory }) {
               className="aboutpage-list"
               style={
                 item === select
-                  ? { color: `rgba(255,255,255,1)` }
+                  ? { color: `#af7340` }
                   : { color: `rgba(255,255,255,0.5)` }
               }
               onClick={(e) => categoryHandle(e, item)}
