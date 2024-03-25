@@ -73,7 +73,7 @@ function App() {
         bgWidth={bgWidth}
       />
       <MainPage selectCategory={selectCategory} />
-      <AboutPage selectCategory={selectCategory} />
+      <AboutPage selectCategory={selectCategory} setHover={setHover} />
       <ProjectPage selectCategory={selectCategory} />
       <ContactPage selectCategory={selectCategory} />
       <MenuPage

@@ -4,7 +4,7 @@ import ProfileComponet from "./ProfileComponet/ProfileComponet";
 import SkillComponent from "./SkillComponent/SkillComponent";
 import Personality from "./Personality/Personality";
 
-function AboutPage({ selectCategory }) {
+function AboutPage({ selectCategory, setHover }) {
   const [select, setSelect] = useState("i am");
   const boxRef = useRef(null);
   const aboutRef = useRef(null);
@@ -21,6 +21,7 @@ function AboutPage({ selectCategory }) {
       boxRef.current.style.left = "0%";
     }
   };
+  console.log(select);
 
   useEffect(() => {
     if (selectCategory == "about") {
@@ -33,7 +34,7 @@ function AboutPage({ selectCategory }) {
       <div className="aboutpage-box" ref={boxRef}>
         <ProfileComponet select={select} />
         <SkillComponent />
-        <Personality />
+        <Personality select={select} />
       </div>
 
       <ul className="aboutpage-category">
@@ -48,6 +49,8 @@ function AboutPage({ selectCategory }) {
                   : { color: `rgba(255,255,255,0.5)` }
               }
               onClick={(e) => categoryHandle(e, item)}
+              onMouseOver={() => setHover(item)}
+              onMouseLeave={() => setHover("")}
             >
               {item.toUpperCase()}
             </li>

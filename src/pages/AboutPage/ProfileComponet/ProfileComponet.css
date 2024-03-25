@@ -51,7 +51,6 @@
   text-align: center;
   font-weight: 500;
   /* color: rgb(46, 46, 46); */
-
   color: transparent;
   background-color: #181818;
   -webkit-background-clip: text;
@@ -65,8 +64,8 @@
 }
 
 .profileComponet-card .profileComponet-profileBox {
-  color: black;
-  background-color: rgb(233, 233, 233);
+  color: #b06019;
+  background-color: rgb(21, 21, 21);
   transform: perspective(1000px) rotateX(180deg);
   display: flex;
   align-items: center;
@@ -106,9 +105,10 @@
 .profileComponet-profileBox-img p {
   position: absolute;
   left: 0;
-  top: 0;
+  top: -20px;
   font-weight: 200;
   font-size: 10px;
+  color: aliceblue;
 }
 
 .profileComponet-profileBox-img div {
@@ -125,4 +125,65 @@
   top: 0;
   width: 250px;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileComponet-profileBox-profile ul {
+  position: absolute;
+  top: 30px;
+  width: 200px;
+  height: 250px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.profileComponet-profileBox-profile ul li:nth-child(1) {
+  position: absolute;
+  display: flex;
+  align-items: end;
+  top: 20px;
+}
+
+.profileComponet-profileBox-profile ul li:nth-child(1) p:nth-child(2) {
+  position: relative;
+  font-size: 7px;
+  color: rgb(231, 231, 231);
+  bottom: 3px;
+  margin-left: 5px;
+}
+
+.profileComponet-profileBox-profile ul li:nth-child(2) {
+  position: absolute;
+  top: 45px;
+  left: 2px;
+  font-size: 9px;
+  color: rgb(188, 188, 188);
+}
+.profileComponet-profileBox-profile ul li:nth-child(3) {
+  position: absolute;
+  bottom: 20px;
+  color: rgb(231, 231, 231);
+  font-weight: 200;
+  font-size: 9px;
+}
+
+.profileComponet-profileBox-profile ul li:nth-child(4) {
+  position: absolute;
+  bottom: 0;
+  font-size: 7px;
+  color: rgb(231, 231, 231);
+  font-weight: 200;
+}
+
+.profileComponet-profileBox-profile ul li:nth-child(5) {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 7px;
+  color: rgb(231, 231, 231);
+  text-align: right;
+  font-weight: 200;
 }
