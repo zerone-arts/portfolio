@@ -74,7 +74,7 @@ function App() {
       />
       <MainPage selectCategory={selectCategory} />
       <AboutPage selectCategory={selectCategory} setHover={setHover} />
-      <ProjectPage selectCategory={selectCategory} />
+      <ProjectPage selectCategory={selectCategory} setHover={setHover} />
       <ContactPage selectCategory={selectCategory} />
       <MenuPage
         toggle={toggle}

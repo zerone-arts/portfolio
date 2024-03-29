@@ -4,7 +4,6 @@ function Personality({ select }) {
   return (
     <div className="personality">
       <ul className={`personality-wrapper ${select}`}>
-        {/* <div className="personality-bg"></div> */}
         <li>
           <div>
             <p>Introversion</p>

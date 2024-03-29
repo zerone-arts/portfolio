@@ -21,7 +21,6 @@ function AboutPage({ selectCategory, setHover }) {
       boxRef.current.style.left = "0%";
     }
   };
-  console.log(select);
 
   useEffect(() => {
     if (selectCategory == "about") {
