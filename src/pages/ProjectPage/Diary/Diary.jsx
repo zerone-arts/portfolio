@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Diary.css";
 import diaryDayBg from "../../../assets/img/day.png";
 import calendar1 from "../../../assets/img/calendar1.png";
@@ -6,8 +6,20 @@ import calendar2 from "../../../assets/img/calendar2.png";
 import diaryMonthBook1 from "../../../assets/img/book2.png";
 import diaryMonthBook2 from "../../../assets/img/book3.png";
 function Diary({ setHover, selectBtn }) {
+  const [explanationHover, setExplanationHover] = useState("");
+  const [tagHover, setTagHover] = useState("");
   let date = new Date();
   let month = date.toLocaleString("en-US", { month: "long" });
+  let tagList = [
+    "dark mode",
+    "react",
+    "firebase",
+    "google login",
+    "custom",
+    "picture",
+    "calendar",
+    "diary",
+  ];
 
   return (
     <div className={`diary-container ${selectBtn === 0 ? "active" : ""}`}>
@@ -37,12 +49,16 @@ function Diary({ setHover, selectBtn }) {
                 VIEW MORE
               </a>
             </button>
-            <div className="diary-main-bottom-text">
-              <p>
-                <span>Design</span> your
+            <a
+              href="https://github.com/zerone-arts/diary"
+              target="_black"
+              className="diary-main-bottom-textBox"
+            >
+              <p className="diary-main-bottom-text">
+                <span>GitHub</span>
               </p>
-              <p>past days</p>
-            </div>
+              <p className="diary-main-bottom-text">Repository</p>
+            </a>
           </div>
         </li>
         <li className="diary-day">
@@ -72,20 +88,36 @@ function Diary({ setHover, selectBtn }) {
             꾸며보세요. <br /> 지나 보면 기억이 남는 달이 될 것입니다.
           </div>
         </li>
-        <li className="diary-explanation">
+        <li
+          className={`diary-explanation ${explanationHover}`}
+          onMouseOver={() => {
+            setExplanationHover("hover");
+          }}
+          onMouseLeave={() => {
+            setExplanationHover("");
+          }}
+        >
           <div className="diary-explanation-imgBox">
             <img src={calendar1} alt="calendar" />
             <img src={calendar2} alt="calendar" />
           </div>
+          <div className="diary-explantation-tagTitle">{tagHover}</div>
           <ul className="diary-explanation-tagBox">
-            <li>dark mode</li>
-            <li>react</li>
-            <li>firebase</li>
-            <li>google login</li>
-            <li>custom</li>
-            <li>picture</li>
-            <li>calendar</li>
-            <li>Diary</li>
+            {tagList.map((item, idx) => {
+              return (
+                <li
+                  key={idx}
+                  onMouseOver={() => {
+                    setTagHover(item);
+                  }}
+                  onMouseLeave={() => {
+                    setTagHover("");
+                  }}
+                >
+                  {item}
+                </li>
+              );
+            })}
           </ul>
         </li>
       </ul>

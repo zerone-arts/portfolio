@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Mouse.css";
 function Mouse({ xy, hover, click }) {
   const mouseRef = useRef(null);
-  console.log(hover);
+
   useEffect(() => {
     if (hover == "") {
       mouseRef.current.style.transform = `translate(-50%, -50%) scale(1)`;

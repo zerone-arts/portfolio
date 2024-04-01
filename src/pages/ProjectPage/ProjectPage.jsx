@@ -15,17 +15,27 @@ function ProjectPage({ selectCategory, setHover }) {
   }, [selectCategory]);
   return (
     <div className="projectpage-container" ref={projectRef}>
+      <div className="projectpage-title">Project</div>
       <div
         className="projectpage-wrapper"
         style={{ left: `-${selectBtn * 100}%` }}
       >
-        <div className="projectpage-project one">
+        <div
+          className="projectpage-project one"
+          style={selectBtn === 0 ? { opacity: 1 } : { opacity: 0 }}
+        >
           <Diary setHover={setHover} selectBtn={selectBtn} />
         </div>
-        <div className="projectpage-project two">
+        <div
+          className="projectpage-project two"
+          style={selectBtn === 1 ? { opacity: 1 } : { opacity: 0 }}
+        >
           <ArtWeb />
         </div>
-        <div className="projectpage-project three">
+        <div
+          className="projectpage-project three"
+          style={selectBtn === 2 ? { opacity: 1 } : { opacity: 0 }}
+        >
           <Effects />
         </div>
       </div>
@@ -64,7 +74,7 @@ function ProjectPage({ selectCategory, setHover }) {
             className="projectpage-projectNameBox-list"
             style={selectBtn === 1 ? { opacity: 1 } : { opacity: 0 }}
           >
-            Web Design - <span>Art web</span>
+            Web Design - <span>Art Web</span>
           </li>
           <li
             className="projectpage-projectNameBox-list"
