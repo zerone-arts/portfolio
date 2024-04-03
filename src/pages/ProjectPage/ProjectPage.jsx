@@ -39,7 +39,7 @@ function ProjectPage({ selectCategory, setHover }) {
             className="projectpage-project three"
             style={selectBtn === 2 ? { opacity: 1 } : { opacity: 0 }}
           >
-            <Effects selectBtn={selectBtn} />
+            <Effects setSelectBtn={setSelectBtn} />
           </div>
         </div>
       </div>

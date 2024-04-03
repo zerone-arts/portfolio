@@ -236,6 +236,15 @@
   flex-direction: column;
   align-items: start;
 }
+.effects-bottom-link-Box button a {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
 .effects-bottom-link-Box button h4 {
   font-weight: 400;
 }

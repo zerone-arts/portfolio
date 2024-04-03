@@ -7,7 +7,7 @@ import effectVideo3 from "../../../assets/video/effectVideo3.mov";
 import effectVideo4 from "../../../assets/video/effectVideo4.mov";
 import effectVideo5 from "../../../assets/video/effectVideo5.mov";
 
-function Effects({ selectBtn }) {
+function Effects({ setSelectBtn }) {
   const videoRefs = useRef({});
   const [videoSlideNum, setVideoSlideNum] = useState(0);
   let videoList = [
@@ -30,10 +30,6 @@ function Effects({ selectBtn }) {
   useEffect(() => {
     videoRefs.current[0].playbackRate = 0.8;
   }, []);
-
-  // useEffect(() => {
-  //   videoRefs.current[videoSlideNum].play();
-  // }, [selectBtn, videoSlideNum]);
 
   return (
     <div
@@ -109,14 +105,26 @@ function Effects({ selectBtn }) {
       </a>
       <div className="effects-bottom-link-Box">
         <button className="effects-bottom-link-Box-github">
-          <h4>GitHub</h4>
-          <p>repository</p>
+          <a href="https://github.com/zerone-arts/effects" target="_blank">
+            <h4>GitHub</h4>
+            <p>repository</p>
+          </a>
         </button>
-        <button className="effects-bottom-link-Box-diary">
+        <button
+          className="effects-bottom-link-Box-diary"
+          onClick={() => {
+            setSelectBtn(0);
+          }}
+        >
           <h4>Diary</h4>
           <p>view more</p>
         </button>
-        <button className="effects-bottom-link-Box-artweb">
+        <button
+          className="effects-bottom-link-Box-artweb"
+          onClick={() => {
+            setSelectBtn(1);
+          }}
+        >
           <h4>ArtWeb</h4>
           <p>view more</p>
         </button>
