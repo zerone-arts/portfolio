@@ -1,0 +1,5 @@
+effectVideo1.mov filter=lfs diff=lfs merge=lfs -text
+effectVideo2.mov filter=lfs diff=lfs merge=lfs -text
+effectVideo3.mov filter=lfs diff=lfs merge=lfs -text
+effectVideo4.mov filter=lfs diff=lfs merge=lfs -text
+effectVideo5.mov filter=lfs diff=lfs merge=lfs -text
