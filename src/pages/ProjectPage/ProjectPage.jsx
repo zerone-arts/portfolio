@@ -6,6 +6,7 @@ import Effects from "./Effects/Effects";
 
 function ProjectPage({ selectCategory, setHover }) {
   const [selectBtn, setSelectBtn] = useState(0);
+  const [resize, setResize] = useState("");
   const projectRef = useRef(null);
 
   useEffect(() => {
@@ -13,30 +14,33 @@ function ProjectPage({ selectCategory, setHover }) {
       projectRef.current?.scrollIntoView({ behavior: "smooth" });
     }
   }, [selectCategory]);
+
   return (
     <div className="projectpage-container" ref={projectRef}>
       <div className="projectpage-title">Project</div>
-      <div
-        className="projectpage-wrapper"
-        style={{ left: `-${selectBtn * 100}%` }}
-      >
+      <div className="projectpage-wrapper">
         <div
-          className="projectpage-project one"
-          style={selectBtn === 0 ? { opacity: 1 } : { opacity: 0 }}
+          className="projectpage-box"
+          style={{ top: `-${selectBtn * 100}%` }}
         >
-          <Diary setHover={setHover} selectBtn={selectBtn} />
-        </div>
-        <div
-          className="projectpage-project two"
-          style={selectBtn === 1 ? { opacity: 1 } : { opacity: 0 }}
-        >
-          <ArtWeb />
-        </div>
-        <div
-          className="projectpage-project three"
-          style={selectBtn === 2 ? { opacity: 1 } : { opacity: 0 }}
-        >
-          <Effects />
+          <div
+            className="projectpage-project one"
+            style={selectBtn === 0 ? { opacity: 1 } : { opacity: 0 }}
+          >
+            <Diary setHover={setHover} selectBtn={selectBtn} />
+          </div>
+          <div
+            className="projectpage-project two"
+            style={selectBtn === 1 ? { opacity: 1 } : { opacity: 0 }}
+          >
+            <ArtWeb />
+          </div>
+          <div
+            className="projectpage-project three"
+            style={selectBtn === 2 ? { opacity: 1 } : { opacity: 0 }}
+          >
+            <Effects selectBtn={selectBtn} />
+          </div>
         </div>
       </div>
       <ul className="projectpage-buttonBox">

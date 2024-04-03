@@ -1,0 +1,294 @@
+.effects-container {
+  position: relative;
+  width: 800px;
+  height: 450px;
+  background-color: black;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  /* transition: 1s; */
+  overflow: hidden;
+}
+
+.effects-logo {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 100px;
+  height: 30px;
+  color: white;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.effects-video-Wrapper {
+  position: absolute;
+
+  top: 0;
+  width: 800px;
+  height: 100%;
+  display: flex;
+  transition: 1s;
+}
+
+.effects-video-Wrapper .effects-video-list {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  filter: brightness(40%);
+  transition: 1s;
+}
+.effects-video-Wrapper .effects-video-list video {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: -30px;
+}
+
+.effects-video-Wrapper .effects-video-list p {
+  top: 0;
+  position: absolute;
+}
+.effects-video-Btn-Wrapper {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  width: 130px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.effects-video-slide-Num {
+  position: absolute;
+  right: 100px;
+  top: 80px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.effects-video-slide-Num p {
+  display: flex;
+}
+.effects-video-slide-Num p span {
+  position: relative;
+  margin-right: 4px;
+  font-weight: 700;
+  font-size: 30px;
+  color: rgba(255, 255, 255, 1);
+  top: -9px;
+}
+
+.effects-video-btnBox {
+  position: absolute;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+.effects-video-Btn-Wrapper-box {
+  position: absolute;
+  width: 10px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.effects-video-Btn-Wrapper-box button {
+  position: relative;
+  width: 5px;
+  height: 5px;
+  background-color: transparent;
+  transition: 0.5s;
+  border-radius: 50%;
+}
+.effects-video-Btn-Wrapper button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.effects-video-btnBox ion-icon {
+  opacity: 0.5;
+  font-size: 20px;
+  font-weight: 100;
+  transition: 0.5s;
+}
+
+.effects-video-btnBox ion-icon:hover {
+  opacity: 1;
+}
+
+.effects-text-Box {
+  position: absolute;
+  width: 350px;
+  height: 120px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 150px;
+}
+.effects-text-Box h2 {
+  font-size: 30px;
+}
+.effects-text-Box h3 {
+  position: relative;
+  top: -5px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.effects-text-Box p {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.effects-link-Box {
+  position: absolute;
+  width: 180px;
+  height: 30px;
+  top: calc(50% + 100px);
+  transform: translateY(-50%);
+  left: 150px;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  font-size: 10px;
+  text-transform: uppercase;
+  transition: 1s;
+}
+
+.effects-link-Box:hover {
+  border: 1px solid rgba(255, 255, 255, 1);
+  letter-spacing: 1px;
+}
+.effects-link-Box span:nth-child(1) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 3px;
+  background-color: white;
+  right: 20px;
+  font-size: 20px;
+  font-weight: 100;
+  border-radius: 50%;
+}
+.effects-link-Box span:nth-child(1):before {
+  content: "";
+  position: absolute;
+  top: calc(50%);
+  left: -5px;
+  width: 2.5px;
+  height: 2.5px;
+  background-color: white;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+.effects-link-Box span:nth-child(1):after {
+  content: "";
+  position: absolute;
+  top: calc(50%);
+  left: -9.5px;
+  width: 2px;
+  height: 2px;
+  background-color: white;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+.effects-link-Box:hover span:nth-child(1) {
+  animation: 3s linkAnimate infinite;
+}
+
+@keyframes linkAnimate {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    right: 0px;
+  }
+}
+
+.effects-bottom-link-Box {
+  position: absolute;
+  left: 100px;
+  bottom: 0;
+  width: 600px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.effects-bottom-link-Box button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.effects-bottom-link-Box button h4 {
+  font-weight: 400;
+}
+.effects-bottom-link-Box button p {
+  position: relative;
+  top: -2px;
+  font-size: 10px;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 1.5px;
+}
+
+.effects-bottom-link-Box button:nth-child(1) {
+  position: absolute;
+  width: 70px;
+  height: 50px;
+  left: 50px;
+  top: 0;
+  transition: 0.5s;
+}
+
+.effects-bottom-link-Box button:nth-child(2) {
+  position: absolute;
+  width: 70px;
+  height: 50px;
+  right: 100px;
+  top: 0;
+  transition: 0.5s;
+}
+.effects-bottom-link-Box button:nth-child(3) {
+  position: absolute;
+  width: 70px;
+  height: 50px;
+  right: 0;
+  top: 0;
+  transition: 0.5s;
+}
+.effects-bottom-link-Box button:hover {
+  top: -10px;
+}
+
+@media (max-width: 800px) {
+  .effects-container {
+    width: 500px;
+    transition: 0.5s;
+  }
+  .effects-video-slide-Num {
+    right: 30px;
+    top: 30px;
+    transition: 0.5s;
+  }
+  .effects-bottom-link-Box {
+    width: 400px;
+    transition: 0.5s;
+  }
+}

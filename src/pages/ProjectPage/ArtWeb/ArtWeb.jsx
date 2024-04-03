@@ -43,6 +43,7 @@ function ArtWeb(props) {
         })}
       </div>
       <div className="artweb-left-wrapper">
+        <div className="artweb-left-title">Art Web</div>
         <ul
           className="artweb-left-textWrapper"
           style={{ left: `${selectList * -300}px` }}
