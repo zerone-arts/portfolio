@@ -8,9 +8,10 @@ function ContactPage({ selectCategory }) {
       contactRef.current?.scrollIntoView({ behavior: "smooth" });
     }
   }, [selectCategory]);
+
   return (
     <div className="contactpage-container" ref={contactRef}>
-      contact
+      <div className="contactpage-Wrapper"></div>
     </div>
   );
 }

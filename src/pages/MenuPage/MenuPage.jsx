@@ -1,12 +1,13 @@
 import React from "react";
 import "./MenuPage.css";
-function MenuPage({ toggle, setHover, setSelectCategory }) {
+function MenuPage({ toggle, setHover, setSelectCategory, setToggle }) {
   const menuSelectHandle = (item) => {
     setSelectCategory(item);
     setTimeout(() => {
       setSelectCategory("");
     }, 1000);
   };
+
   return (
     <div className={`menu-container ${toggle}`}>
       <div className={`menu-background ${toggle}`}></div>
@@ -15,6 +16,7 @@ function MenuPage({ toggle, setHover, setSelectCategory }) {
           <button
             onClick={() => {
               menuSelectHandle("about");
+              setToggle("");
             }}
             onMouseOver={() => {
               setHover("about");
@@ -30,6 +32,7 @@ function MenuPage({ toggle, setHover, setSelectCategory }) {
           <button
             onClick={() => {
               menuSelectHandle("project");
+              setToggle("");
             }}
             onMouseOver={() => {
               setHover("project");
@@ -45,6 +48,7 @@ function MenuPage({ toggle, setHover, setSelectCategory }) {
           <button
             onClick={() => {
               menuSelectHandle("contact");
+              setToggle("");
             }}
             onMouseOver={() => {
               setHover("contact");

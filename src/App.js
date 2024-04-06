@@ -16,6 +16,10 @@ function App() {
   const [screenWidth, setScreenWdith] = useState(null);
   const [click, setClick] = useState(false);
   const [bgWidth, setBgWidth] = useState(50);
+  const [contactBg, setContactBg] = useState("");
+  const contactObserveRef = useRef(null);
+
+  console.log(selectCategory);
 
   const mouseMoveHandle = (e) => {
     setXY({ x: e.clientX, y: e.clientY });
@@ -27,10 +31,6 @@ function App() {
       setToggle("");
     }
   };
-
-  useEffect(() => {
-    setToggle("");
-  }, [selectCategory]);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -45,6 +45,12 @@ function App() {
     } else {
       setBgWidth(0);
     }
+
+    if (contactObserveRef.current?.getBoundingClientRect().top <= 100) {
+      setContactBg("white");
+    } else {
+      setContactBg("");
+    }
   }
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
@@ -55,7 +61,7 @@ function App() {
 
   return (
     <div
-      className={`App ${toggle}`}
+      className={`App ${toggle} ${contactBg}`}
       onMouseMove={(e) => mouseMoveHandle(e)}
       onMouseDown={() => {
         setClick(true);
@@ -71,6 +77,7 @@ function App() {
         setSelectCategory={setSelectCategory}
         setHover={setHover}
         bgWidth={bgWidth}
+        contactBg={contactBg}
       />
       <MainPage selectCategory={selectCategory} />
       <AboutPage selectCategory={selectCategory} setHover={setHover} />
@@ -78,10 +85,12 @@ function App() {
       <ContactPage selectCategory={selectCategory} />
       <MenuPage
         toggle={toggle}
+        setToggle={setToggle}
         setSelectCategory={setSelectCategory}
         setHover={setHover}
       />
-      <Mouse xy={xy} hover={hover} click={click} />
+      <Mouse xy={xy} hover={hover} click={click} contactBg={contactBg} />
+      <div className="contact-observe" ref={contactObserveRef}></div>
     </div>
   );
 }

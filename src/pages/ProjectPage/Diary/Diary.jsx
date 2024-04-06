@@ -70,7 +70,10 @@ function Diary({ setHover, selectBtn }) {
             one words of the past day.
           </div>
           <div className="diary-day-explanation">
-            지난 날들을 사진과 텍스트를 이용하여 커스텀해보세요.
+            one word 웹 사이트는 다이어리 형태의 웹사이트 입니다. one word는
+            사진과 한마디의 텍스트를 이용하여 <br />
+            오늘 하루를 앨범이나 잡지처럼 꾸며보자는 생각에 프로젝트를
+            시작하였습니다.
           </div>
         </li>
         <li className="diary-month">
@@ -84,8 +87,8 @@ function Diary({ setHover, selectBtn }) {
           </p>
           <p className="diary-month-year">2024</p>
           <div className="diary-month-explanation">
-            이번 달을 이야기라 생각하고 제목을 적어보세요. <br /> 그리고 그 책을
-            꾸며보세요. <br /> 지나 보면 기억이 남는 달이 될 것입니다.
+            하루를 사진과 텍스트 한마디를 이용하여 잡지처럼 꾸미는 것이라면
+            한달은 책처럼 제목을 달아 이야기를 만든다는 생각을 넣어봤습니다.
           </div>
         </li>
         <li

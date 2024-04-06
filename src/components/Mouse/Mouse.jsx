@@ -1,18 +1,31 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Mouse.css";
-function Mouse({ xy, hover, click }) {
+function Mouse({ xy, hover, click, contactBg }) {
   const mouseRef = useRef(null);
 
   useEffect(() => {
-    if (hover == "") {
-      mouseRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
-      mouseRef.current.style.border = "1px solid white";
-    } else if (hover === "project-diary-main") {
-      mouseRef.current.style.border = "1px solid black";
-      mouseRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
+    if (contactBg === "white") {
+      if (hover == "") {
+        mouseRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
+        mouseRef.current.style.border = "1px solid black";
+      } else if (hover === "project-diary-main") {
+        mouseRef.current.style.border = "1px solid white";
+        mouseRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
+      } else {
+        mouseRef.current.style.border = "1px solid black";
+        mouseRef.current.style.transform = `translate(-50%, -50%) scale(1.5)`;
+      }
     } else {
-      mouseRef.current.style.border = "1px solid white";
-      mouseRef.current.style.transform = `translate(-50%, -50%) scale(1.5)`;
+      if (hover == "") {
+        mouseRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
+        mouseRef.current.style.border = "1px solid white";
+      } else if (hover === "project-diary-main") {
+        mouseRef.current.style.border = "1px solid black";
+        mouseRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
+      } else {
+        mouseRef.current.style.border = "1px solid white";
+        mouseRef.current.style.transform = `translate(-50%, -50%) scale(1.5)`;
+      }
     }
   }, [hover]);
 
@@ -24,9 +37,17 @@ function Mouse({ xy, hover, click }) {
     }
   }, [click]);
 
+  useEffect(() => {
+    if (contactBg === "white") {
+      mouseRef.current.style.border = "1px solid black";
+    } else {
+      mouseRef.current.style.border = "1px solid white";
+    }
+  }, [contactBg]);
+
   return (
     <div
-      className={`mouse-container `}
+      className={`mouse-container ${contactBg}`}
       ref={mouseRef}
       style={{
         left: `${xy.x}px`,
