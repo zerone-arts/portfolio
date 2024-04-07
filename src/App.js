@@ -19,8 +19,6 @@ function App() {
   const [contactBg, setContactBg] = useState("");
   const contactObserveRef = useRef(null);
 
-  console.log(selectCategory);
-
   const mouseMoveHandle = (e) => {
     setXY({ x: e.clientX, y: e.clientY });
   };
