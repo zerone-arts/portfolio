@@ -6,6 +6,7 @@ function ProfileComponet({ select }) {
   const options = {
     scale: 0,
   };
+
   return (
     <div className="profileComponet">
       <Tilt style={{ background: "transparent" }} options={options}>
