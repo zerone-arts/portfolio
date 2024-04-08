@@ -11,7 +11,10 @@ function ProjectPage({ selectCategory, setHover }) {
 
   useEffect(() => {
     if (selectCategory == "project") {
-      projectRef.current?.scrollIntoView({ behavior: "smooth" });
+      projectRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+      });
     }
   }, [selectCategory]);
 

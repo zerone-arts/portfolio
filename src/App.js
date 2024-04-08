@@ -7,6 +7,7 @@ import ContactPage from "./pages/ContactPage/ContactPage";
 import { useEffect, useRef, useState } from "react";
 import MenuPage from "./pages/MenuPage/MenuPage";
 import Mouse from "./components/Mouse/Mouse";
+import Footer from "./pages/Footer/Footer";
 
 function App() {
   const [toggle, setToggle] = useState("");
@@ -87,6 +88,7 @@ function App() {
         setSelectCategory={setSelectCategory}
         setHover={setHover}
       />
+      <Footer setSelectCategory={setSelectCategory} setHover={setHover} />
       <Mouse xy={xy} hover={hover} click={click} contactBg={contactBg} />
       <div className="contact-observe" ref={contactObserveRef}></div>
     </div>

@@ -17,7 +17,7 @@
   overflow: hidden;
   transition: 1s;
 }
-.App::after {
+.App::before {
   background-image: linear-gradient(white, rgba(255, 255, 255, 0));
   content: "";
   position: absolute;
@@ -28,7 +28,7 @@
   opacity: 0;
   transition: 2s;
 }
-.App.white::after {
+.App.white::before {
   top: 0vh;
   opacity: 1;
   background-image: linear-gradient(

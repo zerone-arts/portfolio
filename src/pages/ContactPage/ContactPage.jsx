@@ -60,7 +60,10 @@ function ContactPage({ selectCategory }) {
 
   useEffect(() => {
     if (selectCategory == "contact") {
-      contactRef.current?.scrollIntoView({ behavior: "smooth" });
+      contactRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+      });
     }
   }, [selectCategory]);
 

@@ -7,7 +7,7 @@
   z-index: 998;
   pointer-events: none;
 }
-.header-container button {
+.header-container .header-logo button {
   border: none;
   background-color: transparent;
   font-size: 15px;
@@ -65,6 +65,9 @@
   color: rgb(195, 195, 195);
   font-size: 12px;
   font-weight: 400;
+  background-color: transparent;
+  border: none;
+  pointer-events: all;
 }
 .header-container.white .header-list li button {
   color: black;
@@ -97,7 +100,7 @@
   border: none;
   background-color: transparent;
   opacity: 0;
-
+  pointer-events: none;
   transition: 1s;
 }
 
@@ -169,9 +172,13 @@
     transition: 1s;
     pointer-events: none;
   }
+  .header-container .header-list li button {
+    pointer-events: none;
+  }
 
   .header-menu-bar {
     opacity: 1;
     transition-delay: 1s;
+    pointer-events: all;
   }
 }

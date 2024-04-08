@@ -7,7 +7,7 @@ function MainPage({ selectCategory }) {
 
   useEffect(() => {
     if (selectCategory == "main") {
-      mainRef.current?.scrollIntoView({ behavior: "smooth" });
+      mainRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   }, [selectCategory]);
 

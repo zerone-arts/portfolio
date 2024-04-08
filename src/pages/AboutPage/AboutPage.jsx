@@ -23,8 +23,8 @@ function AboutPage({ selectCategory, setHover }) {
   };
 
   useEffect(() => {
-    if (selectCategory == "about") {
-      aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (selectCategory === "about") {
+      aboutRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   }, [selectCategory]);
 

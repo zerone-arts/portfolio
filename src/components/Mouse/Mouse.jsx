@@ -11,9 +11,14 @@ function Mouse({ xy, hover, click, contactBg }) {
       } else if (hover === "project-diary-main") {
         mouseRef.current.style.border = "1px solid white";
         mouseRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
+      } else if (hover === "footer") {
+        mouseRef.current.style.border = "1px solid white";
+        mouseRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
       } else {
-        mouseRef.current.style.border = "1px solid black";
-        mouseRef.current.style.transform = `translate(-50%, -50%) scale(1.5)`;
+        {
+          mouseRef.current.style.border = "1px solid black";
+          mouseRef.current.style.transform = `translate(-50%, -50%) scale(1.5)`;
+        }
       }
     } else {
       if (hover == "") {

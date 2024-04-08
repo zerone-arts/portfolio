@@ -34,7 +34,7 @@ function ProfileComponet({ select }) {
                   <p>98.02.10</p>
                 </li>
                 <li>
-                  <p>zerone-@naver.com</p>
+                  <p>zerone.arts@gmail.com</p>
                 </li>
                 <li>
                   <p>제주특별자치도 제주시</p>
