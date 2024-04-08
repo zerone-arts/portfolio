@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.47b991ae.css",
+    "main.js": "/portfolio/static/js/main.b7654bbf.js",
+    "static/media/effectVideo1.mov": "/portfolio/static/media/effectVideo1.d619701ae543118b6488.mov",
+    "static/media/effectVideo5.mov": "/portfolio/static/media/effectVideo5.c32b49f18ee4b38e1e01.mov",
+    "static/media/effectVideo2.mov": "/portfolio/static/media/effectVideo2.04d3651e89066648e1ac.mov",
+    "static/media/flower-shadow.png": "/portfolio/static/media/flower-shadow.a00f8da45d61b42a723b.png",
+    "static/media/art3.png": "/portfolio/static/media/art3.9c5139d5fe5d102a304b.png",
+    "static/media/art2.png": "/portfolio/static/media/art2.a829cc61c946a5e6150f.png",
+    "static/media/effectVideo3.mov": "/portfolio/static/media/effectVideo3.811d774e8e0b131dc44c.mov",
+    "static/media/art4.png": "/portfolio/static/media/art4.16b45a0530eff85d6391.png",
+    "static/media/effectVideo4.mov": "/portfolio/static/media/effectVideo4.704e44155f5ce6f1edac.mov",
+    "static/media/book3.png": "/portfolio/static/media/book3.5b6a3e0e2904e97c84a1.png",
+    "static/media/profileImgTest2.png": "/portfolio/static/media/profileImgTest2.9a9c4978dff90e860611.png",
+    "static/media/day.png": "/portfolio/static/media/day.8fe56198f24e271a7012.png",
+    "static/media/art1.png": "/portfolio/static/media/art1.e81eed6c34089e2b38db.png",
+    "static/media/book2.png": "/portfolio/static/media/book2.ffb21e8fd88e9caeda0c.png",
+    "static/media/calendar2.png": "/portfolio/static/media/calendar2.954fd41cac167b7dabcc.png",
+    "static/media/calendar1.png": "/portfolio/static/media/calendar1.248d18fd166c2ecb0800.png",
+    "index.html": "/portfolio/index.html",
+    "main.47b991ae.css.map": "/portfolio/static/css/main.47b991ae.css.map",
+    "main.b7654bbf.js.map": "/portfolio/static/js/main.b7654bbf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.47b991ae.css",
+    "static/js/main.b7654bbf.js"
+  ]
+}
