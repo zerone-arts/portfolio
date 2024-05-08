@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Mouse.css";
-function Mouse({ xy, hover, click, contactBg }) {
+function Mouse({ xy, hover, click, contactBg, projectColor }) {
   const mouseRef = useRef(null);
 
   useEffect(() => {
@@ -35,6 +35,14 @@ function Mouse({ xy, hover, click, contactBg }) {
   }, [hover]);
 
   useEffect(() => {
+    if (projectColor === "white") {
+      mouseRef.current.style.border = "1px solid black";
+    } else if (projectColor === "") {
+      mouseRef.current.style.border = "1px solid white";
+    }
+  }, [projectColor]);
+
+  useEffect(() => {
     if (click) {
       mouseRef.current.style.transform = `translate(-50%, -50%) scale(0.8)`;
     } else {
@@ -52,7 +60,7 @@ function Mouse({ xy, hover, click, contactBg }) {
 
   return (
     <div
-      className={`mouse-container ${contactBg}`}
+      className={`mouse-container ${contactBg} ${projectColor}`}
       ref={mouseRef}
       style={{
         left: `${xy.x}px`,

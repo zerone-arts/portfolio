@@ -18,6 +18,7 @@ function App() {
   const [click, setClick] = useState(false);
   const [bgWidth, setBgWidth] = useState(50);
   const [contactBg, setContactBg] = useState("");
+  const [projectColor, setProjectColor] = useState("");
   const contactObserveRef = useRef(null);
 
   const mouseMoveHandle = (e) => {
@@ -51,12 +52,19 @@ function App() {
       setContactBg("");
     }
   }
+
+  const bgColorWhiteHandle = (color) => {
+    setProjectColor(color);
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
+
+  console.log(projectColor);
 
   return (
     <div
@@ -80,7 +88,11 @@ function App() {
       />
       <MainPage selectCategory={selectCategory} />
       <AboutPage selectCategory={selectCategory} setHover={setHover} />
-      <ProjectPage selectCategory={selectCategory} setHover={setHover} />
+      <ProjectPage
+        selectCategory={selectCategory}
+        setHover={setHover}
+        bgColorWhiteHandle={bgColorWhiteHandle}
+      />
       <ContactPage selectCategory={selectCategory} />
       <MenuPage
         toggle={toggle}
@@ -89,7 +101,13 @@ function App() {
         setHover={setHover}
       />
       <Footer setSelectCategory={setSelectCategory} setHover={setHover} />
-      <Mouse xy={xy} hover={hover} click={click} contactBg={contactBg} />
+      <Mouse
+        xy={xy}
+        hover={hover}
+        click={click}
+        contactBg={contactBg}
+        projectColor={projectColor}
+      />
       <div className="contact-observe" ref={contactObserveRef}></div>
     </div>
   );

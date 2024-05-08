@@ -10,3 +10,6 @@
   pointer-events: none;
   transition: 0.5s transform;
 }
+.mouse-container.white {
+  border: 1px solid black;
+}

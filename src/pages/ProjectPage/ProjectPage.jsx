@@ -3,8 +3,9 @@ import "./ProjectPage.css";
 import Diary from "./Diary/Diary";
 import ArtWeb from "./ArtWeb/ArtWeb";
 import Effects from "./Effects/Effects";
+import MusicAppWeb from "./MusicAppWeb/MusicAppWeb";
 
-function ProjectPage({ selectCategory, setHover }) {
+function ProjectPage({ selectCategory, setHover, bgColorWhiteHandle }) {
   const [selectBtn, setSelectBtn] = useState(0);
   const [resize, setResize] = useState("");
   const projectRef = useRef(null);
@@ -44,6 +45,12 @@ function ProjectPage({ selectCategory, setHover }) {
           >
             <Effects setSelectBtn={setSelectBtn} />
           </div>
+          <div
+            className="projectpage-project four"
+            style={selectBtn === 3 ? { opacity: 1 } : { opacity: 0 }}
+          >
+            <MusicAppWeb bgColorWhiteHandle={bgColorWhiteHandle} />
+          </div>
         </div>
       </div>
       <ul className="projectpage-buttonBox">
@@ -63,6 +70,12 @@ function ProjectPage({ selectCategory, setHover }) {
           className={`projectpage-button ${selectBtn === 2 ? "active" : ""}`}
           onClick={() => {
             setSelectBtn(2);
+          }}
+        ></li>
+        <li
+          className={`projectpage-button ${selectBtn === 3 ? "active" : ""}`}
+          onClick={() => {
+            setSelectBtn(3);
           }}
         ></li>
       </ul>
@@ -88,6 +101,12 @@ function ProjectPage({ selectCategory, setHover }) {
             style={selectBtn === 2 ? { opacity: 1 } : { opacity: 0 }}
           >
             Interaction - <span>Effects</span>
+          </li>
+          <li
+            className="projectpage-projectNameBox-list"
+            style={selectBtn === 3 ? { opacity: 1 } : { opacity: 0 }}
+          >
+            Music Player - <span>MusicAppWeb</span>
           </li>
         </ul>
       </div>
