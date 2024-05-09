@@ -18,6 +18,8 @@
   left: 0;
   display: flex;
   transition: 1s;
+
+  background-color: rgb(16, 108, 136);
 }
 
 .musicAppWeb-leftbox {
@@ -34,8 +36,8 @@
   content: "";
   width: 200%;
   height: 100%;
-  left: -150%;
-  background-image: linear-gradient(to right, #013335 70%, transparent);
+  left: 150%;
+  background-image: linear-gradient(to left, #012b2d 60%, rgb(16, 108, 136));
   opacity: 1;
 
   transition: 2s;
@@ -46,8 +48,8 @@
   content: "";
   width: 200%;
   height: 100%;
-  left: 0%;
-  background-image: linear-gradient(to right, #013335 70%, transparent);
+  left: -50%;
+  background-image: linear-gradient(to left, #012b2d 90%, rgb(16, 108, 136));
   opacity: 1;
   transition: 2s;
 }
@@ -58,9 +60,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* background-color: rgb(16, 108, 136); */
 }
 
-.musicAppWeb-leftbox img,
+.musicAppWeb-leftbox img {
+  z-index: 1;
+  width: 500px;
+  filter: brightness(70%);
+}
+
 .musicAppWeb-rightbox img {
   z-index: 1;
   width: 500px;
