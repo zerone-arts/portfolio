@@ -49,7 +49,10 @@ function ProjectPage({ selectCategory, setHover, bgColorWhiteHandle }) {
             className="projectpage-project four"
             style={selectBtn === 3 ? { opacity: 1 } : { opacity: 0 }}
           >
-            <MusicAppWeb bgColorWhiteHandle={bgColorWhiteHandle} />
+            <MusicAppWeb
+              bgColorWhiteHandle={bgColorWhiteHandle}
+              selectBtn={selectBtn}
+            />
           </div>
         </div>
       </div>

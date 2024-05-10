@@ -64,8 +64,6 @@ function App() {
     };
   }, []);
 
-  console.log(projectColor);
-
   return (
     <div
       className={`App ${toggle} ${contactBg}`}
