@@ -1,0 +1,151 @@
+.guide-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+}
+.guide-container .guide-theme {
+  position: absolute;
+  top: calc(50% - 105px);
+  left: calc(50% + 155px);
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 50px;
+}
+
+.guide-container .guide-theme::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0.1px;
+  left: 15px;
+  top: 7px;
+  background-color: black;
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+.guide-container.hover .guide-theme::before {
+  width: 25%;
+  transition-delay: 0.5s;
+}
+.guide-container .guide-theme::after {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  left: 3px;
+  top: 6px;
+  border: 0.5px solid black;
+  background-color: black;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+  opacity: 0;
+}
+.guide-container.hover .guide-theme::after {
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+.guide-container .guide-theme-text {
+  position: absolute;
+  color: black;
+  width: 100px;
+  height: 2px;
+  font-size: 8px;
+  left: 50px;
+}
+
+.guide-container .guide-theme-text p span {
+  opacity: 0;
+  transition: 0.5s;
+}
+.guide-container.hover .guide-theme-text p span {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.guide-explanation {
+  position: absolute;
+  top: calc(50% - 155px);
+  left: calc(50% + 155px);
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 20px;
+}
+
+.guide-explanation .guide-explanation-line-left {
+  position: absolute;
+  width: 1px;
+  height: 7px;
+  left: 0;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  transition: 0.5s;
+  opacity: 0;
+}
+.guide-explanation.hover .guide-explanation-line-left {
+  position: absolute;
+  width: 1px;
+  height: 7px;
+  left: 0;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  transition: 0.5s;
+  opacity: 1;
+}
+.guide-explanation .guide-explanation-line-left::before {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 7px;
+  left: 0;
+  top: -1px;
+  border-top: 1px solid black;
+  transition: 0.5s;
+  opacity: 1;
+}
+.guide-explanation.hover .guide-explanation-line-left::before {
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 7px;
+  left: -1px;
+  top: -1px;
+  border-top: 1px solid black;
+  transition: 0.5s;
+  opacity: 1;
+}
+.guide-explanation .guide-explanation-line-left::after {
+  position: absolute;
+  content: "";
+  width: 3px;
+  height: 3px;
+  left: -1.5px;
+  top: 10px;
+  background-color: black;
+  border-radius: 50%;
+  transition: 0.5s;
+  opacity: 1;
+}
+.guide-explanation.hover .guide-explanation-line-left::after {
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.guide-explanation-text {
+  position: absolute;
+  font-size: 8px;
+  left: 40px;
+  top: -6px;
+}
+
+.guide-container .guide-explanation-text p span {
+  opacity: 0;
+  transition: 0.5s;
+}
+.guide-container.hover .guide-explanation-text p span {
+  opacity: 1;
+  transition: 0.5s;
+}
