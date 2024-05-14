@@ -97,41 +97,58 @@
 
 .musicAppWeb-linkBox {
   position: absolute;
-  width: 80px;
-  height: 100px;
-  bottom: 30px;
-  right: 70px;
+  width: 200px;
+  height: 50px;
+  bottom: 70px;
+  right: 50px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
 }
 
 .musicAppWeb-linkBox button {
-  width: 30px;
-  height: 20px;
+  position: relative;
+  width: 80px;
+  height: 15px;
   background-color: transparent;
   border: none;
-  font-size: 15px;
-  font-weight: 300;
-
-  border-radius: 50%;
-  transition: 1s;
+  font-size: 10px;
+  font-weight: 500;
+  transition: 0.5s;
   display: flex;
   align-items: center;
-  justify-content: center;
+  margin-right: 20px;
+  pointer-events: all;
 }
 
-.musicAppWeb-linkBox button:hover {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-  transform: scale(1.1);
-  background-color: black;
-  color: white;
-}
-.musicAppWeb-linkBox button:nth-child(1) {
-  width: 30px;
-  height: 30px;
-}
 .musicAppWeb-linkBox button:nth-child(2) {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+}
+.musicAppWeb-linkBox button::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  border-bottom: 1px solid black;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.musicAppWeb-linkBox button a {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.musicAppWeb-linkBox button p {
+  margin-right: 5px;
+  transition: 0.5s;
+}
+.musicAppWeb-linkBox button:hover p {
+  margin-right: 8px;
+}
+
+.musicAppWeb-linkBox button:hover::before {
+  width: 100%;
 }

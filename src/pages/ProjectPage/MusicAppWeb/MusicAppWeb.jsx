@@ -47,10 +47,16 @@ function MusicAppWeb({ bgColorWhiteHandle, selectBtn }) {
 
       <div className="musicAppWeb-linkBox">
         <button>
-          <ion-icon name="logo-github"></ion-icon>
+          <a href="https://zerone-arts.github.io/musicAppWeb/" target="_blank">
+            <p>Homepage </p>
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </a>
         </button>
         <button>
-          <ion-icon name="home-outline"></ion-icon>
+          <a href="https://github.com/zerone-arts/musicAppWeb" target="_blank">
+            <p>Github </p>
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </a>
         </button>
       </div>
     </div>
