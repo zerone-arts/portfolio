@@ -44,8 +44,8 @@ function AboutPage({ selectCategory, setHover }) {
               className="aboutpage-list"
               style={
                 item === select
-                  ? { color: `#af7340` }
-                  : { color: `rgba(255,255,255,0.5)` }
+                  ? { color: `rgba(0,0,0,1)` }
+                  : { color: `rgba(0,0,0,0.2)` }
               }
               onClick={(e) => categoryHandle(e, item)}
               onMouseOver={() => setHover(item)}

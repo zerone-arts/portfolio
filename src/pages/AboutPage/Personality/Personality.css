@@ -40,7 +40,7 @@
   transform-style: preserve-3d;
   backface-visibility: hidden;
   transition: 1s ease-in-out;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .personality-wrapper li:hover div:nth-child(1) {

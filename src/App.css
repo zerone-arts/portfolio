@@ -14,40 +14,13 @@
 .App {
   position: relative;
   width: 100vw;
-  background-color: #1b1b1b;
+  background-color: #fafafa;
   overflow: hidden;
   transition: 1s;
-}
-.App::before {
-  background-image: linear-gradient(white, rgba(255, 255, 255, 0));
-  content: "";
-  position: absolute;
-  left: 0;
-  top: -400vh;
-  width: 100%;
-  height: 600vh;
-  opacity: 0;
-  transition: 2s;
-}
-.App.white::before {
-  top: 0vh;
-  opacity: 1;
-  background-image: linear-gradient(
-    rgba(255, 255, 255, 0.8) 50%,
-    rgba(255, 255, 255, 0)
-  );
 }
 
 .App.active {
   overflow: hidden;
-}
-
-.app-blackBg {
-  position: absolute;
-  right: left;
-  height: 400vh;
-  transition: 1s;
-  background: #a65d1e;
 }
 
 .contact-observe {

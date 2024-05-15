@@ -1,46 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Mouse.css";
-function Mouse({ xy, hover, click, contactBg, projectColor }) {
+function Mouse({ xy, hover, click }) {
   const mouseRef = useRef(null);
 
   useEffect(() => {
-    if (contactBg === "white") {
-      if (hover == "") {
-        mouseRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
-        mouseRef.current.style.border = "1px solid black";
-      } else if (hover === "project-diary-main") {
-        mouseRef.current.style.border = "1px solid white";
-        mouseRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
-      } else if (hover === "footer") {
-        mouseRef.current.style.border = "1px solid white";
-        mouseRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
-      } else {
-        {
-          mouseRef.current.style.border = "1px solid black";
-          mouseRef.current.style.transform = `translate(-50%, -50%) scale(1.5)`;
-        }
-      }
+    if (hover == "") {
+      mouseRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
+      mouseRef.current.style.border = "1px solid black";
+    } else if (hover === "project-diary-main") {
+      mouseRef.current.style.border = "1px solid black";
+      mouseRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
     } else {
-      if (hover == "") {
-        mouseRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
-        mouseRef.current.style.border = "1px solid white";
-      } else if (hover === "project-diary-main") {
-        mouseRef.current.style.border = "1px solid black";
-        mouseRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
-      } else {
-        mouseRef.current.style.border = "1px solid white";
-        mouseRef.current.style.transform = `translate(-50%, -50%) scale(1.5)`;
-      }
+      mouseRef.current.style.border = "1px solid black";
+      mouseRef.current.style.transform = `translate(-50%, -50%) scale(1.5)`;
     }
   }, [hover]);
-
-  useEffect(() => {
-    if (projectColor === "white") {
-      mouseRef.current.style.border = "1px solid black";
-    } else if (projectColor === "") {
-      mouseRef.current.style.border = "1px solid white";
-    }
-  }, [projectColor]);
 
   useEffect(() => {
     if (click) {
@@ -50,17 +24,9 @@ function Mouse({ xy, hover, click, contactBg, projectColor }) {
     }
   }, [click]);
 
-  useEffect(() => {
-    if (contactBg === "white") {
-      mouseRef.current.style.border = "1px solid black";
-    } else {
-      mouseRef.current.style.border = "1px solid white";
-    }
-  }, [contactBg]);
-
   return (
     <div
-      className={`mouse-container ${contactBg} ${projectColor}`}
+      className={`mouse-container`}
       ref={mouseRef}
       style={{
         left: `${xy.x}px`,

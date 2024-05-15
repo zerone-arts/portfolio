@@ -5,9 +5,9 @@ import ArtWeb from "./ArtWeb/ArtWeb";
 import Effects from "./Effects/Effects";
 import MusicAppWeb from "./MusicAppWeb/MusicAppWeb";
 
-function ProjectPage({ selectCategory, setHover, bgColorWhiteHandle }) {
+function ProjectPage({ selectCategory, setHover }) {
   const [selectBtn, setSelectBtn] = useState(0);
-  const [resize, setResize] = useState("");
+
   const projectRef = useRef(null);
 
   useEffect(() => {
@@ -49,10 +49,7 @@ function ProjectPage({ selectCategory, setHover, bgColorWhiteHandle }) {
             className="projectpage-project four"
             style={selectBtn === 3 ? { opacity: 1 } : { opacity: 0 }}
           >
-            <MusicAppWeb
-              bgColorWhiteHandle={bgColorWhiteHandle}
-              selectBtn={selectBtn}
-            />
+            <MusicAppWeb selectBtn={selectBtn} />
           </div>
         </div>
       </div>

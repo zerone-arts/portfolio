@@ -16,9 +16,7 @@ function App() {
   const [hover, setHover] = useState("");
   const [screenWidth, setScreenWdith] = useState(null);
   const [click, setClick] = useState(false);
-  const [bgWidth, setBgWidth] = useState(50);
-  const [contactBg, setContactBg] = useState("");
-  const [projectColor, setProjectColor] = useState("");
+
   const contactObserveRef = useRef(null);
 
   const mouseMoveHandle = (e) => {
@@ -39,23 +37,7 @@ function App() {
     };
   }, []);
 
-  function onScroll() {
-    if (window.scrollY <= 300) {
-      setBgWidth(50);
-    } else {
-      setBgWidth(0);
-    }
-
-    if (contactObserveRef.current?.getBoundingClientRect().top <= 100) {
-      setContactBg("white");
-    } else {
-      setContactBg("");
-    }
-  }
-
-  const bgColorWhiteHandle = (color) => {
-    setProjectColor(color);
-  };
+  function onScroll() {}
 
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
@@ -66,7 +48,7 @@ function App() {
 
   return (
     <div
-      className={`App ${toggle} ${contactBg}`}
+      className={`App ${toggle}`}
       onMouseMove={(e) => mouseMoveHandle(e)}
       onMouseDown={() => {
         setClick(true);
@@ -75,22 +57,15 @@ function App() {
         setClick(false);
       }}
     >
-      <div className="app-blackBg" style={{ width: `${bgWidth}%` }}></div>
       <Header
         toggle={toggle}
         setToggle={setToggle}
         setSelectCategory={setSelectCategory}
         setHover={setHover}
-        bgWidth={bgWidth}
-        contactBg={contactBg}
       />
       <MainPage selectCategory={selectCategory} />
       <AboutPage selectCategory={selectCategory} setHover={setHover} />
-      <ProjectPage
-        selectCategory={selectCategory}
-        setHover={setHover}
-        bgColorWhiteHandle={bgColorWhiteHandle}
-      />
+      <ProjectPage selectCategory={selectCategory} setHover={setHover} />
       <ContactPage selectCategory={selectCategory} />
       <MenuPage
         toggle={toggle}
@@ -99,13 +74,7 @@ function App() {
         setHover={setHover}
       />
       <Footer setSelectCategory={setSelectCategory} setHover={setHover} />
-      <Mouse
-        xy={xy}
-        hover={hover}
-        click={click}
-        contactBg={contactBg}
-        projectColor={projectColor}
-      />
+      <Mouse xy={xy} hover={hover} click={click} />
       <div className="contact-observe" ref={contactObserveRef}></div>
     </div>
   );

@@ -2,14 +2,11 @@
   position: fixed;
   width: 18px;
   height: 18px;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 50%;
   left: 50%;
   top: 50%;
   z-index: 999;
   pointer-events: none;
   transition: 0.5s transform;
-}
-.mouse-container.white {
-  border: 1px solid black;
 }

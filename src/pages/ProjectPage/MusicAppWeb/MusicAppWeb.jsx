@@ -7,7 +7,7 @@ import musicImgCase from "../../../assets/img/mawImgCase.png";
 import Guide from "./Guide/Guide";
 import useInterval from "../../../assets/utils/interval";
 
-function MusicAppWeb({ bgColorWhiteHandle, selectBtn }) {
+function MusicAppWeb({ selectBtn }) {
   const [hover, setHover] = useState("");
 
   useInterval(
@@ -19,11 +19,7 @@ function MusicAppWeb({ bgColorWhiteHandle, selectBtn }) {
   );
 
   return (
-    <div
-      className="musicAppWeb-container"
-      onMouseOver={() => bgColorWhiteHandle("white")}
-      onMouseLeave={() => bgColorWhiteHandle("")}
-    >
+    <div className="musicAppWeb-container">
       <div className="music-TitleBox">Music</div>
 
       <div
