@@ -26,7 +26,7 @@ function Header({ toggle, setToggle, setSelectCategory, setHover }) {
           onMouseOver={mouseOverHandle}
           onMouseLeave={mouseOutHandle}
         >
-          zerone .
+          ZER<span>ONE.</span>
         </button>
       </div>
       <ul className={`header-list ${toggle}`}>
@@ -56,7 +56,7 @@ function Header({ toggle, setToggle, setSelectCategory, setHover }) {
               setHover("");
             }}
           >
-            about me
+            ABOUT
           </button>
         </li>
         <li className="header-project">
@@ -71,7 +71,7 @@ function Header({ toggle, setToggle, setSelectCategory, setHover }) {
               setHover("");
             }}
           >
-            project
+            PROJECT
           </button>
         </li>
         <li className="header-contact">
@@ -86,7 +86,7 @@ function Header({ toggle, setToggle, setSelectCategory, setHover }) {
               setHover("");
             }}
           >
-            contact
+            CONTACT
           </button>
         </li>
       </ul>

@@ -16,7 +16,7 @@ function App() {
   const [hover, setHover] = useState("");
   const [screenWidth, setScreenWdith] = useState(null);
   const [click, setClick] = useState(false);
-
+  const [bg, setBg] = useState("");
   const contactObserveRef = useRef(null);
 
   const mouseMoveHandle = (e) => {
@@ -57,6 +57,8 @@ function App() {
         setClick(false);
       }}
     >
+      <div className={`app-bg-black ${bg}`}></div>
+
       <Header
         toggle={toggle}
         setToggle={setToggle}
