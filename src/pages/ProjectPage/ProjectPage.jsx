@@ -1,14 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 import "./ProjectPage.css";
 import Diary from "./Diary/Diary";
 import ArtWeb from "./ArtWeb/ArtWeb";
 import Effects from "./Effects/Effects";
 import MusicAppWeb from "./MusicAppWeb/MusicAppWeb";
 
-function ProjectPage({ selectCategory, setHover }) {
+const ProjectPage = forwardRef(({ selectCategory, setHover }, projectRef) => {
   const [selectBtn, setSelectBtn] = useState(0);
-
-  const projectRef = useRef(null);
 
   useEffect(() => {
     if (selectCategory == "project") {
@@ -112,6 +110,6 @@ function ProjectPage({ selectCategory, setHover }) {
       </div>
     </div>
   );
-}
+});
 
 export default ProjectPage;

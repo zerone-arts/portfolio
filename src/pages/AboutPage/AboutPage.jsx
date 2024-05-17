@@ -1,13 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 import "./AboutPage.css";
 import ProfileComponet from "./ProfileComponet/ProfileComponet";
 import SkillComponent from "./SkillComponent/SkillComponent";
 import Personality from "./Personality/Personality";
 
-function AboutPage({ selectCategory, setHover }) {
+const AboutPage = forwardRef(({ selectCategory, setHover }, aboutRef) => {
   const [select, setSelect] = useState("i am");
   const boxRef = useRef(null);
-  const aboutRef = useRef(null);
+
   const list = ["i am", "profile", "skill", "personality"];
 
   const categoryHandle = (e, item) => {
@@ -30,12 +30,11 @@ function AboutPage({ selectCategory, setHover }) {
 
   return (
     <div className="aboutpage-container" ref={aboutRef}>
-      <div className="aboutpage-box" ref={boxRef}>
+      {/* <div className="aboutpage-box" ref={boxRef}>
         <ProfileComponet select={select} />
         <SkillComponent />
         <Personality select={select} />
       </div>
-
       <ul className="aboutpage-category">
         {list.map((item, idx) => {
           return (
@@ -55,9 +54,15 @@ function AboutPage({ selectCategory, setHover }) {
             </li>
           );
         })}
-      </ul>
+      </ul> */}
+      <div className="aboutpage-animationWrapper">
+        <div className="aboutpage-animationBox">
+          <span className="aboutpage-object" id="object1"></span>
+          <span className="aboutpage-object" id="object2"></span>
+        </div>
+      </div>
     </div>
   );
-}
+});
 
 export default AboutPage;

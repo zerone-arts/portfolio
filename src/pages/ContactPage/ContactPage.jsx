@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 import "./ContactPage.css";
 import emailjs from "@emailjs/browser";
-function ContactPage({ selectCategory }) {
+const ContactPage = forwardRef(({ selectCategory }, contactRef) => {
   const [nameValue, setNameValue] = useState("");
   const [emailValue, setEmailValue] = useState("");
-  const contactRef = useRef(null);
+
   const [submitText, setSubmitText] = useState("");
   const form = useRef();
   let date = new Date();
@@ -130,6 +130,6 @@ function ContactPage({ selectCategory }) {
       </div>
     </div>
   );
-}
+});
 
 export default ContactPage;

@@ -39,19 +39,14 @@
   top: 0;
   width: 300%;
   height: 100%;
-  left: -300%;
-  background: linear-gradient(to right, #000 60%, transparent);
+
+  background: white;
   opacity: 1;
   transition: 1s;
 }
-.app-bg-black.black {
-  left: 0%;
+.app-bg-black.deepblue {
+  background-color: #222e36;
 }
-
-.test {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
+.app-bg-black.black {
+  background-color: #000000;
 }

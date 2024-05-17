@@ -1,24 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 import "./MainPage.css";
 import { useTypewriter, Cursor, Typewriter } from "react-simple-typewriter";
 
-function MainPage({ selectCategory }) {
-  const mainRef = useRef(null);
+const MainPage = forwardRef(({ selectCategory, location }, mainRef) => {
   const [cursor, setCursor] = useState(`rgba(0,0,0,1)`);
-  const [opacity, setOpacity] = useState(1);
 
-  console.log();
   let email = "zerone-@naver.com";
-
-  const handleScroll = () => {
-    let scroll = mainRef.current?.getBoundingClientRect().bottom;
-
-    if (window.scrollY >= scroll / 2) {
-      setOpacity(0);
-    } else {
-      setOpacity(1);
-    }
-  };
 
   useEffect(() => {
     if (selectCategory == "main") {
@@ -26,17 +13,19 @@ function MainPage({ selectCategory }) {
     }
   }, [selectCategory]);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll); //clean up
-    };
-  }, []);
-
   return (
     <div className="mainpage-container" ref={mainRef}>
       <div className="mainpage-textBox">
-        <span>
+        <span
+          style={
+            location !== "main"
+              ? {
+                  bottom: `30px`,
+                  opacity: 0,
+                }
+              : { bottom: `0px`, opacity: 1 }
+          }
+        >
           <Typewriter
             words={[`Hi, I'm Kim Young il.`, `I'm a Front-End Developer.`]}
             loop={2}
@@ -53,7 +42,7 @@ function MainPage({ selectCategory }) {
             <span
               key={idx}
               style={
-                opacity === 0
+                location !== "main"
                   ? {
                       bottom: `10px`,
                       opacity: 0,
@@ -69,6 +58,6 @@ function MainPage({ selectCategory }) {
       </div>
     </div>
   );
-}
+});
 
 export default MainPage;
