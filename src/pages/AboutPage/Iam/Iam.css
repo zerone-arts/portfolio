@@ -1,0 +1,715 @@
+.iam-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+}
+
+.iam-textBox {
+  position: absolute;
+  left: 70%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 150px;
+  display: flex;
+  transition: 1s;
+}
+
+.iam-textBox h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 335px;
+  transform: translate(-50%, -50%);
+  font-size: 17px;
+  margin-bottom: 10px;
+  transition: 1s;
+}
+.iam-textBox p {
+  position: absolute;
+  top: 80%;
+  left: 70%;
+  width: 182px;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  color: rgb(121, 121, 121);
+  transition: 1s;
+}
+.iam-textBox p:nth-child(2) {
+  top: 70%;
+  left: 62.5%;
+  width: 235px;
+}
+.iam-textBox p span {
+  color: rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 800px) {
+  .iam-textBox {
+    left: 50%;
+    align-items: center;
+  }
+  .iam-textBox p {
+    left: 50%;
+  }
+  .iam-textBox p:nth-child(2) {
+    left: 50%;
+  }
+}
+
+.iam-animationBox {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+  /* border: 0.5px solid white; */
+  transition: 1s;
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+
+.iam-animationBox .iam-object {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  transition: 1s ease-in-out;
+  opacity: 1;
+  /* transition-delay: 0.5s; */
+}
+
+.iam-animationBox.change {
+  opacity: 0;
+}
+.iam-animationBox.change .iam-object {
+  left: 0%;
+  /* transition-delay: 0s; */
+  /* animation-play-state: paused; */
+}
+
+.iam-object:nth-child(3),
+.iam-object:nth-child(10),
+.iam-object:nth-child(20),
+.iam-object:nth-child(22) {
+  transition-delay: 0.5s;
+}
+
+.iam-object:nth-child(5),
+.iam-object:nth-child(18),
+.iam-object:nth-child(23) {
+  transition-delay: 0.7s;
+}
+
+.iam-object:nth-child(1),
+.iam-object:nth-child(6),
+.iam-object:nth-child(14),
+.iam-object:nth-child(17),
+.iam-object:nth-child(25) {
+  transition-delay: 1s;
+}
+
+.iam-object:nth-child(2),
+.iam-object:nth-child(4),
+.iam-object:nth-child(16),
+.iam-object:nth-child(19),
+.iam-object:nth-child(27) {
+  transition-delay: 1.3s;
+}
+
+.iam-object:nth-child(7),
+.iam-object:nth-child(12),
+.iam-object:nth-child(21),
+.iam-object:nth-child(9),
+.iam-object:nth-child(26) {
+  transition-delay: 1.5s;
+}
+
+.iam-animationBox .object1 {
+  width: 12px;
+  height: 12px;
+  bottom: 50px;
+  left: 270px;
+  animation: object1Animate 4s infinite linear;
+  transition-delay: 0.5s;
+}
+
+@keyframes object1Animate {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-20px, -20px);
+  }
+}
+.iam-animationBox .object2 {
+  width: 8px;
+  height: 8px;
+  bottom: 85px;
+  left: 270px;
+  animation: object2Animate 3s infinite;
+  transform: translate(-10px, -8px);
+}
+
+@keyframes object2Animate {
+  0%,
+  100% {
+    transform: translate(-12px, -10px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+}
+
+.iam-animationBox .object3 {
+  width: 6px;
+  height: 6px;
+  bottom: 85px;
+  left: 270px;
+  animation: object3Animate 3s infinite linear;
+  transform: translate(-47px, -22px);
+}
+
+@keyframes object3Animate {
+  0%,
+  100% {
+    transform: translate(-47px, -22px);
+  }
+  50% {
+    transform: translate(-33px, -40px);
+  }
+}
+
+.iam-animationBox .object4 {
+  width: 5px;
+  height: 5px;
+  bottom: 50px;
+  left: 230px;
+  transform-origin: 10px;
+  animation: object4Animate 7s infinite linear;
+}
+
+@keyframes object4Animate {
+  0%,
+  100% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}
+.iam-animationBox .object5 {
+  width: 2px;
+  height: 2px;
+  bottom: 90px;
+  left: 220px;
+  transform-origin: 10px;
+  animation: object5Animate 7s infinite linear;
+}
+
+@keyframes object5Animate {
+  0%,
+  100% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(50deg);
+  }
+}
+.iam-animationBox .object6 {
+  width: 2px;
+  height: 2px;
+  bottom: 50px;
+  left: 200px;
+  transform-origin: 5px;
+  animation: object6Animate 7s infinite linear;
+}
+
+@keyframes object6Animate {
+  0%,
+  100% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(50deg);
+  }
+}
+.iam-animationBox .object7 {
+  width: 2px;
+  height: 2px;
+  bottom: 30px;
+  left: 230px;
+  transform-origin: 10px;
+  animation: object7Animate 7s infinite linear;
+}
+
+@keyframes object7Animate {
+  0%,
+  100% {
+    transform: rotate(-22px);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}
+.iam-animationBox .object8 {
+  width: 2px;
+  height: 2px;
+  bottom: 80px;
+  left: 195px;
+  transform-origin: 5px;
+  animation: object8Animate 5s infinite linear;
+}
+
+@keyframes object8Animate {
+  0%,
+  100% {
+    transform: rotate(-22px);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}
+.iam-animationBox .object9 {
+  width: 2px;
+  height: 2px;
+  bottom: 120px;
+  left: 250px;
+  transform-origin: 5px;
+  animation: object9Animate 5s infinite linear;
+}
+
+@keyframes object9Animate {
+  0%,
+  100% {
+    transform: rotate(5px);
+  }
+  50% {
+    transform: rotate(-280deg);
+  }
+}
+.iam-animationBox .object10 {
+  width: 8px;
+  height: 8px;
+  bottom: 120px;
+  left: 70px;
+  transform-origin: 20px;
+  animation: object10Animate 7s infinite linear;
+}
+
+@keyframes object10Animate {
+  0%,
+  100% {
+    transform: rotate(5px);
+  }
+  50% {
+    transform: rotate(-280deg);
+  }
+}
+
+.iam-animationBox .object11 {
+  width: 2px;
+  height: 2px;
+  bottom: 100px;
+  left: 120px;
+  transform-origin: 10px;
+  animation: object11Animate 7s infinite linear;
+}
+
+@keyframes object11Animate {
+  0%,
+  100% {
+    transform: rotate(50px);
+  }
+  50% {
+    transform: rotate(320deg);
+  }
+}
+
+.iam-animationBox .object12 {
+  width: 5px;
+  height: 5px;
+  bottom: 200px;
+  left: 120px;
+  /* transform-origin: 20px; */
+  transform: translate(0px, 0px);
+  animation: object12Animate 5s infinite linear;
+}
+
+@keyframes object12Animate {
+  0%,
+  100% {
+    transform: translate(20px, 20px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+}
+.iam-animationBox .object13 {
+  width: 2px;
+  height: 2px;
+  bottom: 210px;
+  left: 150px;
+  transform-origin: 5px;
+  animation: object13Animate 6s infinite linear reverse;
+}
+
+@keyframes object13Animate {
+  0%,
+  100% {
+    transform: rotate(20px);
+  }
+  50% {
+    transform: rotate(320deg);
+  }
+}
+.iam-animationBox .object14 {
+  width: 2px;
+  height: 2px;
+  bottom: 180px;
+  left: 180px;
+  transform-origin: 7px;
+  animation: object14Animate 6s infinite linear;
+}
+
+@keyframes object14Animate {
+  0%,
+  100% {
+    transform: rotate(20px);
+  }
+  50% {
+    transform: rotate(320deg);
+  }
+}
+.iam-animationBox .object15 {
+  width: 4px;
+  height: 4px;
+  bottom: 180px;
+  left: 220px;
+  transform-origin: 10px;
+  animation: object15Animate 3s infinite linear;
+}
+
+@keyframes object15Animate {
+  0%,
+  100% {
+    transform: rotate(20px);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+}
+
+.iam-animationBox .object16 {
+  width: 2px;
+  height: 2px;
+  bottom: 200px;
+  left: 210px;
+  transform-origin: 7px;
+  animation: object16Animate 6s infinite linear;
+}
+
+@keyframes object16Animate {
+  0%,
+  100% {
+    transform: rotate(20px);
+  }
+  50% {
+    transform: rotate(320deg);
+  }
+}
+.iam-animationBox .object17 {
+  width: 2px;
+  height: 2px;
+  bottom: 210px;
+  left: 220px;
+  transform-origin: 8px;
+  animation: object17Animate 6s infinite linear reverse;
+}
+
+@keyframes object17Animate {
+  0%,
+  100% {
+    transform: rotate(0px);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}
+.iam-animationBox .object18 {
+  width: 3px;
+  height: 3px;
+  bottom: 200px;
+  left: 250px;
+  transform-origin: 8px;
+  animation: object18Animate 5s infinite linear;
+}
+
+@keyframes object18Animate {
+  0%,
+  100% {
+    transform: rotate(0px);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}
+
+.iam-animationBox .object19 {
+  width: 2px;
+  height: 2px;
+  bottom: 200px;
+  left: 50px;
+  transform-origin: 8px;
+  animation: object19Animate 5s infinite linear;
+}
+
+@keyframes object19Animate {
+  0%,
+  100% {
+    transform: rotate(0px);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}
+.iam-animationBox .object20 {
+  width: 2px;
+  height: 2px;
+  top: 80px;
+  left: 80px;
+  transform-origin: 5px;
+  animation: object20Animate 6s infinite linear reverse;
+}
+
+@keyframes object20Animate {
+  0%,
+  100% {
+    transform: rotate(0px);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}
+
+.iam-animationBox .object21 {
+  width: 2px;
+  height: 2px;
+  top: 10px;
+  left: 10px;
+  transform-origin: 5px;
+  animation: object21Animate 2s infinite ease-out;
+}
+
+@keyframes object21Animate {
+  0% {
+    transform: transform(0px, 0px);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: transform(-50%, -50%);
+    left: 40%;
+    top: 40%;
+    opacity: 0;
+  }
+}
+.iam-animationBox .object22 {
+  width: 2px;
+  height: 2px;
+  top: 300px;
+  left: 10px;
+  transform-origin: 5px;
+  animation: object22Animate 2.3s infinite ease-out;
+}
+
+@keyframes object22Animate {
+  0% {
+    transform: transform(0px, 0px);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: transform(-50%, -50%);
+    left: 40%;
+    top: 60%;
+    opacity: 0;
+  }
+}
+.iam-animationBox .object23 {
+  width: 2px;
+  height: 2px;
+  top: 10px;
+  left: 230px;
+  transform-origin: 5px;
+  animation: object23Animate 2.5s infinite ease-out;
+}
+
+@keyframes object23Animate {
+  0% {
+    transform: transform(0px, 0px);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: transform(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+  }
+}
+.iam-animationBox .object24 {
+  width: 2px;
+  height: 2px;
+  top: 300px;
+  left: 230px;
+  transform-origin: 5px;
+  animation: object24Animate 2s infinite ease-out;
+}
+
+@keyframes object24Animate {
+  0% {
+    transform: transform(0px, 0px);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: transform(-50%, -50%);
+    left: 50%;
+    top: 60%;
+    opacity: 0;
+  }
+}
+.iam-animationBox .object25 {
+  width: 2px;
+  height: 2px;
+  top: 310px;
+  left: 300px;
+  transform-origin: 5px;
+  animation: object25Animate 3.5s infinite ease-out;
+}
+
+@keyframes object25Animate {
+  0% {
+    transform: transform(0px, 0px);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: transform(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+  }
+}
+
+.iam-animationBox .object26 {
+  width: 2px;
+  height: 2px;
+  top: 150px;
+  left: 300px;
+  transform-origin: 5px;
+  animation: object26Animate 2s infinite ease-out;
+}
+
+@keyframes object26Animate {
+  0% {
+    transform: transform(0px, 0px);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: transform(-50%, -50%);
+    left: 60%;
+    top: 50%;
+    opacity: 0;
+  }
+}
+.iam-animationBox .object27 {
+  width: 2px;
+  height: 2px;
+  top: 150px;
+  left: 40px;
+  transform-origin: 5px;
+  animation: object27Animate 2s infinite ease-out;
+}
+
+@keyframes object27Animate {
+  0% {
+    transform: transform(0px, 0px);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: transform(-50%, -50%);
+    left: 45%;
+    top: 50%;
+    opacity: 0;
+  }
+}
+.iam-animationBox .object28 {
+  width: 2px;
+  height: 2px;
+  top: 30px;
+  left: 150px;
+  transform-origin: 5px;
+  animation: object28Animate 1.5s infinite ease-out;
+}
+
+@keyframes object28Animate {
+  0% {
+    transform: transform(0px, 0px);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: transform(-50%, -50%);
+    left: 48%;
+    top: 40%;
+    opacity: 0;
+  }
+}
+.iam-animationBox .object29 {
+  width: 2px;
+  height: 2px;
+  top: 300px;
+  left: 150px;
+  transform-origin: 5px;
+  animation: object29Animate 2s infinite ease-out;
+}
+
+@keyframes object29Animate {
+  0% {
+    transform: transform(0px, 0px);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: transform(-50%, -50%);
+    left: 50%;
+    top: 60%;
+    opacity: 0;
+  }
+}

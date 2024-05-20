@@ -3,24 +3,11 @@ import "./AboutPage.css";
 import ProfileComponet from "./ProfileComponet/ProfileComponet";
 import SkillComponent from "./SkillComponent/SkillComponent";
 import Personality from "./Personality/Personality";
+import Iam from "./Iam/Iam";
 
-const AboutPage = forwardRef(({ selectCategory, setHover }, aboutRef) => {
-  const [select, setSelect] = useState("i am");
-  const boxRef = useRef(null);
-
-  const list = ["i am", "profile", "skill", "personality"];
-
-  const categoryHandle = (e, item) => {
-    setSelect(item);
-
-    if (item == "skill") {
-      boxRef.current.style.left = "-100%";
-    } else if (item == "personality") {
-      boxRef.current.style.left = "-200%";
-    } else {
-      boxRef.current.style.left = "0%";
-    }
-  };
+const AboutPage = forwardRef(({ selectCategory, location }, aboutRef) => {
+  const [category, setCategory] = useState("Iam");
+  let categoryArr = ["Iam", "Profile", "Skill", "Personality"];
 
   useEffect(() => {
     if (selectCategory === "about") {
@@ -29,37 +16,32 @@ const AboutPage = forwardRef(({ selectCategory, setHover }, aboutRef) => {
   }, [selectCategory]);
 
   return (
-    <div className="aboutpage-container" ref={aboutRef}>
-      {/* <div className="aboutpage-box" ref={boxRef}>
-        <ProfileComponet select={select} />
-        <SkillComponent />
-        <Personality select={select} />
-      </div>
-      <ul className="aboutpage-category">
-        {list.map((item, idx) => {
+    <div className={`aboutpage-container ${location}`} ref={aboutRef}>
+      <Iam category={category} />
+
+      <div className={`aboutpage-btnBox ${category}`}>
+        {categoryArr.map((item, idx) => {
           return (
-            <li
-              key={idx}
-              className="aboutpage-list"
+            <button
               style={
-                item === select
-                  ? { color: `rgba(0,0,0,1)` }
-                  : { color: `rgba(0,0,0,0.2)` }
+                category === item
+                  ? { color: `rgb(251, 251, 251)` }
+                  : { color: `rgb(95, 95, 95)` }
               }
-              onClick={(e) => categoryHandle(e, item)}
-              onMouseOver={() => setHover(item)}
-              onMouseLeave={() => setHover("")}
+              onClick={() => {
+                setCategory(item);
+              }}
             >
-              {item.toUpperCase()}
-            </li>
+              {item.split("").map((item, idx) => {
+                return (
+                  <span style={{ transitionDelay: `${idx * 0.08}s` }}>
+                    {item}
+                  </span>
+                );
+              })}
+            </button>
           );
         })}
-      </ul> */}
-      <div className="aboutpage-animationWrapper">
-        <div className="aboutpage-animationBox">
-          <span className="aboutpage-object" id="object1"></span>
-          <span className="aboutpage-object" id="object2"></span>
-        </div>
       </div>
     </div>
   );

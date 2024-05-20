@@ -36,8 +36,6 @@ function App() {
     }
   };
 
-  console.log(location);
-
   const handleScroll = () => {
     // let mainScroll = mainRef.current?.getBoundingClientRect().bottom;
     // let aboutScroll = aboutRef.current?.getBoundingClientRect().bottom;
@@ -63,6 +61,8 @@ function App() {
       setLocation("main");
     }
   };
+
+  console.log(location);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -130,8 +130,8 @@ function App() {
       />
       <AboutPage
         selectCategory={selectCategory}
-        setHover={setHover}
         ref={aboutRef}
+        location={location}
       />
       <ProjectPage
         selectCategory={selectCategory}

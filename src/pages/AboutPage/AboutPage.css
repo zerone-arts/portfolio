@@ -7,6 +7,15 @@
   justify-content: center;
   color: white;
   font-weight: 30px;
+  transition: 0.5s;
+  transition-delay: 0s;
+  opacity: 0;
+}
+
+.aboutpage-container.about {
+  opacity: 1;
+  transition: 3s;
+  transition-delay: 0.5s;
 }
 /* .aboutpage-container::before {
   position: absolute;
@@ -43,67 +52,30 @@
   transition: 0.5s;
 }
 
-.aboutpage-animationWrapper {
+.aboutpage-btnBox {
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  border: 1px solid red;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+
+  width: 250px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.aboutpage-animationBox {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  top: 50%;
-  left: 20%;
-  transform: translateY(-50%);
-  border: 0.5px solid white;
+.aboutpage-btnBox button {
+  border: none;
+  background-color: transparent;
+  font-size: 10px;
+  transition: 1s;
 }
 
-.aboutpage-object {
-  position: absolute;
-  background-color: white;
-  border-radius: 50%;
+.aboutpage-btnBox button span {
+  transition: 1s;
 }
 
-#object1 {
-  width: 15px;
-  height: 15px;
-  bottom: 50px;
-  right: 50px;
-  animation: object1Animate 3s infinite ease-in-out;
-}
-
-@keyframes object1Animate {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-20px, -20px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-#object2 {
-  width: 8px;
-  height: 8px;
-  bottom: 85px;
-  right: 50px;
-  animation: object2Animate 3s infinite ease-in-out;
-  transform: translate(-10px, -8px);
-}
-
-@keyframes object2Animate {
-  0% {
-    transform: translate(-12px, -10px);
-  }
-  50% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-12px, -10px);
-  }
+.aboutpage-btnBox button:hover span {
+  color: rgb(251, 251, 251);
 }
