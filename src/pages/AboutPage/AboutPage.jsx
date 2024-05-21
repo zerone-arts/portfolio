@@ -1,12 +1,14 @@
 import React, { forwardRef, useEffect, useRef, useState } from "react";
 import "./AboutPage.css";
-import ProfileComponet from "./ProfileComponet/ProfileComponet";
-import SkillComponent from "./SkillComponent/SkillComponent";
+
 import Personality from "./Personality/Personality";
 import Iam from "./Iam/Iam";
+import Profile from "./Profile/Profile";
+import Skill from "./Skill/Skill";
 
 const AboutPage = forwardRef(({ selectCategory, location }, aboutRef) => {
   const [category, setCategory] = useState("Iam");
+
   let categoryArr = ["Iam", "Profile", "Skill", "Personality"];
 
   useEffect(() => {
@@ -17,7 +19,13 @@ const AboutPage = forwardRef(({ selectCategory, location }, aboutRef) => {
 
   return (
     <div className={`aboutpage-container ${location}`} ref={aboutRef}>
-      <Iam category={category} />
+      <div className="aboutpage-box">
+        <Iam category={category} />
+
+        <Profile category={category} />
+        <Skill category={category} />
+        <Personality category={category} />
+      </div>
 
       <div className={`aboutpage-btnBox ${category}`}>
         {categoryArr.map((item, idx) => {

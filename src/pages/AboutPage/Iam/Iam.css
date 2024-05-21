@@ -4,7 +4,10 @@
   top: 0;
   width: 100%;
   height: 100%;
-  border: 1px solid red;
+  pointer-events: none;
+}
+.iam-container.active {
+  pointer-events: all;
 }
 
 .iam-textBox {
@@ -26,8 +29,39 @@
   transform: translate(-50%, -50%);
   font-size: 17px;
   margin-bottom: 10px;
+  transition: 0s;
+}
+
+.iam-textBox h2 span {
+  position: relative;
+  left: -2%;
+  opacity: 0;
+  transition: 0.7s;
+}
+.iam-textBox.active h2 span {
+  position: relative;
+  left: 0%;
+  opacity: 1;
+  transition: 0.7s;
+}
+.iam-textBox p span {
+  position: relative;
+  left: -2%;
+  opacity: 0;
+  transition: 0.7s;
+}
+.iam-textBox.active p span {
+  position: relative;
+  left: 0%;
+  opacity: 1;
   transition: 1s;
 }
+.iam-textBox.active p:nth-child(3) span:nth-child(14),
+.iam-textBox.active p:nth-child(3) span:nth-child(15),
+.iam-textBox.active p:nth-child(3) span:nth-child(16) {
+  color: white;
+}
+
 .iam-textBox p {
   position: absolute;
   top: 80%;
@@ -43,9 +77,9 @@
   left: 62.5%;
   width: 235px;
 }
-.iam-textBox p span {
+/* .iam-textBox p span {
   color: rgba(255, 255, 255, 1);
-}
+} */
 
 @media (max-width: 800px) {
   .iam-textBox {

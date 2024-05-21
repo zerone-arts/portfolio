@@ -86,7 +86,7 @@ function App() {
         setBgColor("deepblue");
         break;
       case "project":
-        setBgColor("black");
+        setBgColor("");
         break;
 
       default:

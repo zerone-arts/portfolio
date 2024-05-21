@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import "./Iam.css";
 function Iam({ category }) {
   console.log(category);
+
+  let textH2 = `" 디자인 ･ 인터랙션 만드는 것을 좋아하는 개발자 "`;
+  let textP1 = "저는 그래픽, 로고, 일러스트 등등 디자인과 아트를 좋아하고";
+  let textP2 = "인터랙션에 관심이 많은 김영일이라고 합니다.";
   return (
-    <div className="iam-container">
+    <div className={`iam-container ${category === "Iam" ? "active" : ""}`}>
       <div className="iam-animationWrapper">
         <div
           className={`iam-animationBox ${category === "Iam" ? "" : "change"}`}
@@ -39,11 +43,39 @@ function Iam({ category }) {
           <span className="iam-object object29"></span>
         </div>
       </div>
-      <div className="iam-textBox">
-        <h2>" 디자인 ･ 인터랙션 만드는 것을 좋아하는 개발자 "</h2>
-        <p>저는 그래픽, 로고, 일러스트 등등 디자인과 아트를 좋아하고</p>
+      <div className={`iam-textBox ${category === "Iam" ? "active" : ""}`}>
+        <h2>
+          {textH2.split("").map((item, idx) => {
+            return (
+              <span key={idx} style={{ transitionDelay: `${idx * 0.05}s` }}>
+                {item}
+              </span>
+            );
+          })}
+        </h2>
         <p>
-          인터랙션에 관심이 많은 <span>김영일</span> 이라고 합니다.
+          {textP1.split("").map((item, idx) => {
+            return (
+              <span
+                key={idx}
+                style={{ transitionDelay: `${idx * 0.05 + 0.5}s` }}
+              >
+                {item}
+              </span>
+            );
+          })}
+        </p>
+        <p>
+          {textP2.split("").map((item, idx) => {
+            return (
+              <span
+                key={idx}
+                style={{ transitionDelay: `${idx * 0.05 + 0.7}s` }}
+              >
+                {item}
+              </span>
+            );
+          })}
         </p>
       </div>
     </div>

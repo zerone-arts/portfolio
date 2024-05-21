@@ -1,10 +1,14 @@
 .personality {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
+}
+.personality.active {
+  pointer-events: all;
 }
 .personality-wrapper {
   position: relative;
@@ -24,9 +28,9 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  left: 50px;
+  left: 100px;
   opacity: 0;
-  transition: 0.2s;
+  transition: 1s ease-in-out;
   transform-style: preserve-3d;
 }
 
@@ -52,12 +56,12 @@
 .personality-wrapper li:hover div:nth-child(2) {
   transform: perspective(500px) rotateY(360deg);
 }
-.personality-wrapper.personality li {
+.personality-wrapper.Personality li {
   left: 0;
   opacity: 1;
   transition: 1s ease-in-out;
 }
-.personality-wrapper.personality li div::before {
+.personality-wrapper.Personality li div::before {
   position: absolute;
   content: "";
   left: 0;

@@ -1,10 +1,18 @@
 import React from "react";
 import "../Personality/Personality.css";
-function Personality({ select }) {
+function Personality({ category }) {
   return (
-    <div className="personality">
-      <ul className={`personality-wrapper ${select}`}>
-        <li>
+    <div
+      className={`personality ${category === "Personality" ? "active" : ""}`}
+    >
+      <ul className={`personality-wrapper ${category}`}>
+        <li
+          style={
+            category === "Personality"
+              ? { transitionDelay: `0.2s` }
+              : { transitionDelay: `0.8s` }
+          }
+        >
           <div>
             <p>Introversion</p>
           </div>
@@ -19,7 +27,13 @@ function Personality({ select }) {
             </p>
           </div>
         </li>
-        <li>
+        <li
+          style={
+            category === "Personality"
+              ? { transitionDelay: `0.4s` }
+              : { transitionDelay: `0.6s` }
+          }
+        >
           <div>
             <p>iNtuition .</p>
           </div>
@@ -34,7 +48,13 @@ function Personality({ select }) {
             </p>
           </div>
         </li>
-        <li>
+        <li
+          style={
+            category === "Personality"
+              ? { transitionDelay: `0.6s` }
+              : { transitionDelay: `0.4s` }
+          }
+        >
           <div>
             <p>Feeling</p>
           </div>
@@ -49,7 +69,13 @@ function Personality({ select }) {
             </p>
           </div>
         </li>
-        <li>
+        <li
+          style={
+            category === "Personality"
+              ? { transitionDelay: `0.8s` }
+              : { transitionDelay: `0.2s` }
+          }
+        >
           <div>
             <p>Judging</p>
           </div>
