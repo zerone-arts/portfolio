@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
 .mainpage-container {
   position: relative;
   width: 100%;
@@ -19,6 +21,12 @@
   font-size: 50px;
   font-weight: 900;
   font-family: "Manrope", sans-serif;
+  opacity: 1;
+  transition: 0s;
+}
+
+.mainpage-textBox.hide {
+  opacity: 0;
 }
 
 .mainpage-textBox span {
@@ -57,4 +65,52 @@
   .mainpage-textBox span {
     font-size: 30px;
   }
+}
+
+.mainpage-shadowTextBox {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition-delay: 0.5s;
+  transition: 4s;
+}
+
+.mainpage-shadowTextBox.hide {
+  opacity: 1;
+}
+
+.mainpage-shadowTextBox .mainpage-shadowText {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 80%;
+  text-align: center;
+  transform: translate(-50%, -50%) skewY(30deg);
+
+  font-weight: 600;
+  font-size: 40px;
+}
+
+.mainpage-shadowTextBox .mainpage-shadowText::before {
+  position: absolute;
+  content: "ZERONE";
+
+  transform: skewX(0deg) scaleY(1);
+  left: 45px;
+  top: 0px;
+  transform-origin: bottom left;
+  font-weight: 500;
+  opacity: 0.25;
+  transition: 1s;
+}
+
+.mainpage-shadowTextBox.hide .mainpage-shadowText::before {
+  left: 22px;
+  top: 8px;
+  transform: skewX(-45deg) scaleY(1.5);
+  transition-delay: 0.5s;
 }

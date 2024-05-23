@@ -3,9 +3,13 @@ import "./MainPage.css";
 import { useTypewriter, Cursor, Typewriter } from "react-simple-typewriter";
 
 const MainPage = forwardRef(({ selectCategory, location }, mainRef) => {
-  const [cursor, setCursor] = useState(`rgba(0,0,0,1)`);
+  const [typeWriter, setTypeWriter] = useState("");
 
   let email = "zerone-@naver.com";
+
+  const handleType = (count) => {
+    count >= 2 ? setTypeWriter("hide") : setTypeWriter("");
+  };
 
   useEffect(() => {
     if (selectCategory == "main") {
@@ -15,7 +19,7 @@ const MainPage = forwardRef(({ selectCategory, location }, mainRef) => {
 
   return (
     <div className="mainpage-container" ref={mainRef}>
-      <div className="mainpage-textBox">
+      <div className={`mainpage-textBox ${typeWriter}`}>
         <span
           style={
             location !== "main"
@@ -27,14 +31,18 @@ const MainPage = forwardRef(({ selectCategory, location }, mainRef) => {
           }
         >
           <Typewriter
-            words={[`Hi, I'm Kim Young il.`, `I'm a Front-End Developer.`]}
+            words={[
+              `Hi, I'm Kim Young il.`,
+              `I will be a Front-End Developer !`,
+            ]}
             loop={2}
-            onLoopDone={() => {
-              setCursor(`rgba(0,0,0,0)`);
-            }}
+            onType={handleType}
           />
-          <Cursor cursorStyle={`|`} cursorColor={cursor} />
+          <Cursor cursorStyle={`|`} cursorColor="black" />
         </span>
+      </div>
+      <div className={`mainpage-shadowTextBox ${typeWriter}`}>
+        <div className="mainpage-shadowText">ZERONE</div>
       </div>
       <div className="mainpage-bottomBox">
         {email.split("").map((item, idx) => {

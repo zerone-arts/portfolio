@@ -39,10 +39,11 @@ const AboutPage = forwardRef(({ selectCategory, location }, aboutRef) => {
               onClick={() => {
                 setCategory(item);
               }}
+              key={idx}
             >
               {item.split("").map((item, idx) => {
                 return (
-                  <span style={{ transitionDelay: `${idx * 0.08}s` }}>
+                  <span style={{ transitionDelay: `${idx * 0.08}s` }} key={idx}>
                     {item}
                   </span>
                 );
