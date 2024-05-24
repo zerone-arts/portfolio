@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./Iam.css";
 function Iam({ category }) {
-  console.log(category);
-
   let textH2 = `" 디자인 ･ 인터랙션 만드는 것을 좋아하는 개발자 "`;
   let textP1 = "저는 그래픽, 로고, 일러스트 등등 디자인과 아트를 좋아하고";
   let textP2 = "인터랙션에 관심이 많은 김영일이라고 합니다.";
@@ -47,7 +45,14 @@ function Iam({ category }) {
         <h2>
           {textH2.split("").map((item, idx) => {
             return (
-              <span key={idx} style={{ transitionDelay: `${idx * 0.05}s` }}>
+              <span
+                key={idx}
+                style={
+                  category === "Iam"
+                    ? { transitionDelay: `${idx * 0.05}s` }
+                    : { transitionDelay: `${idx * 0.02}s` }
+                }
+              >
                 {item}
               </span>
             );
@@ -58,7 +63,11 @@ function Iam({ category }) {
             return (
               <span
                 key={idx}
-                style={{ transitionDelay: `${idx * 0.05 + 0.5}s` }}
+                style={
+                  category === "Iam"
+                    ? { transitionDelay: `${idx * 0.05 + 0.5}s` }
+                    : { transitionDelay: `${idx * 0.02 + 0.1}s` }
+                }
               >
                 {item}
               </span>
@@ -70,7 +79,11 @@ function Iam({ category }) {
             return (
               <span
                 key={idx}
-                style={{ transitionDelay: `${idx * 0.05 + 0.7}s` }}
+                style={
+                  category === "Iam"
+                    ? { transitionDelay: `${idx * 0.05 + 1}s` }
+                    : { transitionDelay: `${idx * 0.02 + 0.3}s` }
+                }
               >
                 {item}
               </span>

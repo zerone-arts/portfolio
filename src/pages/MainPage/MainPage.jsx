@@ -6,6 +6,7 @@ const MainPage = forwardRef(({ selectCategory, location }, mainRef) => {
   const [typeWriter, setTypeWriter] = useState("");
 
   let email = "zerone-@naver.com";
+  let portfolio = "PORTFOLIO";
 
   const handleType = (count) => {
     count >= 2 ? setTypeWriter("hide") : setTypeWriter("");
@@ -42,7 +43,11 @@ const MainPage = forwardRef(({ selectCategory, location }, mainRef) => {
         </span>
       </div>
       <div className={`mainpage-shadowTextBox ${typeWriter}`}>
-        <div className="mainpage-shadowText">ZERONE</div>
+        <div className="mainpage-shadowText">
+          {portfolio.split("").map((item, idx) => {
+            return <span key={idx}>{item}</span>;
+          })}
+        </div>
       </div>
       <div className="mainpage-bottomBox">
         {email.split("").map((item, idx) => {

@@ -44,7 +44,6 @@
   left: 50%;
   bottom: 30px;
   transform: translateX(-50%);
-
   width: 250px;
   height: 30px;
   display: flex;
@@ -56,13 +55,17 @@
   border: none;
   background-color: transparent;
   font-size: 10px;
-  transition: 1s;
+  transition: 0.5s;
+  color: white;
 }
 
 .aboutpage-btnBox button span {
-  transition: 1s;
+  transition: 0.5s;
 }
 
 .aboutpage-btnBox button:hover span {
   color: rgb(251, 251, 251);
+}
+.aboutpage-btnBox.black button:hover span {
+  color: rgb(0, 0, 0);
 }

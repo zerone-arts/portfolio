@@ -6,54 +6,88 @@ import Iam from "./Iam/Iam";
 import Profile from "./Profile/Profile";
 import Skill from "./Skill/Skill";
 
-const AboutPage = forwardRef(({ selectCategory, location }, aboutRef) => {
-  const [category, setCategory] = useState("Iam");
+const AboutPage = forwardRef(
+  ({ selectCategory, location, handleBgColor }, aboutRef) => {
+    const [category, setCategory] = useState("Iam");
+    const [color, setColor] = useState("white");
 
-  let categoryArr = ["Iam", "Profile", "Skill", "Personality"];
+    let categoryArr = ["Iam", "Profile", "Skill", "Personality"];
 
-  useEffect(() => {
-    if (selectCategory === "about") {
-      aboutRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-  }, [selectCategory]);
+    useEffect(() => {
+      if (location !== "about") {
+        setCategory("Iam");
+        setColor("white");
+      }
+    }, [location]);
 
-  return (
-    <div className={`aboutpage-container ${location}`} ref={aboutRef}>
-      <div className="aboutpage-box">
-        <Iam category={category} />
+    useEffect(() => {
+      if (location === "about") {
+        if (category === "Iam") {
+          handleBgColor("deepblue");
+          setColor("white");
+        } else {
+          handleBgColor("");
+          setColor("black");
+        }
+      }
+    }, [category]);
 
-        <Profile category={category} />
-        <Skill category={category} />
-        <Personality category={category} />
+    useEffect(() => {
+      if (selectCategory === "about") {
+        aboutRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }
+    }, [selectCategory]);
+
+    console.log(color);
+
+    return (
+      <div className={`aboutpage-container ${location}`} ref={aboutRef}>
+        <div className="aboutpage-box">
+          <Iam category={category} />
+
+          <Profile category={category} />
+          <Skill category={category} />
+          <Personality category={category} />
+        </div>
+
+        <div className={`aboutpage-btnBox ${category} ${color}`}>
+          {categoryArr.map((item, idx) => {
+            return (
+              <button
+                style={
+                  category === item
+                    ? color === "white"
+                      ? { color: `rgb(251, 251, 251)` }
+                      : { color: `rgb(0, 0, 0)` }
+                    : color === ""
+                    ? { color: `rgba(95, 95, 95,1)` }
+                    : { color: `rgba(95, 95, 95,0.4)` }
+                }
+                onClick={() => {
+                  setCategory(item);
+                }}
+                key={idx}
+              >
+                {item.split("").map((item, idx) => {
+                  return (
+                    <span
+                      style={{ transitionDelay: `${idx * 0.08}s` }}
+                      key={idx}
+                    >
+                      {item}
+                    </span>
+                  );
+                })}
+              </button>
+            );
+          })}
+        </div>
       </div>
-
-      <div className={`aboutpage-btnBox ${category}`}>
-        {categoryArr.map((item, idx) => {
-          return (
-            <button
-              style={
-                category === item
-                  ? { color: `rgb(251, 251, 251)` }
-                  : { color: `rgb(95, 95, 95)` }
-              }
-              onClick={() => {
-                setCategory(item);
-              }}
-              key={idx}
-            >
-              {item.split("").map((item, idx) => {
-                return (
-                  <span style={{ transitionDelay: `${idx * 0.08}s` }} key={idx}>
-                    {item}
-                  </span>
-                );
-              })}
-            </button>
-          );
-        })}
-      </div>
-    </div>
-  );
-});
+    );
+  }
+);
 
 export default AboutPage;

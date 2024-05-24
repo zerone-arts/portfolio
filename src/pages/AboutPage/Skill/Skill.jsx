@@ -3,7 +3,7 @@ import "./Skill.css";
 function Skill({ category }) {
   return (
     <div className={`skill-container ${category === "Skill" ? "active" : ""}`}>
-      Skill
+      <div className="test"></div>
     </div>
   );
 }

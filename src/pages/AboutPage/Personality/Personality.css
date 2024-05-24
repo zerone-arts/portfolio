@@ -161,10 +161,12 @@
   padding: 10px;
   bottom: -30px;
   opacity: 0;
+
   transition: 1s;
 }
 .personality-wrapper li:hover div:nth-child(2) p {
   transition-delay: 0.8s;
+
   bottom: 30px;
   opacity: 1;
 }

@@ -36,6 +36,10 @@ function App() {
     }
   };
 
+  const handleBgColor = (e) => {
+    setBgColor(e);
+  };
+
   const handleScroll = () => {
     // let mainScroll = mainRef.current?.getBoundingClientRect().bottom;
     // let aboutScroll = aboutRef.current?.getBoundingClientRect().bottom;
@@ -61,8 +65,6 @@ function App() {
       setLocation("main");
     }
   };
-
-  console.log(location);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -132,6 +134,7 @@ function App() {
         selectCategory={selectCategory}
         ref={aboutRef}
         location={location}
+        handleBgColor={handleBgColor}
       />
       <ProjectPage
         selectCategory={selectCategory}

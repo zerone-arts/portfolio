@@ -90,27 +90,47 @@
   width: 80%;
   text-align: center;
   transform: translate(-50%, -50%) skewY(30deg);
-
   font-weight: 600;
   font-size: 40px;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.mainpage-shadowTextBox .mainpage-shadowText span {
+  position: relative;
+  top: 0px;
+  transition: 0.5s;
+}
+.mainpage-shadowTextBox .mainpage-shadowText:hover span {
+  position: relative;
+  top: -10px;
 }
 
 .mainpage-shadowTextBox .mainpage-shadowText::before {
   position: absolute;
-  content: "ZERONE";
+  content: "PORTFOLIO";
 
   transform: skewX(0deg) scaleY(1);
-  left: 45px;
+  left: 13px;
   top: 0px;
   transform-origin: bottom left;
   font-weight: 500;
   opacity: 0.25;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 .mainpage-shadowTextBox.hide .mainpage-shadowText::before {
-  left: 22px;
+  left: -11px;
   top: 8px;
   transform: skewX(-45deg) scaleY(1.5);
   transition-delay: 0.5s;
+  transition-delay: 1;
+}
+
+.mainpage-shadowTextBox.hide .mainpage-shadowText:hover::before {
+  transform: skewX(-45deg) scaleY(1.5);
+  transition-delay: 0s;
+  transition: 0.5s;
+  left: -5px;
+  top: 0px;
 }

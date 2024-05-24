@@ -121,6 +121,7 @@
 }
 .iam-animationBox.change .iam-object {
   left: 0%;
+
   /* transition-delay: 0s; */
   /* animation-play-state: paused; */
 }
