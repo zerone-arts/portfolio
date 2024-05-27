@@ -57,6 +57,7 @@
   font-size: 10px;
   transition: 0.5s;
   color: white;
+  text-transform: uppercase;
 }
 
 .aboutpage-btnBox button span {
@@ -68,4 +69,22 @@
 }
 .aboutpage-btnBox.black button:hover span {
   color: rgb(0, 0, 0);
+}
+
+.skill-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.skill-btn.front {
+  top: 40%;
+}
+.skill-btn.back {
+  left: 40%;
+  top: 55%;
 }

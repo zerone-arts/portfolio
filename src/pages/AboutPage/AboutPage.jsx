@@ -25,9 +25,6 @@ const AboutPage = forwardRef(
         if (category === "Iam") {
           handleBgColor("deepblue");
           setColor("white");
-        } else {
-          handleBgColor("");
-          setColor("black");
         }
       }
     }, [category]);
@@ -40,8 +37,6 @@ const AboutPage = forwardRef(
         });
       }
     }, [selectCategory]);
-
-    console.log(color);
 
     return (
       <div className={`aboutpage-container ${location}`} ref={aboutRef}>
@@ -64,7 +59,7 @@ const AboutPage = forwardRef(
                       : { color: `rgb(0, 0, 0)` }
                     : color === ""
                     ? { color: `rgba(95, 95, 95,1)` }
-                    : { color: `rgba(95, 95, 95,0.4)` }
+                    : { color: `rgba(95, 95, 95,0.7)` }
                 }
                 onClick={() => {
                   setCategory(item);
