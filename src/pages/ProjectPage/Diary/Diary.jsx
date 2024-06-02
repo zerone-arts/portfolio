@@ -1,129 +1,137 @@
 import React, { useState } from "react";
 import "./Diary.css";
-import diaryDayBg from "../../../assets/img/day.png";
-import calendar1 from "../../../assets/img/calendar1.png";
-import calendar2 from "../../../assets/img/calendar2.png";
-import diaryMonthBook1 from "../../../assets/img/book2.png";
-import diaryMonthBook2 from "../../../assets/img/book3.png";
-function Diary({ setHover, selectBtn }) {
-  const [explanationHover, setExplanationHover] = useState("");
-  const [tagHover, setTagHover] = useState("");
-  let date = new Date();
-  let month = date.toLocaleString("en-US", { month: "long" });
-  let tagList = [
-    "dark mode",
-    "react",
-    "firebase",
-    "google login",
-    "custom",
-    "picture",
-    "calendar",
-    "diary",
-  ];
+import personImg from "../../../assets/img/person.png";
+import person2Img from "../../../assets/img/person2.png";
 
+let monthText =
+  "January February March April May June August September October November December January February March April May June August September October November December ";
+let monthArr = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "August",
+];
+function Diary({ setHover, selectBtn }) {
   return (
-    <div className={`diary-container ${selectBtn === 0 ? "active" : ""}`}>
-      <div className="diary-header">
-        <h2>{month}</h2>
-        <h2>Hover your mouse for explanation</h2>
-      </div>
-      <ul className="diary-listBox">
-        <li
-          className="diary-main"
-          onMouseOver={() => {
-            setHover("project-diary-main");
-          }}
-          onMouseLeave={() => {
-            setHover("");
-          }}
-        >
-          <h2>
-            <span>D</span>iary,
-            <br />
-            <span>C</span>alendar
-          </h2>
-          <h4>one word</h4>
-          <div className="diary-main-bottom">
-            <button>
-              <a href="https://zerone-arts.github.io/diary/" target="_blank">
-                VIEW MORE
-              </a>
-            </button>
-            <a
-              href="https://github.com/zerone-arts/diary"
-              target="_black"
-              className="diary-main-bottom-textBox"
-            >
-              <p className="diary-main-bottom-text">
-                <span>GitHub</span>
-              </p>
-              <p className="diary-main-bottom-text">Repository</p>
-            </a>
-          </div>
-        </li>
-        <li className="diary-day">
-          <div className="diary-day-bg">
-            <img src={diaryDayBg} alt="diaryDayBg" />
-          </div>
-          <div className="diary-day-text">
-            Pictures and <br />
-            one words of the past day.
-          </div>
-          <div className="diary-day-explanation">
-            one word 웹 사이트는 다이어리 형태의 웹사이트 입니다. one word는
-            사진과 한마디의 텍스트를 이용하여 <br />
-            오늘 하루를 앨범이나 잡지처럼 꾸며보자는 생각에 프로젝트를
-            시작하였습니다.
-          </div>
-        </li>
-        <li className="diary-month">
-          <div className="diary-month-bgBox">
-            <h2>month</h2>
-            <p>" 조금은 다르게 "</p>
-          </div>
-          <p className="diary-month-title">
-            month's <br />
-            story and title.
+    <div className={`diary-container`}>
+      <div className="diary-wrapper left">
+        <div className="diary-light"></div>
+        <div className="diary-title">
+          <p>Web and App</p>
+          <h2>Diary</h2>
+        </div>
+        <div className="diary-exText">
+          <p>Diary는 캘린더를 베이스로 만들었습니다.</p>
+          <p>
+            하루를 사진과 텍스트로 포스터처럼 디자인하고 저장할 수 있는
+            다이어리입니다.
           </p>
-          <p className="diary-month-year">2024</p>
-          <div className="diary-month-explanation">
-            하루를 사진과 텍스트 한마디를 이용하여 잡지처럼 꾸미는 것이라면
-            한달은 책처럼 제목을 달아 이야기를 만든다는 생각을 넣어봤습니다.
+        </div>
+        <button className="diary-linkBtn">
+          {" "}
+          <a href="https://zerone-arts.github.io/diary/" target="_blank">
+            view more
+          </a>
+        </button>
+        <div className="diary-circle">
+          <div className="diary-text">
+            <p>
+              {monthArr.map((item, idx) => {
+                return (
+                  <span
+                    key={idx}
+                    style={{ transform: `rotate(${idx * 20}deg)` }}
+                  >
+                    {item}
+                  </span>
+                );
+              })}
+            </p>
           </div>
-        </li>
-        <li
-          className={`diary-explanation ${explanationHover}`}
-          onMouseOver={() => {
-            setExplanationHover("hover");
-          }}
-          onMouseLeave={() => {
-            setExplanationHover("");
-          }}
-        >
-          <div className="diary-explanation-imgBox">
-            <img src={calendar1} alt="calendar" />
-            <img src={calendar2} alt="calendar" />
+        </div>
+
+        <div className="diary-circle-line">
+          <div className="diary-line">
+            <p>
+              {monthArr.map((item, idx) => {
+                return (
+                  <span
+                    key={idx}
+                    style={{ transform: `rotate(${idx * 20}deg)` }}
+                  ></span>
+                );
+              })}
+            </p>
           </div>
-          <div className="diary-explantation-tagTitle">{tagHover}</div>
-          <ul className="diary-explanation-tagBox">
-            {tagList.map((item, idx) => {
-              return (
-                <li
-                  key={idx}
-                  onMouseOver={() => {
-                    setTagHover(item);
-                  }}
-                  onMouseLeave={() => {
-                    setTagHover("");
-                  }}
-                >
-                  {item}
-                </li>
-              );
-            })}
-          </ul>
-        </li>
-      </ul>
+        </div>
+        <div className="diary-imgBox">
+          <img src={personImg} alt="person" />
+        </div>
+      </div>
+      <div className="diary-wrapper right">
+        <div className="diary-light"></div>
+        <div className="diary-title">
+          <p>Web and App</p>
+          <h2>Diary</h2>
+        </div>
+        <div className="diary-exText">
+          <p>이 프로젝트는 리액트를 기반으로 만들었으며</p>
+          <p>인증과 데이터베이스는 파이어베이스를 사용하였습니다.</p>
+        </div>
+        <button className="diary-linkBtn">
+          <a href="https://github.com/zerone-arts/diray" target="_blank">
+            GitHub
+          </a>
+        </button>
+        <div className="diary-circle">
+          <div className="diary-text">
+            <p>
+              {monthArr.map((item, idx) => {
+                return (
+                  <span
+                    key={idx}
+                    style={{ transform: `rotate(${idx * 20}deg)` }}
+                  >
+                    {item}
+                  </span>
+                );
+              })}
+            </p>
+          </div>
+        </div>
+
+        <div className="diary-circle-line">
+          <div className="diary-line">
+            <p>
+              {monthArr.map((item, idx) => {
+                return (
+                  <span
+                    key={idx}
+                    style={{ transform: `rotate(${idx * 20}deg)` }}
+                  ></span>
+                );
+              })}
+            </p>
+          </div>
+        </div>
+        <div className="diary-imgBox">
+          <img src={person2Img} alt="person" />
+        </div>
+      </div>
     </div>
   );
 }

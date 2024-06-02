@@ -1,6 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Header.css";
-function Header({ toggle, setToggle, setSelectCategory, setHover, color }) {
+function Header({
+  toggle,
+  setToggle,
+  setSelectCategory,
+  setHover,
+  color,
+  bgColor,
+}) {
   const mouseOverHandle = () => {
     setHover("main");
   };
@@ -17,7 +24,7 @@ function Header({ toggle, setToggle, setSelectCategory, setHover, color }) {
   };
 
   return (
-    <div className={`header-container ${color}`}>
+    <div className={`header-container ${bgColor === "" ? "" : "white"}`}>
       <div className={`header-logo ${toggle} ${color} `}>
         <button
           onClick={() => {

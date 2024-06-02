@@ -7,7 +7,7 @@ import effectVideo3 from "../../../assets/video/effectVideo3.mov";
 import effectVideo4 from "../../../assets/video/effectVideo4.mov";
 import effectVideo5 from "../../../assets/video/effectVideo5.mov";
 
-function Effects({ setSelectBtn }) {
+function Effects({ setSelectBtn, handleProjectHover }) {
   const videoRefs = useRef({});
   const [videoSlideNum, setVideoSlideNum] = useState(0);
   let videoList = [
@@ -36,9 +36,11 @@ function Effects({ setSelectBtn }) {
       className="effects-container"
       onMouseOver={() => {
         videoRefs.current[videoSlideNum].play();
+        handleProjectHover(true);
       }}
       onMouseLeave={() => {
         videoRefs.current[videoSlideNum].pause();
+        handleProjectHover(false);
       }}
     >
       <div className="effects-logo">Es.</div>

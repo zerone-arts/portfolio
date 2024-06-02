@@ -93,7 +93,6 @@ function Skill({ category }) {
     },
   ];
 
-  console.log(category);
   return (
     <div className={`skill-container ${category === "Skill" ? "active" : ""}`}>
       <ul className="skill-box">

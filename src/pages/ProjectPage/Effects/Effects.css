@@ -132,6 +132,7 @@
   top: 50%;
   transform: translateY(-50%);
   left: 150px;
+  color: white;
 }
 .effects-text-Box h2 {
   font-size: 30px;

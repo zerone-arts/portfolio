@@ -13,7 +13,9 @@ function MusicAppWeb({ selectBtn }) {
   useInterval(
     () => {
       // Your custom logic here
-      hover === "" ? setHover("hover") : setHover("");
+      if (selectBtn === 3) {
+        hover === "" ? setHover("hover") : setHover("");
+      }
     },
     hover === "" ? 3000 : 5000
   );

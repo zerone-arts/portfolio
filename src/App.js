@@ -19,6 +19,7 @@ function App() {
   const [color, setColor] = useState("");
   const [bgColor, setBgColor] = useState("");
   const [location, setLocation] = useState("main");
+  const [projectHover, setProjectHover] = useState(false);
   const contactObserveRef = useRef(null);
   const mainRef = useRef(null);
   const aboutRef = useRef(null);
@@ -38,6 +39,10 @@ function App() {
 
   const handleBgColor = (e) => {
     setBgColor(e);
+  };
+
+  const handleProjectHover = (e) => {
+    setProjectHover(e);
   };
 
   const handleScroll = () => {
@@ -99,11 +104,17 @@ function App() {
 
   useEffect(() => {
     if (bgColor === "") {
-      setColor("");
+      if (projectHover) {
+        setColor("white");
+      } else {
+        setColor("");
+      }
     } else {
       setColor("white");
     }
-  }, [bgColor]);
+  }, [bgColor, location, projectHover]);
+
+  console.log(projectHover);
 
   return (
     <div
@@ -123,6 +134,7 @@ function App() {
         setToggle={setToggle}
         setSelectCategory={setSelectCategory}
         setHover={setHover}
+        bgColor={bgColor}
         color={color}
       />
       <MainPage
@@ -140,6 +152,7 @@ function App() {
         selectCategory={selectCategory}
         setHover={setHover}
         ref={projectRef}
+        handleProjectHover={handleProjectHover}
       />
       <ContactPage selectCategory={selectCategory} ref={contactRef} />
       <MenuPage
