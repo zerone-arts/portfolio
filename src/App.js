@@ -95,7 +95,9 @@ function App() {
       case "project":
         setBgColor("");
         break;
-
+      case "contact":
+        setBgColor("");
+        break;
       default:
         setBgColor("");
         break;
@@ -113,8 +115,6 @@ function App() {
       setColor("white");
     }
   }, [bgColor, location, projectHover]);
-
-  console.log(projectHover);
 
   return (
     <div
@@ -136,6 +136,7 @@ function App() {
         setHover={setHover}
         bgColor={bgColor}
         color={color}
+        location={location}
       />
       <MainPage
         selectCategory={selectCategory}
@@ -153,6 +154,7 @@ function App() {
         setHover={setHover}
         ref={projectRef}
         handleProjectHover={handleProjectHover}
+        location={location}
       />
       <ContactPage selectCategory={selectCategory} ref={contactRef} />
       <MenuPage
@@ -162,7 +164,13 @@ function App() {
         setHover={setHover}
       />
       <Footer setSelectCategory={setSelectCategory} setHover={setHover} />
-      <Mouse xy={xy} hover={hover} click={click} color={color} />
+      <Mouse
+        xy={xy}
+        hover={hover}
+        toggle={toggle}
+        click={click}
+        color={color}
+      />
       <div className="contact-observe" ref={contactObserveRef}></div>
     </div>
   );

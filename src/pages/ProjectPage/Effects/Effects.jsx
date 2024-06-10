@@ -73,7 +73,7 @@ function Effects({ setSelectBtn, handleProjectHover }) {
           {videoList.map((item, idx) => {
             return (
               <button
-                onClick={() => {
+                onMouseOver={() => {
                   setVideoSlideNum(idx);
                 }}
                 key={idx}

@@ -7,6 +7,7 @@ function Header({
   setHover,
   color,
   bgColor,
+  location,
 }) {
   const mouseOverHandle = () => {
     setHover("main");
@@ -23,6 +24,8 @@ function Header({
     }, 1000);
   };
 
+  console.log(location);
+
   return (
     <div className={`header-container ${bgColor === "" ? "" : "white"}`}>
       <div className={`header-logo ${toggle} ${color} `}>
@@ -36,7 +39,7 @@ function Header({
           ZER<span>ONE.</span>
         </button>
       </div>
-      <ul className={`header-list ${toggle}`}>
+      <ul className={`header-list ${toggle} ${location}`}>
         <li
           className="header-line"
           onClick={() => {

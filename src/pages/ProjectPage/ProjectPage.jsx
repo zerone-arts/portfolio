@@ -6,7 +6,7 @@ import Effects from "./Effects/Effects";
 import MusicAppWeb from "./MusicAppWeb/MusicAppWeb";
 
 const ProjectPage = forwardRef(
-  ({ selectCategory, setHover, handleProjectHover }, projectRef) => {
+  ({ selectCategory, setHover, handleProjectHover, location }, projectRef) => {
     const [selectBtn, setSelectBtn] = useState(0);
 
     useEffect(() => {
@@ -20,8 +20,11 @@ const ProjectPage = forwardRef(
 
     return (
       <div className="projectpage-container" ref={projectRef}>
-        <div className="projectpage-title">Project</div>
-        <div className="projectpage-wrapper">
+        <div className={`projectpage-title ${location}`}>Project</div>
+        <div
+          className="projectpage-wrapper"
+          style={location === "project" ? { opacity: 1 } : { opacity: 0 }}
+        >
           <div
             className="projectpage-box"
             style={{ top: `-${selectBtn * 100}%` }}
@@ -36,7 +39,7 @@ const ProjectPage = forwardRef(
               className="projectpage-project two"
               style={selectBtn === 1 ? { opacity: 1 } : { opacity: 0 }}
             >
-              <ArtWeb />
+              <ArtWeb handleProjectHover={handleProjectHover} />
             </div>
             <div
               className="projectpage-project three"
@@ -55,7 +58,7 @@ const ProjectPage = forwardRef(
             </div>
           </div>
         </div>
-        <ul className="projectpage-buttonBox">
+        <ul className={`projectpage-buttonBox `}>
           <li
             className={`projectpage-button ${selectBtn === 0 ? "active" : ""}`}
             onClick={() => {
@@ -81,7 +84,7 @@ const ProjectPage = forwardRef(
             }}
           ></li>
         </ul>
-        <div className="projectpage-projectNameBox">
+        <div className={`projectpage-projectNameBox`}>
           <ul
             className="projectpage-projectNameBox-ul"
             style={{ top: `${selectBtn * -25}px` }}

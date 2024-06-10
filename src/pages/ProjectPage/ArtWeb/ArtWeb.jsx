@@ -4,7 +4,7 @@ import artImg1 from "../../../assets/img/art1.png";
 import artImg2 from "../../../assets/img/art2.png";
 import artImg3 from "../../../assets/img/art3.png";
 import artImg4 from "../../../assets/img/art4.png";
-function ArtWeb(props) {
+function ArtWeb({ handleProjectHover }) {
   const [selectList, setSelectList] = useState(0);
 
   const list = [
@@ -27,7 +27,15 @@ function ArtWeb(props) {
   const designText = "Design & Art";
   const circleText = "Art Web - Project ";
   return (
-    <div className="artweb-container">
+    <div
+      className="artweb-container"
+      onMouseOver={() => {
+        handleProjectHover(true);
+      }}
+      onMouseLeave={() => {
+        handleProjectHover(false);
+      }}
+    >
       <div className="artweb-right-wrapper">
         {list.map((item, idx) => {
           return (

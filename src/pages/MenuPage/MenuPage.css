@@ -75,13 +75,13 @@
 .menu-container ul li button {
   background-color: transparent;
   border: none;
-  color: rgb(195, 195, 195);
+  color: rgb(97, 97, 97);
   font-size: 20px;
   font-weight: 300;
 }
 
 .menu-container ul li button:hover {
-  color: #ce701e;
+  color: #ffffff;
   transition: 0.2s;
   cursor: none;
 }

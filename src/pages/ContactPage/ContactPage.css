@@ -8,6 +8,7 @@
   color: white;
   font-weight: 30px;
   z-index: 1;
+  border: 1px solid red;
 }
 /* .contactpage-container::before {
   position: absolute;
@@ -222,4 +223,7 @@
 }
 .contactpage-footer ul p:nth-child(1) {
   font-weight: 700;
+}
+
+.contactpage-box {
 }

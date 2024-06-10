@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Mouse.css";
-function Mouse({ xy, hover, click, color }) {
+function Mouse({ xy, hover, click, color, toggle }) {
   const mouseRef = useRef(null);
 
   useEffect(() => {
@@ -16,8 +16,14 @@ function Mouse({ xy, hover, click, color }) {
       mouseRef.current.style.border = "1px solid white";
     } else {
       mouseRef.current.style.border = "1px solid black";
+
+      if (toggle === "active") {
+        mouseRef.current.style.border = "1px solid white";
+      } else {
+        mouseRef.current.style.border = "1px solid black";
+      }
     }
-  }, [hover, color]);
+  }, [hover, color, toggle]);
 
   useEffect(() => {
     if (click) {
