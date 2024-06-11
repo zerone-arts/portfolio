@@ -156,7 +156,11 @@ function App() {
         handleProjectHover={handleProjectHover}
         location={location}
       />
-      <ContactPage selectCategory={selectCategory} ref={contactRef} />
+      <ContactPage
+        selectCategory={selectCategory}
+        ref={contactRef}
+        handleProjectHover={handleProjectHover}
+      />
       <MenuPage
         toggle={toggle}
         setToggle={setToggle}
