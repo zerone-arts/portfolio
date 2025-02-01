@@ -32,7 +32,11 @@ function App() {
   const handleResize = () => {
     setScreenWdith(window.innerWidth);
 
-    if (window.innerWidth >= 800 && toggle == "active" && screenWidth != null) {
+    if (
+      window.innerWidth >= 800 &&
+      toggle === "active" &&
+      screenWidth != null
+    ) {
       setToggle("");
     }
   };
@@ -46,12 +50,6 @@ function App() {
   };
 
   const handleScroll = () => {
-    // let mainScroll = mainRef.current?.getBoundingClientRect().bottom;
-    // let aboutScroll = aboutRef.current?.getBoundingClientRect().bottom;
-    // let projectScroll = projectRef.current?.getBoundingClientRect().bottom;
-    // let contactScroll = contactRef.current?.getBoundingClientRect().bottom;
-
-    // let pageHeight = document.documentElement.scrollHeight - 200;
     let viewHeight = window.innerHeight;
 
     if (

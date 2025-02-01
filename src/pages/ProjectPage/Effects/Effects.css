@@ -235,7 +235,7 @@
   color: white;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 }
 .effects-bottom-link-Box button a {
   color: white;
@@ -244,7 +244,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 }
 .effects-bottom-link-Box button h4 {
   font-weight: 400;

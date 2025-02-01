@@ -84,7 +84,7 @@
   height: 100%;
   color: white;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   transition: 1s;
