@@ -1,22 +1,24 @@
-import React, { forwardRef, useEffect, useRef, useState } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import "./ProjectPage.css";
+
 import Diary from "./Diary/Diary";
 import ArtWeb from "./ArtWeb/ArtWeb";
 import Effects from "./Effects/Effects";
 import MusicAppWeb from "./MusicAppWeb/MusicAppWeb";
+import ProjectTools from "./ProjectTools/ProjectTools";
 
 const ProjectPage = forwardRef(
   ({ selectCategory, setHover, handleProjectHover, location }, projectRef) => {
     const [selectBtn, setSelectBtn] = useState(0);
 
     useEffect(() => {
-      if (selectCategory == "project") {
+      if (selectCategory === "project") {
         projectRef.current?.scrollIntoView({
           behavior: "smooth",
           block: "end",
         });
       }
-    }, [selectCategory]);
+    }, [selectCategory, projectRef]);
 
     return (
       <div className="projectpage-container" ref={projectRef}>
@@ -33,17 +35,23 @@ const ProjectPage = forwardRef(
               className="projectpage-project one"
               style={selectBtn === 0 ? { opacity: 1 } : { opacity: 0 }}
             >
-              <Diary setHover={setHover} selectBtn={selectBtn} />
+              <ProjectTools setHover={setHover} selectBtn={selectBtn} />
             </div>
             <div
               className="projectpage-project two"
               style={selectBtn === 1 ? { opacity: 1 } : { opacity: 0 }}
             >
-              <ArtWeb handleProjectHover={handleProjectHover} />
+              <Diary setHover={setHover} selectBtn={selectBtn} />
             </div>
             <div
               className="projectpage-project three"
               style={selectBtn === 2 ? { opacity: 1 } : { opacity: 0 }}
+            >
+              <ArtWeb handleProjectHover={handleProjectHover} />
+            </div>
+            <div
+              className="projectpage-project four"
+              style={selectBtn === 3 ? { opacity: 1 } : { opacity: 0 }}
             >
               <Effects
                 setSelectBtn={setSelectBtn}
@@ -52,7 +60,7 @@ const ProjectPage = forwardRef(
             </div>
             <div
               className="projectpage-project four"
-              style={selectBtn === 3 ? { opacity: 1 } : { opacity: 0 }}
+              style={selectBtn === 4 ? { opacity: 1 } : { opacity: 0 }}
             >
               <MusicAppWeb selectBtn={selectBtn} />
             </div>
@@ -83,6 +91,12 @@ const ProjectPage = forwardRef(
               setSelectBtn(3);
             }}
           ></li>
+          <li
+            className={`projectpage-button ${selectBtn === 4 ? "active" : ""}`}
+            onClick={() => {
+              setSelectBtn(4);
+            }}
+          ></li>
         </ul>
         <div className={`projectpage-projectNameBox`}>
           <ul
@@ -93,23 +107,29 @@ const ProjectPage = forwardRef(
               className="projectpage-projectNameBox-list"
               style={selectBtn === 0 ? { opacity: 1 } : { opacity: 0 }}
             >
-              Diary Web - <span>one word</span>
+              multiple tools - <span>Tools</span>
             </li>
             <li
               className="projectpage-projectNameBox-list"
               style={selectBtn === 1 ? { opacity: 1 } : { opacity: 0 }}
             >
-              Web Design - <span>Art Web</span>
+              Diary Web - <span>one word</span>
             </li>
             <li
               className="projectpage-projectNameBox-list"
               style={selectBtn === 2 ? { opacity: 1 } : { opacity: 0 }}
             >
-              Interaction - <span>Effects</span>
+              Web Design - <span>Art Web</span>
             </li>
             <li
               className="projectpage-projectNameBox-list"
               style={selectBtn === 3 ? { opacity: 1 } : { opacity: 0 }}
+            >
+              Interaction - <span>Effects</span>
+            </li>
+            <li
+              className="projectpage-projectNameBox-list"
+              style={selectBtn === 4 ? { opacity: 1 } : { opacity: 0 }}
             >
               Music Player - <span>MusicAppWeb</span>
             </li>

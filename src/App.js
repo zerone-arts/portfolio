@@ -68,7 +68,7 @@ function App() {
       setLocation("main");
     }
   };
-
+  console.log(location);
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => {
@@ -113,6 +113,34 @@ function App() {
       setColor("white");
     }
   }, [bgColor, location, projectHover]);
+
+  // useEffect(() => {
+  //   const scrollToSection = (ref) => {
+  //     if (ref?.current) {
+  //       ref.current.scrollIntoView({
+  //         behavior: "smooth",
+  //         block: "center", // 섹션이 화면 중앙에 오도록 설정
+  //       });
+  //     }
+  //   };
+
+  //   switch (location) {
+  //     case "main":
+  //       scrollToSection(mainRef);
+  //       break;
+  //     case "about":
+  //       scrollToSection(aboutRef);
+  //       break;
+  //     case "project":
+  //       scrollToSection(projectRef);
+  //       break;
+  //     case "contact":
+  //       scrollToSection(contactRef);
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  // }, [location]); // location이 바뀔 때마다 실행
 
   return (
     <div
