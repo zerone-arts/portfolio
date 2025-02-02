@@ -44,10 +44,10 @@
 }
 
 .musicAppWeb-Imgbox img:nth-child(2) {
-  opacity: 0;
+  opacity: 1;
 }
 .musicAppWeb-Imgbox img:nth-child(3) {
-  opacity: 0;
+  opacity: 1;
 }
 .musicAppWeb-Imgbox img:nth-child(4) {
   opacity: 1;

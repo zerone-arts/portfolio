@@ -4,7 +4,7 @@ function Guide({ hover }) {
   let explanationText =
     "music player의 UI UX를 여러 테마로 나누어 구현했습니다.";
   let themeText = "Theme Select Button";
-
+  console.log(hover);
   return (
     <div className={`guide-container ${hover}`}>
       <div className="guide-theme">

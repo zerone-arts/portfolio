@@ -26,8 +26,8 @@ function MusicAppWeb({ selectBtn }) {
 
       <div
         className="musicAppWeb-Wrapper"
-        // onMouseOver={() => setHover("hover")}
-        // onMouseLeave={() => setHover("")}
+        onMouseOver={() => setHover("hover")}
+        onMouseLeave={() => setHover("")}
       >
         <div className={`musicAppWeb-Imgbox ${hover}`}>
           <img src={musicImgCase} alt="musicImg1" />

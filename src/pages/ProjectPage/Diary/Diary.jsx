@@ -42,7 +42,6 @@ function Diary({ setHover, selectBtn }) {
           </p>
         </div>
         <button className="diary-linkBtn">
-          {" "}
           <a href="https://zerone-arts.github.io/diary/" target="_blank">
             view more
           </a>

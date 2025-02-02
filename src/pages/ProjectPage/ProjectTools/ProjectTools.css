@@ -1,6 +1,149 @@
 .ProjectTools-container {
   position: relative;
+  width: 800px;
+  height: 450px;
+  background-color: rgb(22, 22, 22);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  /* transition: 1s; */
+  overflow: hidden;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+.Tools-wrapper {
+  position: relative;
+  width: 45%;
+  height: 350px;
+}
+
+.Tools-titleBox {
+  width: 100%;
+  height: 130px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-left: 20px;
+}
+
+.Tools-title {
+  font-size: 50px;
+  letter-spacing: 10px;
+}
+
+.Tools-subTitle {
+  position: absolute;
+  font-size: 10px;
+  padding-left: 5px;
+  color: rgb(171, 171, 171);
+}
+
+.Tools-Introduction {
+  width: 100%;
+  height: 60px;
+
+  padding-left: 25px;
+  font-size: 10px;
+  display: flex;
+  align-items: end;
+}
+
+.Tools-btnBox {
+  width: 100%;
+  height: 80px;
+  position: relative;
+  margin-top: 50px;
+  display: flex;
+  align-items: end;
+  padding-left: 20px;
+  gap: 20px;
+  font-size: 12px;
+}
+
+.Tools-btn {
+  width: 100px;
+  height: 35px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+  transition: 0.5s;
+}
+
+.Tools-btn a {
+  text-decoration: none;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1px;
+  transition: 1s;
+}
+
+.Tools-btn:hover a {
+  color: rgb(0, 142, 174);
+}
+
+.Tools-cubeBox {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.Tools-cube {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transform-style: preserve-3d;
+  transform: rotateX(-35deg) rotateY(45deg);
+}
+
+.Tools-face {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.Tools-front {
+  transform: translateZ(40px);
+
+  border: 3px solid white;
+}
+
+.Tools-left {
+  transform: rotateY(-90deg) translateZ(40px);
+  border: 3px solid white;
+  font-size: 15px;
+  color: white;
+}
+
+.Tools-top {
+  transform: rotateX(90deg) translateZ(40px);
+
+  border: 3px solid white;
+}
+
+@media (max-width: 800px) {
+  .ProjectTools-container {
+    width: 500px;
+    transition: 0.5s;
+  }
 }

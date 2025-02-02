@@ -68,7 +68,6 @@ function App() {
       setLocation("main");
     }
   };
-  console.log(location);
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => {

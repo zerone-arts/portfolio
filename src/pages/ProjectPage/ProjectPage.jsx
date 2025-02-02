@@ -35,7 +35,11 @@ const ProjectPage = forwardRef(
               className="projectpage-project one"
               style={selectBtn === 0 ? { opacity: 1 } : { opacity: 0 }}
             >
-              <ProjectTools setHover={setHover} selectBtn={selectBtn} />
+              <ProjectTools
+                setHover={setHover}
+                selectBtn={selectBtn}
+                handleProjectHover={handleProjectHover}
+              />
             </div>
             <div
               className="projectpage-project two"
@@ -107,7 +111,7 @@ const ProjectPage = forwardRef(
               className="projectpage-projectNameBox-list"
               style={selectBtn === 0 ? { opacity: 1 } : { opacity: 0 }}
             >
-              multiple tools - <span>Tools</span>
+              All-in-One Tools - <span>Tools</span>
             </li>
             <li
               className="projectpage-projectNameBox-list"
