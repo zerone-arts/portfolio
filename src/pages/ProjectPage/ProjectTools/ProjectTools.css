@@ -2,7 +2,7 @@
   position: relative;
   width: 800px;
   height: 450px;
-  background-color: rgb(22, 22, 22);
+  background-color: rgb(31, 31, 31);
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   /* transition: 1s; */
@@ -98,7 +98,7 @@
 .Tools-titleBox {
   width: 100%;
   height: 130px;
-
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -106,7 +106,13 @@
 }
 
 .Tools-title {
-  font-size: 50px;
+  font-size: clamp(40px, 6.25vw, 50px);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  padding-left: 20px;
 }
 
 .Tools-subTitle {
@@ -116,55 +122,105 @@
   color: rgb(171, 171, 171);
 }
 
-.Tools-Introduction {
+.Tools-IntroductionWrapper {
   width: 65%;
   height: 70px;
-
+  position: relative;
   font-size: 10px;
   display: flex;
   margin-top: 20px;
   margin-left: 25px;
 }
 
-.Tools-btnBox {
+.Tools-Introduction {
+  position: absolute;
   width: 100%;
-  height: 80px;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.Tools-Introduction-Stack {
+  position: relative;
+  width: 240px;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+}
+.Tools-Introduction-Stack li {
+  border: 1px solid rgb(49, 49, 49);
+  background-color: rgb(38, 38, 38);
+  border-radius: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gray;
+  transition: 0.5s;
+}
+.Tools-Introduction-Stack li:hover {
+  color: white;
+}
+
+.Tools-btnBox {
+  width: 300px;
+  height: 60px;
   position: relative;
   margin-top: 0px;
   display: flex;
   align-items: end;
   padding-left: 20px;
   gap: 20px;
-  font-size: 12px;
 }
 
 .Tools-btn {
+  position: relative;
   width: 100px;
   height: 35px;
-  border: 1px solid rgb(255, 255, 255);
+
   border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background-color: transparent;
+  font-size: 12px;
+  border: 1.5px solid rgb(49, 49, 49);
+  background-color: rgb(38, 38, 38);
   transition: 0.5s;
+  pointer-events: auto;
+}
+.Tools-btn::before {
+  width: 110%;
+  height: 120%;
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(96, 96, 96, 0.1);
+  border-radius: 30px;
+  pointer-events: none;
 }
 
 .Tools-btn:hover {
-  border: 1px solid rgb(0, 142, 174);
+  border: 1.5px solid rgb(71, 71, 71);
+  background-color: rgb(43, 43, 43);
+  box-shadow: 0px 1px 12px 3px rgba(0, 0, 0, 0.5);
 }
 
 .Tools-btn a {
   text-decoration: none;
   font-weight: 200;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.7);
   letter-spacing: 1px;
   transition: 0.5s;
 }
 
 .Tools-btn:hover a {
-  color: rgb(0, 142, 174);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* right */
@@ -206,17 +262,17 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: gray;
+  background-color: rgb(49, 49, 49);
   border-radius: 1.5px/ 3px;
   transition: 0.3s;
 }
 
 .Tools-HexBox:hover .Tools-hex {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgb(168, 168, 168);
 }
 
 .Tools-hex-selected {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgb(168, 168, 168);
 }
 
 .Tools-hex::before,
@@ -240,10 +296,10 @@
 }
 
 .Tools-hex-innerBox-black {
-  background-color: rgb(22, 22, 22) !important;
+  background-color: rgb(38, 38, 38) !important;
 }
 .Tools-hex-innerBox-select {
-  background-color: rgb(0, 102, 124) !important;
+  background-color: rgb(42, 42, 42) !important;
 }
 
 .Tools-hex-inner {
@@ -269,6 +325,9 @@
   height: 24px;
   opacity: 0.5;
   transition: 0.5s;
+  position: relative;
+  top: 2px;
+  transition: 0.5s;
 }
 
 .Tools-hex-inner-select .Tools-icon,
@@ -280,14 +339,70 @@
   opacity: 1;
 }
 
+.Tools-shadowHex {
+  position: absolute;
+  transform: translate(-55%, -40%) scale(1.5);
+  z-index: -1;
+  filter: blur(5px);
+  background-color: rgb(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: 1s;
+}
+
+.Tools-shadowHex-visible {
+  opacity: 0.8;
+}
+
+.Tools-HexBox:hover .Tools-shadowHex {
+  background-color: rgb(0, 0, 0, 0.8);
+  opacity: 0.5;
+}
+
+.Tools-guideBox {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+
+  left: 50%;
+  top: 77%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  font-size: 8px;
+  pointer-events: none;
+
+  transition: 1s;
+}
+
 @media (max-width: 800px) {
   .ProjectTools-container {
     width: 500px;
     transition: 0.5s;
   }
+
+  .Tools-Introduction-Stack {
+    width: 160px;
+    gap: 5px;
+  }
+  .Tools-Introduction-Stack li {
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 7px;
+  }
 }
 
 @media (max-width: 460px) {
+  .Tools-btn {
+    width: 70px;
+    height: 25px;
+
+    border-radius: 30px;
+  }
+  .Tools-btn {
+    font-size: 8px;
+  }
+
   .Tools-HexBox {
     width: 30px;
     height: 32.5px;
