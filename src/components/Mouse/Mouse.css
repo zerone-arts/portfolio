@@ -11,3 +11,30 @@
   transition: 0.5s transform;
   cursor: none;
 }
+
+.mouse-WebView {
+  position: absolute;
+  left: 100%;
+  top: 100%;
+
+  width: 200px;
+  pointer-events: none;
+}
+.mouse-WebView li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+}
+
+.mouse-WebView li img {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  transition: 0.5s;
+  pointer-events: none;
+}

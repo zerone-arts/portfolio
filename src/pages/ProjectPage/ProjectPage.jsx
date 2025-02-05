@@ -51,7 +51,10 @@ const ProjectPage = forwardRef(
               className="projectpage-project three"
               style={selectBtn === 2 ? { opacity: 1 } : { opacity: 0 }}
             >
-              <ArtWeb handleProjectHover={handleProjectHover} />
+              <ArtWeb
+                handleProjectHover={handleProjectHover}
+                setHover={setHover}
+              />
             </div>
             <div
               className="projectpage-project four"
@@ -60,13 +63,14 @@ const ProjectPage = forwardRef(
               <Effects
                 setSelectBtn={setSelectBtn}
                 handleProjectHover={handleProjectHover}
+                setHover={setHover}
               />
             </div>
             <div
               className="projectpage-project four"
               style={selectBtn === 4 ? { opacity: 1 } : { opacity: 0 }}
             >
-              <MusicAppWeb selectBtn={selectBtn} />
+              <MusicAppWeb selectBtn={selectBtn} setHover={setHover} />
             </div>
           </div>
         </div>

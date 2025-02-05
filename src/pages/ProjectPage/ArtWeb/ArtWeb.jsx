@@ -4,7 +4,7 @@ import artImg1 from "../../../assets/img/art1.png";
 import artImg2 from "../../../assets/img/art2.png";
 import artImg3 from "../../../assets/img/art3.png";
 import artImg4 from "../../../assets/img/art4.png";
-function ArtWeb({ handleProjectHover }) {
+function ArtWeb({ handleProjectHover, setHover }) {
   const [selectList, setSelectList] = useState(0);
 
   const list = [
@@ -187,7 +187,12 @@ function ArtWeb({ handleProjectHover }) {
         </ul>
         <div className="artweb-left-linkBox">
           <div className="artweb-left-site">
-            <a href="https://zerone-arts.github.io/art-web/" target="_blank">
+            <a
+              href="https://zerone-arts.github.io/art-web/"
+              target="_blank"
+              onMouseEnter={() => setHover("ArtWeb")}
+              onMouseLeave={() => setHover("")}
+            >
               view more
             </a>
           </div>

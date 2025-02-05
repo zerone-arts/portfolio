@@ -7,7 +7,7 @@ import musicImgCase from "../../../assets/img/mawImgCase.png";
 import Guide from "./Guide/Guide";
 import useInterval from "../../../assets/utils/interval";
 
-function MusicAppWeb({ selectBtn }) {
+function MusicAppWeb({ selectBtn, setHover: setViewHover }) {
   const [hover, setHover] = useState("");
 
   useInterval(
@@ -45,7 +45,12 @@ function MusicAppWeb({ selectBtn }) {
 
       <div className="musicAppWeb-linkBox">
         <button>
-          <a href="https://zerone-arts.github.io/musicAppWeb/" target="_blank">
+          <a
+            href="https://zerone-arts.github.io/musicAppWeb/"
+            target="_blank"
+            onMouseEnter={() => setViewHover("MusicAppWeb")}
+            onMouseLeave={() => setViewHover("")}
+          >
             <p>Homepage </p>
             <ion-icon name="arrow-forward-outline"></ion-icon>
           </a>

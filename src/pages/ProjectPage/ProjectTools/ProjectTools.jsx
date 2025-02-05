@@ -207,7 +207,7 @@ const StackArr = [
   "Axious",
 ];
 
-export default function ProjectTools({ handleProjectHover }) {
+export default function ProjectTools({ handleProjectHover, setHover }) {
   const [select, setSelect] = useState("Tools");
   const [guide, setGuide] = useState(true);
 
@@ -294,7 +294,11 @@ export default function ProjectTools({ handleProjectHover }) {
           })}
         </div>
         <div className="Tools-btnBox">
-          <button className="Tools-btn">
+          <button
+            className="Tools-btn"
+            onMouseEnter={() => setHover("Tools")}
+            onMouseLeave={() => setHover("")}
+          >
             <a href="https://zerone-tools.vercel.app/" target="_blank">
               view more
             </a>

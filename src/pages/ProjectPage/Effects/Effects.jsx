@@ -7,7 +7,7 @@ import effectVideo3 from "../../../assets/video/effectVideo3.mov";
 import effectVideo4 from "../../../assets/video/effectVideo4.mov";
 import effectVideo5 from "../../../assets/video/effectVideo5.mov";
 
-function Effects({ setSelectBtn, handleProjectHover }) {
+function Effects({ setSelectBtn, handleProjectHover, setHover }) {
   const videoRefs = useRef({});
   const [videoSlideNum, setVideoSlideNum] = useState(0);
   let videoList = [
@@ -102,6 +102,8 @@ function Effects({ setSelectBtn, handleProjectHover }) {
         className="effects-link-Box"
         href="https://zerone-arts.github.io/effects/"
         target="_blank"
+        onMouseEnter={() => setHover("Effects")}
+        onMouseLeave={() => setHover("")}
       >
         view more <span></span>
       </a>
