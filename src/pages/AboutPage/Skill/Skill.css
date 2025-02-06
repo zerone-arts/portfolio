@@ -29,7 +29,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  overflow: hidden;
+  flex-direction: row;
+  transition: 1s;
 }
 
 .skill-box li {
@@ -130,6 +131,11 @@
   opacity: 1;
 }
 
+.skill-box li div div .openSkill {
+  top: -10px;
+  opacity: 1;
+}
+
 .skill-box li div div:hover .vercelIcon {
   top: -10px;
   opacity: 1;
@@ -173,6 +179,7 @@
 
 @media (max-width: 800px) {
   .skill-box {
-    width: 500px;
+    flex-direction: column;
+    gap: 20px;
   }
 }

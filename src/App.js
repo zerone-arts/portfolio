@@ -141,8 +141,6 @@ function App() {
   //   }
   // }, [location]); // location이 바뀔 때마다 실행
 
-  console.log(hover);
-
   return (
     <div
       className={`App ${toggle}`}

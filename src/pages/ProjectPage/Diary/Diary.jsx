@@ -32,13 +32,13 @@ function Diary({ setHover, selectBtn }) {
         <div className="diary-light"></div>
         <div className="diary-title">
           <p>Web and App</p>
-          <h2>Diary</h2>
+          <h2>one word.</h2>
         </div>
         <div className="diary-exText">
-          <p>Diary는 캘린더를 베이스로 만들었습니다.</p>
           <p>
-            하루를 사진과 텍스트로 포스터처럼 디자인하고 저장할 수 있는
-            다이어리입니다.
+            one word는 캘린더를 기반으로 한 다이어리로, <br />
+            하루를 사진과 텍스트로 감각적인 포스터처럼 <br />
+            디자인하고 저장할 수 있습니다.
           </p>
         </div>
         <button className="diary-linkBtn">
@@ -90,11 +90,11 @@ function Diary({ setHover, selectBtn }) {
         <div className="diary-light"></div>
         <div className="diary-title">
           <p>Web and App</p>
-          <h2>Diary</h2>
+          <h2>one word.</h2>
         </div>
         <div className="diary-exText">
-          <p>이 프로젝트는 리액트를 기반으로 만들었으며</p>
-          <p>인증과 데이터베이스는 파이어베이스를 사용하였습니다.</p>
+          <p>one word는 React를 기반으로 개발되었으며,</p>{" "}
+          <p>인증 및 데이터베이스 관리에는 Firebase를 사용하였습니다.</p>
         </div>
         <button className="diary-linkBtn">
           <a href="https://github.com/zerone-arts/diray" target="_blank">

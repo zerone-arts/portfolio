@@ -24,9 +24,15 @@ function Header({
     }, 1000);
   };
 
+  console.log(location);
+
   return (
     <div className={`header-container ${bgColor === "" ? "" : "white"}`}>
-      <div className={`header-logo ${toggle} ${color} `}>
+      <div
+        className={`header-logo ${toggle} ${
+          location === "project" || location === "contact" ? "" : color
+        } `}
+      >
         <button
           onClick={() => {
             menuSelectHandle("main");
