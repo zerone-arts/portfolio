@@ -43,7 +43,7 @@ function Diary({ setHover, selectBtn }) {
         </div>
         <button className="diary-linkBtn">
           <a
-            href="https://zerone-arts.github.io/diary/"
+            href="https://zerone-oneword.vercel.app/"
             target="_blank"
             onMouseEnter={() => setHover("Diary")}
             onMouseLeave={() => setHover("")}

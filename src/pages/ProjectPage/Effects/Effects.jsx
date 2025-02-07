@@ -100,7 +100,7 @@ function Effects({ setSelectBtn, handleProjectHover, setHover }) {
 
       <a
         className="effects-link-Box"
-        href="https://zerone-arts.github.io/effects/"
+        href="https://zerone-effects.vercel.app/"
         target="_blank"
         onMouseEnter={() => setHover("Effects")}
         onMouseLeave={() => setHover("")}

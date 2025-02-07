@@ -46,7 +46,7 @@ function MusicAppWeb({ selectBtn, setHover: setViewHover }) {
       <div className="musicAppWeb-linkBox">
         <button>
           <a
-            href="https://zerone-arts.github.io/musicAppWeb/"
+            href="https://zerone-musicappweb.vercel.app/"
             target="_blank"
             onMouseEnter={() => setViewHover("MusicAppWeb")}
             onMouseLeave={() => setViewHover("")}

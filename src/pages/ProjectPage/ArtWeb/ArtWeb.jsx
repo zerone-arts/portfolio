@@ -188,7 +188,7 @@ function ArtWeb({ handleProjectHover, setHover }) {
         <div className="artweb-left-linkBox">
           <div className="artweb-left-site">
             <a
-              href="https://zerone-arts.github.io/art-web/"
+              href="https://zerone-artweb.vercel.app/"
               target="_blank"
               onMouseEnter={() => setHover("ArtWeb")}
               onMouseLeave={() => setHover("")}
