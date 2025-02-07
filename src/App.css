@@ -11,7 +11,11 @@
   font-family: "poppins", sans-serif;
   cursor: none !important;
 }
-
+body {
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased; /* 크롬에서 부드럽게 */
+  -moz-osx-font-smoothing: grayscale; /* 맥에서는 기본 적용됨 */
+}
 a {
   text-decoration: none;
 }
