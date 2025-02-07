@@ -135,8 +135,17 @@
   left: -10%;
   transition: 1s;
   opacity: 0;
+  color: inherit;
 }
 
+.profile-textBox div:hover {
+  color: rgb(198, 155, 54);
+}
+
+.profile-textBox div a {
+  text-decoration: none;
+  color: inherit;
+}
 .profile-container.active .profile-textBox div:nth-child(1) {
   transition-property: left, opacity;
   transition-delay: 0.7s;
@@ -160,4 +169,12 @@
 .profile-container.active .profile-textBox div:nth-child(6) {
   transition-property: left, opacity;
   transition-delay: 1.7s;
+}
+.profile-container.active .profile-textBox div:nth-child(7) {
+  transition-property: left, opacity;
+  transition-delay: 1.9s;
+}
+.profile-container.active .profile-textBox div:nth-child(8) {
+  transition-property: left, opacity;
+  transition-delay: 2.1s;
 }

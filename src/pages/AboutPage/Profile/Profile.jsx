@@ -130,10 +130,29 @@ function Profile({ category }) {
           </div>
           <div>1998.02.10</div>
           <div>제주특별자치도 제주시 설촌로 4길 19</div>
-          <div>zerone-@naver.com</div>
           <div>010-8006-5105</div>
           <div style={{ fontSize: "12px" }}>
             음악 • 영화 • 디자인 • 무채색 • 컴퓨터
+          </div>
+          <div>zerone-@naver.com</div>
+          <div>
+            <a
+              href="https://github.com/zerone-arts"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              GitHub
+            </a>
+          </div>
+
+          <div>
+            <a
+              href="https://vercel.com/zerone-projects"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Vercel
+            </a>
           </div>
         </div>
       </div>

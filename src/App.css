@@ -12,6 +12,9 @@
   cursor: none !important;
 }
 
+a {
+  text-decoration: none;
+}
 .App {
   position: relative;
   width: 100vw;
