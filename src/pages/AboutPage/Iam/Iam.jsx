@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./Iam.css";
 function Iam({ category }) {
   let textH2 = `" 디자인 ･ 인터랙션 만드는 것을 좋아하는 개발자 "`;
-  let textP1 = "저는 그래픽, 로고, 일러스트 등등 디자인과 아트를 좋아하고";
-  let textP2 = "인터랙션에 관심이 많은 김영일이라고 합니다.";
+  let textP1 = "저는 그래픽, 로고, 일러스트 등 디자인과 아트를 좋아하며,";
+  let textP2 = "인터랙션에 많은 관심을 가지고 있는 김영일이라고 합니다.";
 
   const animeArr = Array.from({ length: 29 }, (_, i) => i + 1);
   return (

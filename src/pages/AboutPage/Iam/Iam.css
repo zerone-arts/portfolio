@@ -59,9 +59,9 @@
   opacity: 1;
   transition: 1s;
 }
-.iam-textBox.active p:nth-child(3) span:nth-child(14),
-.iam-textBox.active p:nth-child(3) span:nth-child(15),
-.iam-textBox.active p:nth-child(3) span:nth-child(16) {
+.iam-textBox.active p:nth-child(3) span:nth-child(21),
+.iam-textBox.active p:nth-child(3) span:nth-child(22),
+.iam-textBox.active p:nth-child(3) span:nth-child(23) {
   color: white;
 }
 
