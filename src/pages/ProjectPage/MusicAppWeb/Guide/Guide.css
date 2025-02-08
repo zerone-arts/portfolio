@@ -55,6 +55,7 @@
   height: 2px;
   font-size: 8px;
   left: 50px;
+  font-weight: 700;
 }
 
 .guide-container .guide-theme-text p span {
@@ -139,6 +140,7 @@
   font-size: 8px;
   left: 40px;
   top: -6px;
+  font-weight: 700;
 }
 
 .guide-container .guide-explanation-text p span {

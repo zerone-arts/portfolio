@@ -93,8 +93,8 @@ function Effects({ setSelectBtn, handleProjectHover, setHover }) {
         <h2>Effects.</h2>
         <h3>Interation & animation</h3>
         <p>
-          css Animation , Interaction , Slide , Clone Coding, Canvas 등 공부를
-          하며 만들었던 작은 작업들을 모아둔 사이트입니다.
+          css Animation, Interaction, Slide, Clone Coding, Canvas 등을 공부하며
+          만든 작은 작업들을 모아둔 사이트입니다.
         </p>
       </div>
 

@@ -82,8 +82,9 @@ function ArtWeb({ handleProjectHover, setHover }) {
                 <a href="http://nlf.geex-arts.com/" target="_blank">
                   geex-arts
                 </a>
-                을 클론코딩 및 베이스로
-                <br /> 만든 웹사이트 입니다.
+                를 클론 코딩하고,
+                <br />
+                이를 기반으로 제작한 웹사이트입니다.
               </p>
             </div>
           </li>
@@ -114,8 +115,9 @@ function ArtWeb({ handleProjectHover, setHover }) {
                 })}
               </h2>
               <p>
-                오브젝트, 마우스포인트, 마우스 위치값 <br />
-                등을 이용한 인터랙션과 디자인을 사용하였습니다.
+                오브젝트, 마우스 포인터, 마우스 위치값 등을
+                <br />
+                활용한 인터랙션과 디자인 요소를 적용하였습니다.
               </p>
             </div>
           </li>
@@ -141,8 +143,8 @@ function ArtWeb({ handleProjectHover, setHover }) {
                 })}
               </h2>
               <p>
-                일러스트를 제외한 오브젝트는 <br />
-                자바스크립트와 css를 이용하여 배치하였습니다.
+                일러스트를 제외한 모든 오브젝트는 <br />
+                JavaScript와 CSS를 이용하여 배치하였습니다.
               </p>
             </div>
           </li>
@@ -178,9 +180,9 @@ function ArtWeb({ handleProjectHover, setHover }) {
                 })}
               </h2>
               <p>
-                상업적인 프로젝트는 되지 못하지만 <br />
-                제가 좋아하는 디자인을 이용하여
-                <br /> 웹사이트를 만들어 보고 싶었습니다 :)
+                상업적인 프로젝트는 아니지만, <br />
+                제가 좋아하는 디자인을 활용하여
+                <br /> 웹사이트를 만들어 보고 싶었습니다. :)
               </p>
             </div>
           </li>

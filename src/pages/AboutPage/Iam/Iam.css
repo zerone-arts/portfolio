@@ -58,6 +58,7 @@
   left: 0%;
   opacity: 1;
   transition: 1s;
+  font-weight: 700;
 }
 .iam-textBox.active p:nth-child(3) span:nth-child(21),
 .iam-textBox.active p:nth-child(3) span:nth-child(22),
