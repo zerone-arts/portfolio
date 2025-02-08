@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
 .diary-container {
   position: relative;
   width: 100%;
@@ -193,9 +195,10 @@
 }
 
 .diary-exText p {
-  font-size: 7px;
+  font-size: 8px;
   font-weight: 500;
-  color: rgb(0, 0, 0);
+  color: rgb(27, 27, 27);
+  font-family: "Noto Sans KR", serif;
   text-align: center;
 }
 
