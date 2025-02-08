@@ -201,6 +201,11 @@
 .personality-wrapper.personality li:nth-child(4) {
   transition-delay: 1.1s;
 }
+
+.personality-text {
+  font-weight: 700;
+}
+
 @media (max-width: 800px) {
   .personality-wrapper {
     width: 440px;
