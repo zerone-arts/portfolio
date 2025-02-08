@@ -200,7 +200,7 @@
   color: rgb(27, 27, 27);
   font-family: "Noto Sans KR", serif;
   text-align: center;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .diary-linkBtn {
