@@ -144,7 +144,7 @@ function ArtWeb({ handleProjectHover, setHover }) {
               </h2>
               <p>
                 일러스트를 제외한 모든 오브젝트는 <br />
-                JavaScript와 CSS를 이용하여 배치하였습니다.
+                JavaScript,React,CSS를 이용하여 배치하였습니다.
               </p>
             </div>
           </li>

@@ -176,7 +176,7 @@ function Skill({ category }) {
   const [skillHover, setSkillHover] = useState(0);
 
   return (
-    <div className={`skill-container ${category === "Skill" ? "active" : ""}`}>
+    <div className={`skill-container ${category === "Stack" ? "active" : ""}`}>
       <ul className="skill-box">
         <li
           onMouseOver={() => setListHover("frontArr")}

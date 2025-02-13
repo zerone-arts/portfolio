@@ -11,7 +11,7 @@ const AboutPage = forwardRef(
     const [category, setCategory] = useState("Iam");
     const [color, setColor] = useState("white");
 
-    let categoryArr = ["Iam", "Profile", "Skill", "Personality"];
+    let categoryArr = ["Iam", "Profile", "Stack", "Personality"];
 
     useEffect(() => {
       if (location !== "about") {
