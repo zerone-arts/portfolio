@@ -6,11 +6,14 @@ import ArtWeb from "./ArtWeb/ArtWeb";
 import Effects from "./Effects/Effects";
 import MusicAppWeb from "./MusicAppWeb/MusicAppWeb";
 import ProjectTools from "./ProjectTools/ProjectTools";
+import { useSelector } from "react-redux";
 
 const ProjectPage = forwardRef(
-  ({ selectCategory, setHover, handleProjectHover, location }, projectRef) => {
+  ({ setHover, handleProjectHover, location }, projectRef) => {
     const [selectBtn, setSelectBtn] = useState(0);
-
+    const selectCategory = useSelector(
+      (state) => state.category.selectCategory
+    );
     useEffect(() => {
       if (selectCategory === "project") {
         projectRef.current?.scrollIntoView({

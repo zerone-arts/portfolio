@@ -1,10 +1,13 @@
 import React from "react";
 import "./MenuPage.css";
-function MenuPage({ toggle, setHover, setSelectCategory, setToggle }) {
+import { useDispatch } from "react-redux";
+import { setSelectCategory } from "../../redux/reducers/categorySlice";
+function MenuPage({ toggle, setHover, setToggle }) {
+  const dispatch = useDispatch();
   const menuSelectHandle = (item) => {
-    setSelectCategory(item);
+    dispatch(setSelectCategory(item));
     setTimeout(() => {
-      setSelectCategory("");
+      dispatch(setSelectCategory(""));
     }, 1000);
   };
 

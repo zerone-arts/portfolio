@@ -1,10 +1,11 @@
 import React, { forwardRef, useEffect, useRef, useState } from "react";
 import "./MainPage.css";
 import { useTypewriter, Cursor, Typewriter } from "react-simple-typewriter";
+import { useSelector } from "react-redux";
 
-const MainPage = forwardRef(({ selectCategory, location }, mainRef) => {
+const MainPage = forwardRef(({ location }, mainRef) => {
   const [typeWriter, setTypeWriter] = useState("");
-
+  const selectCategory = useSelector((state) => state.category.selectCategory);
   let email = "zerone-@naver.com";
   let portfolio = "PORTFOLIO";
 

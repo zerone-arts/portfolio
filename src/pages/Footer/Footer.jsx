@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "./Footer.css";
-function Footer({ setSelectCategory, setHover }) {
+import { useDispatch } from "react-redux";
+import { setSelectCategory } from "../../redux/reducers/categorySlice";
+function Footer({ setHover }) {
+  const dispatch = useDispatch();
   const menuSelectHandle = (item) => {
-    setSelectCategory(item);
+    dispatch(setSelectCategory(item));
     setTimeout(() => {
-      setSelectCategory("");
+      dispatch(setSelectCategory(""));
     }, 1000);
   };
   return (

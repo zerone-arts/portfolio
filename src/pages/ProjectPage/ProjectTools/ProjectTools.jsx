@@ -201,6 +201,7 @@ const StackArr = [
   "React",
   "TypeScript",
   "Tailwind",
+  "Redux",
   "Zustande",
   "next-themes",
   "Supabase",

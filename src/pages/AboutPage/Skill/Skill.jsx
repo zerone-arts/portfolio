@@ -7,6 +7,7 @@ import tsImg from "../../../assets/img/icon/ts.png";
 import reactImg from "../../../assets/img/icon/react.png";
 import nextjsImg from "../../../assets/img/icon/nextjs.png";
 import tailwindImg from "../../../assets/img/icon/tailwind.png";
+import reduxImg from "../../../assets/img/icon/redux.png";
 
 import nodeImg from "../../../assets/img/icon/nodejs.png";
 import firebaseImg from "../../../assets/img/icon/firebase.png";
@@ -63,6 +64,15 @@ let frontArr = [
         동적 라우팅과 서버 사이드 렌더링을 활용하여 성능을 최적화했습니다.{" "}
         <br />
         이를 통해 SEO와 빠른 페이지 로딩 속도를 구현하였습니다.
+      </span>
+    ),
+  },
+  {
+    img: reduxImg,
+    ex: (
+      <span>
+        Redux는 최근 배우기 시작하여 사용한 부분은 적지만, <br /> 앞으로 Redux
+        Toolkit의 장점을 활용하여 점진적으로 적용해 나갈 예정입니다.
       </span>
     ),
   },

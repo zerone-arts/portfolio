@@ -1,14 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Header.css";
-function Header({
-  toggle,
-  setToggle,
-  setSelectCategory,
-  setHover,
-  color,
-  bgColor,
-  location,
-}) {
+import { useDispatch } from "react-redux";
+import { setSelectCategory } from "../../redux/reducers/categorySlice";
+function Header({ toggle, setToggle, setHover, color, bgColor, location }) {
+  const dispatch = useDispatch();
+
   const mouseOverHandle = () => {
     setHover("main");
   };
@@ -18,13 +14,11 @@ function Header({
   };
 
   const menuSelectHandle = (item) => {
-    setSelectCategory(item);
+    dispatch(setSelectCategory(item));
     setTimeout(() => {
-      setSelectCategory("");
+      dispatch(setSelectCategory(""));
     }, 1000);
   };
-
-  console.log(location);
 
   return (
     <div className={`header-container ${bgColor === "" ? "" : "white"}`}>
