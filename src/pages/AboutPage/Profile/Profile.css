@@ -58,7 +58,9 @@
   align-items: flex-end;
   transition: 0.5s;
 }
-
+.profile-photo img {
+  will-change: opacity;
+}
 .profile-photoWrapper img {
   position: absolute;
   width: 95%;
