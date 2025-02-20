@@ -59,7 +59,7 @@
 
 @keyframes textUpAnimate {
   0% {
-    top: 40px;
+    top: 100px;
   }
   100% {
     top: 0px;
