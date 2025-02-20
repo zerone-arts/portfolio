@@ -1,16 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Header.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setSelectCategory } from "../../redux/reducers/categorySlice";
-function Header({ toggle, setToggle, setHover, color, bgColor, location }) {
+import { setHover, setToggle } from "../../redux/reducers/uiSlice";
+function Header({ color }) {
   const dispatch = useDispatch();
+  const toggle = useSelector((state) => state.ui.toggle);
+  const location = useSelector((state) => state.ui.location);
+  const bgColor = useSelector((state) => state.ui.bgColor);
 
   const mouseOverHandle = () => {
-    setHover("main");
+    dispatch(setHover("main"));
   };
 
   const mouseOutHandle = () => {
-    setHover("");
+    dispatch(setHover(""));
   };
 
   const menuSelectHandle = (item) => {
@@ -44,10 +48,10 @@ function Header({ toggle, setToggle, setHover, color, bgColor, location }) {
             menuSelectHandle("main");
           }}
           onMouseOver={() => {
-            setHover("main");
+            dispatch(setHover("main"));
           }}
           onMouseLeave={() => {
-            setHover("");
+            dispatch(setHover(""));
           }}
         >
           <div className="header-line-object"></div>
@@ -58,10 +62,10 @@ function Header({ toggle, setToggle, setHover, color, bgColor, location }) {
               menuSelectHandle("about");
             }}
             onMouseOver={() => {
-              setHover("about");
+              dispatch(setHover("about"));
             }}
             onMouseLeave={() => {
-              setHover("");
+              dispatch(setHover(""));
             }}
           >
             ABOUT
@@ -73,10 +77,10 @@ function Header({ toggle, setToggle, setHover, color, bgColor, location }) {
               menuSelectHandle("project");
             }}
             onMouseOver={() => {
-              setHover("project");
+              dispatch(setHover("project"));
             }}
             onMouseLeave={() => {
-              setHover("");
+              dispatch(setHover(""));
             }}
           >
             PROJECT
@@ -88,10 +92,10 @@ function Header({ toggle, setToggle, setHover, color, bgColor, location }) {
               menuSelectHandle("contact");
             }}
             onMouseOver={() => {
-              setHover("contact");
+              dispatch(setHover("contact"));
             }}
             onMouseLeave={() => {
-              setHover("");
+              dispatch(setHover(""));
             }}
           >
             CONTACT
@@ -100,12 +104,16 @@ function Header({ toggle, setToggle, setHover, color, bgColor, location }) {
       </ul>
       <button
         className="header-menu-bar"
-        onClick={() => (toggle === "" ? setToggle("active") : setToggle(""))}
+        onClick={() =>
+          toggle === ""
+            ? dispatch(setToggle("active"))
+            : dispatch(setToggle(""))
+        }
         onMouseOver={() => {
-          setHover("menu");
+          dispatch(setHover("menu"));
         }}
         onMouseLeave={() => {
-          setHover("");
+          dispatch(setHover(""));
         }}
       >
         <div className={`header-menu-bar-top ${toggle}`}></div>

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./ProjectTools.css";
+import { useDispatch } from "react-redux";
+import { setHover, setLink } from "../../../redux/reducers/uiSlice";
 
 const TopArr = [
   {
@@ -209,9 +211,11 @@ const StackArr = [
   "Axious",
 ];
 
-export default function ProjectTools({ handleProjectHover, setHover }) {
+export default function ProjectTools({ handleProjectHover }) {
   const [select, setSelect] = useState("Tools");
   const [guide, setGuide] = useState(true);
+
+  const dispatch = useDispatch();
 
   const AllToolsArr = [...TopArr, ...CenterArr, ...BottomArr];
   const filteredAllToolsArr = AllToolsArr.map((tool, index) => ({
@@ -298,14 +302,28 @@ export default function ProjectTools({ handleProjectHover, setHover }) {
         <div className="Tools-btnBox">
           <button
             className="Tools-btn"
-            onMouseEnter={() => setHover("Tools")}
-            onMouseLeave={() => setHover("")}
+            onMouseEnter={() => {
+              dispatch(setHover("Tools"));
+              dispatch(setLink(true));
+            }}
+            onMouseLeave={() => {
+              dispatch(setHover(""));
+              dispatch(setLink(false));
+            }}
           >
             <a href="https://zerone-tools.vercel.app/" target="_blank">
               view more
             </a>
           </button>
-          <button className="Tools-btn">
+          <button
+            className="Tools-btn"
+            onMouseEnter={() => {
+              dispatch(setLink(true));
+            }}
+            onMouseLeave={() => {
+              dispatch(setLink(false));
+            }}
+          >
             <a href="https://github.com/zerone-arts/Tools" target="_blank">
               GitHub
             </a>

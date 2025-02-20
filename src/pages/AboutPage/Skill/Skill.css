@@ -61,27 +61,31 @@
   height: 30px;
   transition: 0.5s;
 }
+
+.skill-container.active .skill-box li div div {
+  top: 0px;
+}
+
 .skill-container .skill-box li div div:nth-child(7) {
   position: absolute;
-  top: 40px;
+  top: 70px;
   width: 30px;
   height: 30px;
-  transition: 0.5s;
 
   transform: translateY(-35px);
 }
 .skill-container .skill-box li div div:nth-child(8) {
   position: absolute;
-  top: 40px;
+  top: 70px;
   left: 30px;
   width: 30px;
   height: 30px;
-  transition: 0.5s;
 
   transform: translateY(-35px);
 }
 
-.skill-container.active .skill-box li div div {
+.skill-container.active .skill-box li div div:nth-child(7),
+.skill-container.active .skill-box li div div:nth-child(8) {
   top: 0px;
 }
 

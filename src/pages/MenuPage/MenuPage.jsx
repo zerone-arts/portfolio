@@ -1,9 +1,11 @@
 import React from "react";
 import "./MenuPage.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setSelectCategory } from "../../redux/reducers/categorySlice";
-function MenuPage({ toggle, setHover, setToggle }) {
+import { setHover, setToggle } from "../../redux/reducers/uiSlice";
+function MenuPage({}) {
   const dispatch = useDispatch();
+  const toggle = useSelector((state) => state.ui.toggle);
   const menuSelectHandle = (item) => {
     dispatch(setSelectCategory(item));
     setTimeout(() => {
@@ -19,13 +21,13 @@ function MenuPage({ toggle, setHover, setToggle }) {
           <button
             onClick={() => {
               menuSelectHandle("about");
-              setToggle("");
+              dispatch(setToggle(""));
             }}
             onMouseOver={() => {
-              setHover("about");
+              dispatch(setHover("about"));
             }}
             onMouseLeave={() => {
-              setHover("");
+              dispatch(setHover(""));
             }}
           >
             ABOUT ME
@@ -35,13 +37,13 @@ function MenuPage({ toggle, setHover, setToggle }) {
           <button
             onClick={() => {
               menuSelectHandle("project");
-              setToggle("");
+              dispatch(setToggle(""));
             }}
             onMouseOver={() => {
-              setHover("project");
+              dispatch(setHover("project"));
             }}
             onMouseLeave={() => {
-              setHover("");
+              dispatch(setHover(""));
             }}
           >
             PROJECT
@@ -51,13 +53,13 @@ function MenuPage({ toggle, setHover, setToggle }) {
           <button
             onClick={() => {
               menuSelectHandle("contact");
-              setToggle("");
+              dispatch(setToggle(""));
             }}
             onMouseOver={() => {
-              setHover("contact");
+              dispatch(setHover("contact"));
             }}
             onMouseLeave={() => {
-              setHover("");
+              dispatch(setHover(""));
             }}
           >
             CONTACT

@@ -7,34 +7,94 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-weight: 30px;
 }
 
-.mainpage-textBox {
+.mainpage-shadowTextBox {
   position: absolute;
-  width: 1000px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 50px;
-  font-weight: 900;
-  font-family: "Manrope", sans-serif;
+  width: 300px;
+  height: 300px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   opacity: 1;
-  transition: 0s;
+  transition-delay: 0.5s;
+  transition: 4s;
 }
 
-.mainpage-textBox.hide {
-  opacity: 0;
-}
-
-.mainpage-textBox span {
-  position: relative;
-  font-size: 50px;
-  font-weight: 900;
-  font-family: "Manrope", sans-serif;
+.mainpage-line {
+  position: absolute;
+  width: 150%;
+  height: 100px;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%) skewY(30deg);
+  background: rgb(230, 230, 230);
+  border-top: 1px solid black;
   transition: 1s;
+}
+.mainpage-line.shadowActive {
+  width: 0%;
+}
+
+.mainpage-shadowTextBox .mainpage-shadowText {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 80%;
+  text-align: center;
+  transform: translate(-50%, -50%) skewY(30deg);
+  font-weight: 600;
+  font-size: 40px;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.mainpage-shadowTextBox .mainpage-shadowText span {
+  position: relative;
+  top: 40px;
+  transition: 0.5s;
+  animation: textUpAnimate 1s forwards;
+}
+
+@keyframes textUpAnimate {
+  0% {
+    top: 40px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+.mainpage-shadowTextBox .mainpage-shadowText:hover span {
+  position: relative;
+  top: -10px;
+}
+
+.mainpage-shadowTextBox .mainpage-shadowText::before {
+  position: absolute;
+  content: "PORTFOLIO";
+  transform: skewX(0deg) scaleY(1);
+  left: 13px;
+  top: 0px;
+  transform-origin: bottom left;
+  font-weight: 500;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.mainpage-shadowTextBox.shadowActive .mainpage-shadowText::before {
+  left: -11px;
+  top: 8px;
+  transform: skewX(-45deg) scaleY(1.5);
+  opacity: 0.25;
+}
+
+.mainpage-shadowTextBox.shadowActive .mainpage-shadowText:hover::before {
+  transform: skewX(-45deg) scaleY(1.5);
+
+  left: -5px;
+  top: 0px;
 }
 
 .mainpage-bottomBox {
@@ -65,72 +125,4 @@
   .mainpage-textBox span {
     font-size: 30px;
   }
-}
-
-.mainpage-shadowTextBox {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition-delay: 0.5s;
-  transition: 4s;
-}
-
-.mainpage-shadowTextBox.hide {
-  opacity: 1;
-}
-
-.mainpage-shadowTextBox .mainpage-shadowText {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 80%;
-  text-align: center;
-  transform: translate(-50%, -50%) skewY(30deg);
-  font-weight: 600;
-  font-size: 40px;
-  transition: 0.5s;
-  z-index: 10;
-}
-
-.mainpage-shadowTextBox .mainpage-shadowText span {
-  position: relative;
-  top: 0px;
-  transition: 0.5s;
-}
-.mainpage-shadowTextBox .mainpage-shadowText:hover span {
-  position: relative;
-  top: -10px;
-}
-
-.mainpage-shadowTextBox .mainpage-shadowText::before {
-  position: absolute;
-  content: "PORTFOLIO";
-
-  transform: skewX(0deg) scaleY(1);
-  left: 13px;
-  top: 0px;
-  transform-origin: bottom left;
-  font-weight: 500;
-  opacity: 0.25;
-  transition: 0.5s;
-}
-
-.mainpage-shadowTextBox.hide .mainpage-shadowText::before {
-  left: -11px;
-  top: 8px;
-  transform: skewX(-45deg) scaleY(1.5);
-  transition-delay: 0.5s;
-  transition-delay: 1;
-}
-
-.mainpage-shadowTextBox.hide .mainpage-shadowText:hover::before {
-  transform: skewX(-45deg) scaleY(1.5);
-  transition-delay: 0s;
-  transition: 0.5s;
-  left: -5px;
-  top: 0px;
 }

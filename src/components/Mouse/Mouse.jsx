@@ -6,6 +6,7 @@ import Diary from "../../assets/img/webImg/oneWordWeb.png";
 import ArtWeb from "../../assets/img/webImg/ArtWeb.png";
 import Effects from "../../assets/img/webImg/EffectsWeb.png";
 import MusicWebApp from "../../assets/img/webImg/MusicWebApp.png";
+import { useDispatch, useSelector } from "react-redux";
 
 const viewArr = [
   { name: "Tools", img: Tools },
@@ -15,9 +16,12 @@ const viewArr = [
   { name: "MusicAppWeb", img: MusicWebApp },
 ];
 
-function Mouse({ xy, hover, click, color, toggle }) {
+function Mouse({ xy, click, color }) {
   const mouseRef = useRef(null);
-
+  const dispatch = useDispatch();
+  const toggle = useSelector((state) => state.ui.toggle);
+  const hover = useSelector((state) => state.ui.hover);
+  const link = useSelector((state) => state.ui.link);
   useEffect(() => {
     if (hover == "") {
       mouseRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
@@ -27,7 +31,8 @@ function Mouse({ xy, hover, click, color, toggle }) {
       hover === "Diary" ||
       hover === "ArtWeb" ||
       hover === "Effects" ||
-      hover === "MusicAppWeb"
+      hover === "MusicAppWeb" ||
+      hover === "footer"
     ) {
       mouseRef.current.style.transform = `translate(-50%, -50%) scale(1)`;
     } else {
@@ -45,7 +50,11 @@ function Mouse({ xy, hover, click, color, toggle }) {
         mouseRef.current.style.border = "1px solid black";
       }
     }
-  }, [hover, color, toggle]);
+
+    if (link) {
+      mouseRef.current.style.border = "none";
+    }
+  }, [hover, color, toggle, link]);
 
   useEffect(() => {
     if (click) {
@@ -57,7 +66,7 @@ function Mouse({ xy, hover, click, color, toggle }) {
 
   return (
     <div
-      className={`mouse-container`}
+      className={`mouse-container `}
       ref={mouseRef}
       style={{
         left: `${xy.x}px`,
@@ -80,6 +89,27 @@ function Mouse({ xy, hover, click, color, toggle }) {
           </li>
         ))}
       </ul>
+      <div
+        className="mouse-link"
+        style={link ? { opacity: 1 } : { opacity: 0 }}
+      >
+        <span style={color === "white" ? { color: "white" } : {}}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+            />
+          </svg>
+        </span>
+      </div>
     </div>
   );
 }

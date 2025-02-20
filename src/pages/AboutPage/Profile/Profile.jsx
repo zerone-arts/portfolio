@@ -5,6 +5,8 @@ import me2Bw from "../../../assets/img/me/meBW.jpg";
 import me2 from "../../../assets/img/me/me.jpg";
 import me1Bw from "../../../assets/img/me/me2BW.jpg";
 import me1 from "../../../assets/img/me/me2.PNG";
+import { useDispatch } from "react-redux";
+import { setHover, setLink } from "../../../redux/reducers/uiSlice";
 
 const PhotoArr = [
   {
@@ -22,6 +24,7 @@ const PhotoArr = [
 function Profile({ category }) {
   const [color, setColor] = useState(false);
   const [photoCount, setPhotoCount] = useState(0);
+  const dispatch = useDispatch();
   return (
     <div
       className={`profile-container ${category === "Profile" ? "active" : ""}`}
@@ -94,7 +97,6 @@ function Profile({ category }) {
                   : { opacity: 1, transition: "1s" }
               }
             >
-              {" "}
               color?
             </div>
           </div>
@@ -131,15 +133,18 @@ function Profile({ category }) {
           <div>1998.02.10</div>
           <div>제주특별자치도 제주시 설촌로 4길 19</div>
           <div>010-8006-5105</div>
-          <div style={{ fontSize: "12px" }}>
-            음악 • 영화 • 디자인 • 무채색 • 컴퓨터
-          </div>
           <div>zerone-@naver.com</div>
           <div>
             <a
               href="https://github.com/zerone-arts"
               target="_blank"
               rel="noreferrer noopener"
+              onMouseOver={() => {
+                dispatch(setLink(true));
+              }}
+              onMouseLeave={() => {
+                dispatch(setLink(false));
+              }}
             >
               GitHub
             </a>
@@ -150,9 +155,18 @@ function Profile({ category }) {
               href="https://vercel.com/zerone-projects"
               target="_blank"
               rel="noreferrer noopener"
+              onMouseOver={() => {
+                dispatch(setLink(true));
+              }}
+              onMouseLeave={() => {
+                dispatch(setLink(false));
+              }}
             >
               Vercel
             </a>
+          </div>
+          <div style={{ fontSize: "12px" }}>
+            음악 • 영화 • 디자인 • 무채색 • 컴퓨터
           </div>
         </div>
       </div>

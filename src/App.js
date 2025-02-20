@@ -8,16 +8,19 @@ import { useEffect, useRef, useState } from "react";
 import MenuPage from "./pages/MenuPage/MenuPage";
 import Mouse from "./components/Mouse/Mouse";
 import Footer from "./pages/Footer/Footer";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setBgColor,
+  setLocation,
+  setScreenWidth,
+  setToggle,
+} from "./redux/reducers/uiSlice";
 
 function App() {
-  const [toggle, setToggle] = useState("");
   const [xy, setXY] = useState({ x: 0, y: 0 });
-  const [hover, setHover] = useState("");
-  const [screenWidth, setScreenWdith] = useState(null);
+
   const [click, setClick] = useState(false);
   const [color, setColor] = useState("");
-  const [bgColor, setBgColor] = useState("");
-  const [location, setLocation] = useState("main");
   const [projectHover, setProjectHover] = useState(false);
   const contactObserveRef = useRef(null);
   const mainRef = useRef(null);
@@ -25,23 +28,29 @@ function App() {
   const projectRef = useRef(null);
   const contactRef = useRef(null);
 
+  const dispatch = useDispatch();
+  const toggle = useSelector((state) => state.ui.toggle);
+  const screenWidth = useSelector((state) => state.ui.screenWidth);
+  const location = useSelector((state) => state.ui.location);
+  const bgColor = useSelector((state) => state.ui.bgColor);
+
   const mouseMoveHandle = (e) => {
     setXY({ x: e.clientX, y: e.clientY });
   };
   const handleResize = () => {
-    setScreenWdith(window.innerWidth);
+    dispatch(setScreenWidth(window.innerWidth));
 
     if (
       window.innerWidth >= 800 &&
       toggle === "active" &&
       screenWidth != null
     ) {
-      setToggle("");
+      dispatch(setToggle(""));
     }
   };
 
   const handleBgColor = (e) => {
-    setBgColor(e);
+    dispatch(setBgColor(e));
   };
 
   const handleProjectHover = (e) => {
@@ -50,23 +59,23 @@ function App() {
 
   const handleScroll = () => {
     let viewHeight = window.innerHeight;
-
     if (
       window.scrollY >= viewHeight - viewHeight / 2 &&
       window.scrollY <= viewHeight * 2 - viewHeight / 2
     ) {
-      setLocation("about");
+      dispatch(setLocation("about"));
     } else if (
       window.scrollY >= viewHeight * 2 - viewHeight / 2 &&
       window.scrollY <= viewHeight * 3 - viewHeight / 2
     ) {
-      setLocation("project");
+      dispatch(setLocation("project"));
     } else if (window.scrollY >= viewHeight * 3 - viewHeight / 2) {
-      setLocation("contact");
+      dispatch(setLocation("contact"));
     } else {
-      setLocation("main");
+      dispatch(setLocation("main"));
     }
   };
+
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => {
@@ -83,19 +92,19 @@ function App() {
   useEffect(() => {
     switch (location) {
       case "main":
-        setBgColor("");
+        dispatch(setBgColor(""));
         break;
       case "about":
-        setBgColor("deepblue");
+        dispatch(setBgColor("deepblue"));
         break;
       case "project":
-        setBgColor("");
+        dispatch(setBgColor(""));
         break;
       case "contact":
-        setBgColor("");
+        dispatch(setBgColor(""));
         break;
       default:
-        setBgColor("");
+        dispatch(setBgColor(""));
         break;
     }
   }, [location]);
@@ -124,37 +133,14 @@ function App() {
       }}
     >
       <div className={`app-bg-black ${bgColor}`}></div>
-
-      <Header
-        toggle={toggle}
-        setToggle={setToggle}
-        setHover={setHover}
-        bgColor={bgColor}
-        color={color}
-        location={location}
-      />
-      <MainPage ref={mainRef} location={location} />
-      <AboutPage
-        ref={aboutRef}
-        location={location}
-        handleBgColor={handleBgColor}
-      />
-      <ProjectPage
-        setHover={setHover}
-        ref={projectRef}
-        handleProjectHover={handleProjectHover}
-        location={location}
-      />
+      <Header color={color} />
+      <MainPage ref={mainRef} />
+      <AboutPage ref={aboutRef} handleBgColor={handleBgColor} />
+      <ProjectPage ref={projectRef} handleProjectHover={handleProjectHover} />
       <ContactPage ref={contactRef} handleProjectHover={handleProjectHover} />
-      <MenuPage toggle={toggle} setToggle={setToggle} setHover={setHover} />
-      <Footer setHover={setHover} />
-      <Mouse
-        xy={xy}
-        hover={hover}
-        toggle={toggle}
-        click={click}
-        color={color}
-      />
+      <MenuPage />
+      <Footer setColor={setColor} />
+      <Mouse xy={xy} click={click} color={color} />
       <div className="contact-observe" ref={contactObserveRef}></div>
     </div>
   );

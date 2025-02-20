@@ -7,13 +7,14 @@ import Profile from "./Profile/Profile";
 import Skill from "./Skill/Skill";
 import { useSelector } from "react-redux";
 
-const AboutPage = forwardRef(({ location, handleBgColor }, aboutRef) => {
+const AboutPage = forwardRef(({ handleBgColor }, aboutRef) => {
   const [category, setCategory] = useState("Iam");
   const [color, setColor] = useState("white");
 
   let categoryArr = ["Iam", "Profile", "Stack", "Personality"];
 
   const selectCategory = useSelector((state) => state.category.selectCategory);
+  const location = useSelector((state) => state.ui.location);
 
   useEffect(() => {
     if (location !== "about") {

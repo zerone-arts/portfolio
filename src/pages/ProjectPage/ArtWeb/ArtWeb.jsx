@@ -4,8 +4,11 @@ import artImg1 from "../../../assets/img/art1.png";
 import artImg2 from "../../../assets/img/art2.png";
 import artImg3 from "../../../assets/img/art3.png";
 import artImg4 from "../../../assets/img/art4.png";
-function ArtWeb({ handleProjectHover, setHover }) {
+import { useDispatch } from "react-redux";
+import { setHover, setLink } from "../../../redux/reducers/uiSlice";
+function ArtWeb({ handleProjectHover }) {
   const [selectList, setSelectList] = useState(0);
+  const dispatch = useDispatch();
 
   const list = [
     {
@@ -192,13 +195,27 @@ function ArtWeb({ handleProjectHover, setHover }) {
             <a
               href="https://zerone-artweb.vercel.app/"
               target="_blank"
-              onMouseEnter={() => setHover("ArtWeb")}
-              onMouseLeave={() => setHover("")}
+              onMouseEnter={() => {
+                dispatch(setHover("ArtWeb"));
+                dispatch(setLink(true));
+              }}
+              onMouseLeave={() => {
+                dispatch(setHover(""));
+                dispatch(setLink(false));
+              }}
             >
               view more
             </a>
           </div>
-          <div className="artweb-left-github">
+          <div
+            className="artweb-left-github"
+            onMouseEnter={() => {
+              dispatch(setLink(true));
+            }}
+            onMouseLeave={() => {
+              dispatch(setLink(false));
+            }}
+          >
             <a href="https://github.com/zerone-arts/art-web" target="_blank">
               GitHub
             </a>

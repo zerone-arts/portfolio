@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./Diary.css";
 import personImg from "../../../assets/img/person.png";
 import person2Img from "../../../assets/img/person2.png";
+import { useDispatch } from "react-redux";
+import { setHover, setLink } from "../../../redux/reducers/uiSlice";
 
 let monthText =
   "January February March April May June August September October November December January February March April May June August September October November December ";
@@ -25,7 +27,8 @@ let monthArr = [
   "June",
   "August",
 ];
-function Diary({ setHover, selectBtn }) {
+function Diary({}) {
+  const dispatch = useDispatch();
   return (
     <div className={`diary-container`}>
       <div className="diary-wrapper left">
@@ -45,8 +48,14 @@ function Diary({ setHover, selectBtn }) {
           <a
             href="https://zerone-oneword.vercel.app/"
             target="_blank"
-            onMouseEnter={() => setHover("Diary")}
-            onMouseLeave={() => setHover("")}
+            onMouseEnter={() => {
+              dispatch(setHover("Diary"));
+              dispatch(setLink(true));
+            }}
+            onMouseLeave={() => {
+              dispatch(setHover(""));
+              dispatch(setLink(false));
+            }}
           >
             view more
           </a>
@@ -93,10 +102,18 @@ function Diary({ setHover, selectBtn }) {
           <h2>one word.</h2>
         </div>
         <div className="diary-exText">
-          <p>one word는 React를 기반으로 개발되었으며,</p>{" "}
+          <p>one word는 React를 기반으로 개발되었으며,</p>
           <p>인증 및 데이터베이스 관리에는 Firebase를 사용하였습니다.</p>
         </div>
-        <button className="diary-linkBtn">
+        <button
+          className="diary-linkBtn"
+          onMouseEnter={() => {
+            dispatch(setLink(true));
+          }}
+          onMouseLeave={() => {
+            dispatch(setLink(false));
+          }}
+        >
           <a href="https://github.com/zerone-arts/diray" target="_blank">
             GitHub
           </a>

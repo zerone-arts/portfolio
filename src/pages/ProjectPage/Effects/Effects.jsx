@@ -6,10 +6,13 @@ import effectVideo2 from "../../../assets/video/effectVideo2.mov";
 import effectVideo3 from "../../../assets/video/effectVideo3.mov";
 import effectVideo4 from "../../../assets/video/effectVideo4.mov";
 import effectVideo5 from "../../../assets/video/effectVideo5.mov";
+import { useDispatch } from "react-redux";
+import { setHover, setLink } from "../../../redux/reducers/uiSlice";
 
-function Effects({ setSelectBtn, handleProjectHover, setHover }) {
+function Effects({ setSelectBtn, handleProjectHover }) {
   const videoRefs = useRef({});
   const [videoSlideNum, setVideoSlideNum] = useState(0);
+  const dispatch = useDispatch();
   let videoList = [
     effectVideo1,
     effectVideo2,
@@ -102,13 +105,27 @@ function Effects({ setSelectBtn, handleProjectHover, setHover }) {
         className="effects-link-Box"
         href="https://zerone-effects.vercel.app/"
         target="_blank"
-        onMouseEnter={() => setHover("Effects")}
-        onMouseLeave={() => setHover("")}
+        onMouseEnter={() => {
+          dispatch(setHover("Effects"));
+          dispatch(setLink(true));
+        }}
+        onMouseLeave={() => {
+          dispatch(setHover(""));
+          dispatch(setLink(false));
+        }}
       >
         view more <span></span>
       </a>
       <div className="effects-bottom-link-Box">
-        <button className="effects-bottom-link-Box-github">
+        <button
+          className="effects-bottom-link-Box-github"
+          onMouseEnter={() => {
+            dispatch(setLink(true));
+          }}
+          onMouseLeave={() => {
+            dispatch(setLink(false));
+          }}
+        >
           <a href="https://github.com/zerone-arts/effects" target="_blank">
             <h4>GitHub</h4>
             <p>repository</p>

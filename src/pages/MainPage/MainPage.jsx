@@ -3,15 +3,13 @@ import "./MainPage.css";
 import { useTypewriter, Cursor, Typewriter } from "react-simple-typewriter";
 import { useSelector } from "react-redux";
 
-const MainPage = forwardRef(({ location }, mainRef) => {
-  const [typeWriter, setTypeWriter] = useState("");
+const MainPage = forwardRef((props, mainRef) => {
+  const [shadowActive, setShadowActive] = useState(false);
+  const spansRef = useRef([]);
   const selectCategory = useSelector((state) => state.category.selectCategory);
+  const location = useSelector((state) => state.ui.location);
   let email = "zerone-@naver.com";
   let portfolio = "PORTFOLIO";
-
-  const handleType = (count) => {
-    count >= 2 ? setTypeWriter("hide") : setTypeWriter("");
-  };
 
   useEffect(() => {
     if (selectCategory == "main") {
@@ -19,37 +17,52 @@ const MainPage = forwardRef(({ location }, mainRef) => {
     }
   }, [selectCategory]);
 
+  useEffect(() => {
+    const lastSpan = spansRef.current[spansRef.current.length - 1];
+
+    if (lastSpan) {
+      // 마지막 span의 애니메이션이 끝나면 실행
+      lastSpan.addEventListener("animationend", () => {
+        setShadowActive(true);
+      });
+    }
+
+    return () => {
+      if (lastSpan) {
+        lastSpan.removeEventListener("animationend", () => {
+          setShadowActive(true);
+        });
+      }
+    };
+  }, []);
+
   return (
     <div className="mainpage-container" ref={mainRef}>
-      <div className={`mainpage-textBox ${typeWriter}`}>
-        <span
-          style={
-            location !== "main"
-              ? {
-                  bottom: `30px`,
-                  opacity: 0,
-                }
-              : { bottom: `0px`, opacity: 1 }
-          }
-        >
-          <Typewriter
-            words={[
-              `Hi, I'm Kim Young il.`,
-              `I will be a Front-End Developer !`,
-            ]}
-            loop={2}
-            onType={handleType}
-          />
-          <Cursor cursorStyle={`|`} cursorColor="black" />
-        </span>
-      </div>
-      <div className={`mainpage-shadowTextBox ${typeWriter}`}>
+      <div
+        className={`mainpage-shadowTextBox ${
+          shadowActive ? "shadowActive" : ""
+        }`}
+      >
         <div className="mainpage-shadowText">
           {portfolio.split("").map((item, idx) => {
-            return <span key={idx}>{item}</span>;
+            return (
+              <span
+                key={idx}
+                ref={(el) => (spansRef.current[idx] = el)}
+                style={{ animationDelay: `${idx * 0.2}s` }}
+              >
+                {item}
+              </span>
+            );
           })}
         </div>
       </div>
+      {location === "main" && (
+        <div
+          className={`mainpage-line ${shadowActive ? "shadowActive" : ""}`}
+        ></div>
+      )}
+
       <div className="mainpage-bottomBox">
         {email.split("").map((item, idx) => {
           return (

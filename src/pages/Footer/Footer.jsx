@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./Footer.css";
 import { useDispatch } from "react-redux";
 import { setSelectCategory } from "../../redux/reducers/categorySlice";
-function Footer({ setHover }) {
+import { setHover } from "../../redux/reducers/uiSlice";
+function Footer({ setColor }) {
   const dispatch = useDispatch();
   const menuSelectHandle = (item) => {
     dispatch(setSelectCategory(item));
@@ -15,10 +16,12 @@ function Footer({ setHover }) {
       <ul
         className="footer-wrapper"
         onMouseOver={() => {
-          setHover("footer");
+          dispatch(setHover("footer"));
+          setColor("white");
         }}
         onMouseLeave={() => {
-          setHover("");
+          dispatch(setHover(""));
+          setColor("");
         }}
       >
         <li className="footer-wrapper-list">
